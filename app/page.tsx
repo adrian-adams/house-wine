@@ -1,65 +1,115 @@
-import Image from "next/image";
+// Queries & Types
+import { getAllProducts } from "@/lib/queries/products";
+import { getProductsByTag } from "@/lib/queries/products";
+import { getAllStores, getStoresWithProducts } from "@/lib/queries/stores";
+import { getFeaturesByTag } from "@/lib/queries/features";
+// Content Lists
+import { perks, powerfulFeatures } from "./home/HomeLists";
+// Components
+import Hero from '@/components/hero/Hero'
+import { Button } from "@/components/ui/button"
+import SwiperSlidesPerView from "@/components/swiper/SwiperSlidesPerView";
+// Lucide
+import InfoCardsFeatures from "@/components/cards/InfoCards_Features";
+import FeaturedShopCards from "@/components/cards/stores/FeaturedShopCards";
+import { ShopUI } from "@/components/cards/stores/FeaturedShopCards";
 
-export default function Home() {
+export default async function Home() {
+  const [newArrivals, features, stores] = await Promise.all([
+    getProductsByTag("newArrivals", "promoTag"),
+    getFeaturesByTag("powerfulFeatures", "section"),
+    getAllStores()
+  ]);
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+      <div>
+        {/* HERO */}
+        <Hero />
+        {/* PERKS */}
+        <section className="w-full border-b border-hw-pinch-pepper">
+          <ul className="md:w-fit mx-auto grid grid-cols-1 md:grid-cols-3 justify-center items-center gap-4">
+            {perks.map((perk, index) => {
+              const Icon = perk.icon;
+              return (
+                <li key={index} className="relative flex items-center md:justify-center gap-2">
+                  {Icon && <Icon size={24} className="text-hw-heritage-park" />}
+                  {perk.desc}
+                  <span className="hidden md:block ps-10 text-hw-heritage-park">
+                    {perk.content}
+                  </span>
+                </li>
+              );
+            })}
+          </ul>
+        </section>
+      </div>
+
+      {/* NEW ARRIVALS */}
+      <section>
+        <div className="w-full! container mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+            <div className="w-full md:space-y-2">
+              <h2>New Arrivals</h2>
+              <p className="text-hw-dead-sea-mud">Discover the latest additions to our marketplace</p>
+            </div>
+            <div>
+              <Button variant="hw_secondary">
+                View Marketplace
+              </Button>
+            </div>
+          </div>
+          <div className="container mx-auto">
+            <SwiperSlidesPerView slides={newArrivals} />
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* AI-Powered Analysis */}
+
+      {/* Powerful Features */}
+      <section>
+        <div>
+          <div className="hw-text-box-6">
+            <h2>Powerful Features</h2>
+            <p>From AI photo recognition and smart organisation to planned drops, online payments, and B2B wholesale — everything you need to manage and sell your wine collection professionally</p>
+          </div>
+          <ul className="hw-grid">
+            {powerfulFeatures.map((feature, index) => (
+              <li key={index}>
+                <InfoCardsFeatures
+                  src={feature.src}
+                  element="h3"
+                  title={feature.title}
+                  desc={feature.desc}
+                />
+              </li>
+            ))}
+          </ul>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* Featured Shops */}
+      <section>
+        <div>
+          <div className="hw-text-box-6 space-y-4">
+            <h2>Featured Shops</h2>
+            <p>Discover curated wine collections from our community of wine enthusiasts</p>
+          </div>
+          <ul className="hw-grid">
+            {stores.map((store: ShopUI) => (
+              <FeaturedShopCards
+                key={store._id}
+                title={store.title}
+                about={store.about}
+                imageUrl={store.imageUrl}
+                products={store.products}
+                slug={store.slug}
+              />
+            ))}
+          </ul>
+        </div>
+      </section>
+    </>
   );
 }

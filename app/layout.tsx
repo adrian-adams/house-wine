@@ -1,14 +1,25 @@
+// NextJS
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { IBM_Plex_Sans, Instrument_Serif } from "next/font/google";
+// CSS
 import "./globals.css";
+// DNS
+import dns from 'node:dns';
+dns.setServers(['1.1.1.1', '8.8.8.8']);
+// Components
+import AuthSessionProvider from '@/components/providers/SessionProvider'
+import Navigation from "@/components/navigation/Navigation";
+import Footer from "@/components/footer/Footer";
+import HWContainer from "@/components/layout/HWContainer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const instrumentSarif = Instrument_Serif({
+  variable: "--font-instrument-sarif",
+  weight: "400",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const ibmPlexSans = IBM_Plex_Sans({
+  variable: "--font-ibm-plex-sans",
   subsets: ["latin"],
 });
 
@@ -25,9 +36,17 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${instrumentSarif.variable} ${ibmPlexSans.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <Navigation />
+        <AuthSessionProvider>
+          <HWContainer>
+            {children}
+          </HWContainer>
+        </AuthSessionProvider>
+        <Footer />
+      </body>
     </html>
   );
 }
