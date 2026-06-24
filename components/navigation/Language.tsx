@@ -1,4 +1,9 @@
+"use client"
+
 import React from 'react'
+// Next Intl
+import { useLocale } from 'next-intl'
+import { useRouter, usePathname } from '@/i18n/routing'
 // Components
 import LanguageSVG from '../svgs/LanguageSVG'
 import {
@@ -12,40 +17,45 @@ import {
 } from "@/components/ui/select"
 
 interface LanguageArr {
-    id: number
+    name: string
     value: string
 }
 
 const languages: LanguageArr[] = [
-    { id: 1, value: 'Nerderlands' },
-    { id: 2, value: 'English' },
-    { id: 3, value: 'Français' },
-    { id: 4, value: 'Deutsch' },
-    { id: 5, value: 'Dansk' },
+    { name: 'Nederlands', value: 'nl' },
+    { name: 'English', value: 'en' },
 ]
 
 export default function Language() {
+    const router = useRouter();
+    const pathname = usePathname();
+    const locale = useLocale();
+
+    const handleChange = (locale: string) => {
+        router.replace(pathname, { locale })
+    }
+
     return (
-        <span>
-            <Select>
-                <HW_SelectTrigger className="w-full border-0 p-0">
-                    <SelectValue>
-                        <LanguageSVG />
-                    </SelectValue>
+        <span className="relative flex flex-row items-center justify-center gap-1 hover:bg-gray-600/20 rounded-2xl px-3 py-1.5 cursor-pointer">
+            <Select onValueChange={handleChange}>
+                <HW_SelectTrigger className="h-8 w-8" >
+                    {/* <SelectValue /> */}
                 </HW_SelectTrigger>
-                <SelectContent className="z-999 top-10 right-10">
+                <SelectContent className="z-999" position='popper' sideOffset={5} align="start">
                     <SelectGroup>
-                        {languages?.map((lng) => (
+                        {languages?.map((lng, index) => (
                             <SelectItem
-                                key={lng.id}
-                                value={lng.value.toLocaleLowerCase()}
+                                key={index}
+                                value={lng.value}
+                                className={`${lng.value === locale ? 'font-bold' : ''}`}
                             >
-                                {lng.value}
+                                {lng.name}
                             </SelectItem>
                         ))}
                     </SelectGroup>
                 </SelectContent>
             </Select>
+            <span className="text-sm uppercase">{locale}</span>
         </span>
     )
 }

@@ -1,0 +1,403 @@
+{
+  "nav": {
+    "siteMenu": [
+      { "slug": "Marketplace" },
+      { "slug": "Shops" },
+      { "slug": "About" },
+      { "slug": "Features" },
+      { "slug": "Pricing" }
+    ],
+    "userMenu": [
+      { "slug": "Sign in" },
+      { "slug": "Sign up" }
+    ]
+  },
+  "footer": {
+    "desc": "Manage your wine collection with AI-powered intelligence. Organize, catalog, and showcase your wines with ease.",
+    "disclaimer": "Shared Wines. All rights reserved.",
+    "quickLinks": {
+      "title": "Quick Links",
+      "list": [
+        { "link": "Marketplace" },
+        { "link": "Features" },
+        { "link": "Wine Deals" },
+        { "link": "About" },
+        { "link": "Sign In" }
+      ]
+    },
+    "forProfessionals": {
+      "title": "For Professionals",
+      "list": [
+        { "link": "Online sales" },
+        { "link": "Wholesale (B2B)" },
+        { "link": "Bookkeeping integration" },
+        { "link": "Planned drops" },
+        { "link": "Build a community" }
+      ]
+    },
+    "moreInformation": {
+      "title": "More Information",
+      "list": [
+        { "link": "A better marketplace for wine" },
+        { "link": "By and for enthusiasts" },
+        { "link": "Easily share your wine collection" },
+        { "link": "A better price for buyer and seller" },
+        { "link": "The secondary wine market" },
+        { "link": "Burgundy Wines" },
+        { "link": "Grape Varieties" }
+      ]
+    },
+    "legal": {
+      "title": "Legal",
+      "list": [
+        { "link": "Terms & Conditions" },
+        { "link": "Privacy Policy" },
+        { "link": "Contact" }
+      ]
+    }
+  },
+  "logIn": { 
+    "title": "Welcome Back",
+    "email": "Email",
+    "password": "Password",
+    "errorMessage": "Invalid login credentials",
+    "forgotPassword": "Forgot password?",
+    "signIn": "Sign In",
+    "signUp": "Don't have an account? Sign up",
+    "backToHome": "Back to Home"
+  },
+  "register": {
+    "title": "Start Managing Your Wine Collection",
+    "desc": "Join thousands of wine lovers and sellers. Completely free.",
+    "subDesc": "No credit card required",
+    "createAccount": {
+      "title": "Create Your Account",
+      "email": "Email",
+      "password": "Password",
+      "errorMessage": "",
+      "signUpMessage": "Shared Wines connects buyers and sellers — the individual sellers, not Shared Wines, are responsible for the wines they list and sell. We encourage you to reach out to the seller, ask about provenance, storage and condition, and agree on the details before buying.",
+      "acceptTerms": "I have read and agree to the Terms & Conditions and Privacy Policy.",
+      "termsAndCoditions": "Terms & Conditions",
+      "privacyPolicy": "Privacy Policy",
+      "signUpBtn": "Sing Up",
+      "signInBtn": "Already have an account? Sign in",
+      "backToHomeBtn": "Back to Home"
+    },
+    "features": [
+      { 
+        "title": "AI Wine Label Scanner",
+        "desc": "Snap a photo of any wine label and let AI extract name, producer, vintage, region and more."
+      },
+      { 
+        "title": "Your Own Wine Shop",
+        "desc": "Create a beautiful online storefront for your wines with your own subdomain, branding and cart."
+      },
+      { 
+        "title": "Collection Management",
+        "desc": "Track your cellar with detailed tasting notes, purchase prices and drinking windows."
+      },
+      { 
+        "title": "Wine Marketplace",
+        "desc": "Buy and sell wines with other collectors. Send inquiries, negotiate prices and close deals."
+      },
+      { 
+        "title": "Insights & Stats",
+        "desc": "See your collection value, regional breakdown, vintage charts and drinking timeline at a glance."
+      }
+    ]
+  },
+  "home": {
+    "hero": {
+      "title": "The marketplace for independent <i>wine sellers, enthusiasts</i> and <i>estates</i>",
+      "desc_1": "Catalogue your collection with AI, set up your own online shop, and browse the marketplace.",
+      "registerBtn": "Register",
+      "marketplaceBtn": "View Marketplace",
+      "desc_2": "Start free with your first 25 wines. Upgrade for unlimited. <link>See pricing</link>"
+    },
+    "perks": [
+      { "desc": "Catalog your cellar" },
+      { "desc": "Buy from independent sellers" },
+      { "desc": "Make your own shop" }
+    ],
+    "newArrivals": {
+      "title": "New Arrivals",
+      "desc": "Discover the latest additions to our marketplace",
+      "marketplaceBtn": "View Marketplace"
+    },
+    "aiPowered": {
+      "title": "Create your collection with AI-Powered Analysis",
+      "desc": "Our advanced AI automatically extracts all wine details from a single photo, it works for single bottle and bundles."
+    },
+    "powerfulFeatures": {
+      "title": "Powerful Features",
+      "desc": "From AI photo recognition and smart organisation to planned drops, online payments, and B2B wholesale — everything you need to manage and sell your wine collection professionally",
+      "cards": [
+        {
+          "title": "AI-Powered Image Analysis",
+          "desc": "Simply take a photo of your wine bottle. Our AI automatically extracts all details including name, producer, vintage, region, and more. No manual data entry required."
+        },
+        {
+          "title": "Public Wine Shops",
+          "desc": "Create beautiful, customizable public shops to showcase your collection. Share with customers, friends, or use for your business. Complete with categories and inquiry management."
+        },
+        {
+          "title": "Smart Organization",
+          "desc": "Filter and search your collection by country, region, vintage, and type. Organize wines into shops with custom categories. Track quantities and prices effortlessly."
+        },
+        {
+          "title": "Image Optimization",
+          "desc": "AI-powered image enhancement automatically improves lighting and perspective. Remove backgrounds and crop images for professional product photos perfect for your shop."
+        },
+        {
+          "title": "Inquiries & Sales",
+          "desc": "Manage customer inquiries and cart requests from your public shops. Track delivery preferences, view cart contents, and respond to customer messages all in one place."
+        },
+        {
+          "title": "Secure & Private",
+          "desc": "Your collection is securely stored and private by default. Choose which shops to make public and control access to your wine inventory. Full account management and security controls."
+        },
+        {
+          "title": "Planned drops & releases",
+          "desc": "Schedule a release for a future date, show a countdown to the public, and give subscribers early access. Built for en primeur, allocations, and limited bottlings that need to go live at a specific moment."
+        },
+        {
+          "title": "Online payments (Stripe & Mollie)",
+          "desc": "Activate Premium Shopping and connect your own Stripe or Mollie account. Customers pay directly with iDEAL, Bancontact, SEPA, credit card, or Apple Pay — and the money lands in your bank account. Every paid order is automatically issued a sequentially-numbered PDF invoice."
+        },
+        {
+          "title": "Wholesale (B2B)",
+          "desc": "Add a separate price tier for importers, restaurants, and retailers. Invite trade buyers by email, set wholesale prices per wine, and enforce minimum order rules at the cart — without touching your retail prices."
+        }
+      ]
+    },
+    "featuredShops": {
+      "title": "Featured Shops",
+      "desc": "Discover curated wine collections from our community of wine enthusiasts",
+      "cards": [
+        {
+          "desc": "",
+          "latesetAdditions": ""
+        }
+      ]
+    },
+    "startYourCollection": {
+      "title": "Ready to Start Your Collection?",
+      "desc": "Join Shared Wines today and transform how you manage your wine collection",
+      "signUpBtn": "Sign Up Free"
+    }
+  },
+  "about": {
+    "title": "About Shared Wines",
+    "desc": "Shared Wines allows independent wine collectors, enthusiasts and estates to manage, showcase, and sell their collections with ease. Offering an alternative to large, anonymous wine marketplaces and auction houses, Shared Wines focuses on individuals who want to share or sell in a more personal way. Powered by AI and built by a fellow wine lover.",
+    "aboutStory": [
+      { 
+        "title": "Catalogue your collection",
+        "desc": "Photograph any bottle and our AI reads the label: producer, vintage, region, grape variety. No typing. Whether you have a dozen bottles or a full cellar, everything stays organised and searchable."
+      },
+      { 
+        "title": "Set up your own shop",
+        "desc": "Easily convert your collection (or part of it) into a shop. Make it public, password-protected, or invite-only. Set the prices, add your own branding, and come in direct contact with buyers with no commission on sales. Online payments, automatic invoicing, and wholesale pricing for trade buyers all built in."
+      },
+      { 
+        "title": "Browse the marketplace",
+        "desc": "Discover shops from independent collectors and merchants around the world. Filter by country, region, vintage, or price. Find something you like — get in touch directly."
+      }
+    ],
+    "commitment": {
+      "desc": "No tech skills required. Just add your wines. <br>Built in Amsterdam, by and for people who love wine."
+    },
+    "startYourAccount": {
+      "startYourAccountBtn": "Start your free account"
+    }
+  },
+  "features": {
+    "title": "Wine collection tools for enthusiasts and professionals",
+    "desc": "Shared Wines brings together AI-powered cataloguing, beautiful public shops, and smart organisation—so you can manage, share, and sell from your collection with ease.",
+    "featuresMain": [
+      {
+        "title": "AI-powered wine analysis",
+        "desc": "Take a photo of any bottle—or a whole case—and our AI reads the label to extract producer, vintage, region, grape varieties, and more. No typing required. Works for single bottles and wine deals and bundles too."
+      },
+      {
+        "title": "Public wine shops & the secondary wine market",
+        "desc": "Turn your collection into a proper shop with its own subdomain. Perfect for the secondary wine market: private collectors, merchants, and wine clubs can list bottles, set prices, and receive inquiries. Shops can be public, password-protected, or invite-only."
+      },
+      {
+        "title": "Wine sharing and discovery",
+        "desc": "Wine sharing is at the heart of Shared Wines. Share a link to your shop, let subscribers get daily updates when you add new wines, or invite specific people to a private list. Great for sharing with friends, clients, or your mailing list."
+      },
+      {
+        "title": "Organisation that scales",
+        "desc": "Filter by country, region, grape variety, vintage, and type. Use custom categories per shop. Track quantities, prices, and condition. Whether you have a dozen bottles or a cellar, everything stays searchable and manageable."
+      }
+    ],
+    "shopYourWay": {
+      "title": "Your wine shop, your way",
+      "desc": "Shared Wines gives you a complete online wine shop with tools built specifically for wine sellers. No tech skills required — just add your wines and start selling.",
+      "list": [
+        {
+          "title": "Instant shop setup",
+          "desc": "The moment you sign up, a shop is created for you. Set it public, pick a subdomain, upload your logo, and you’re live. Add wines by snapping photos — our AI fills in the details."
+        },
+        {
+          "title": "Custom domains",
+          "desc": "Connect your own domain name and run your shop on a URL that matches your brand. DNS setup is guided step by step, and SSL is automatic."
+        },
+        {
+          "title": "Cart & inquiry system",
+          "desc": "Customers browse your wines, add bottles to a cart, suggest their own price if you allow counter offers, and send a single inquiry. You accept, reject, or convert it straight into a sale — or let customers pay online instantly."
+        },
+        {
+          "title": "Online payments with Stripe or Mollie",
+          "desc": "Activate Premium Shopping (€20/month or €200/year) and connect your own Stripe or Mollie account. Customers check out directly on your shop — by iDEAL, card, or Bancontact — and funds land in your account, not ours."
+        },
+        {
+          "title": "Automatic invoicing",
+          "desc": "Every paid order generates a sequentially-numbered PDF invoice and emails it to the customer as an attachment. Per-bottle VAT scheme is supported — standard VAT, margin, and exempt items can coexist in one cart, with the correct legal wording on the invoice."
+        },
+        {
+          "title": "Sales & revenue tracking",
+          "desc": "Record sales manually or convert inquiries. Track revenue, cost, profit, and conversion rate. See monthly trends and identify your best-selling bottles."
+        },
+        {
+          "title": "Shop analytics",
+          "desc": "See how many visitors your shop gets, which wines are viewed most, how many are added to carts and favourited. Weekly stats emails keep you informed without logging in."
+        },
+        {
+          "title": "Subscriber management",
+          "desc": "Let visitors subscribe for daily or weekly digests of new wines. Control who can subscribe — open, invite-only, or via referral links. You see every subscriber and can manage access."
+        },
+        {
+          "title": "Categories & featured wines",
+          "desc": "Organise your wines into categories and subcategories. Highlight specific bottles as featured. Customers can filter and search by producer, country, vintage, grape variety, and type."
+        },
+        {
+          "title": "Delivery options",
+          "desc": "Configure pickup, shipping, or custom delivery methods with prices. Customers select their preference when submitting an inquiry."
+        },
+        {
+          "title": "Producer pages",
+          "desc": "Create dedicated pages for the producers you carry. Each producer gets their own profile with logo, description, and a view of all their wines in your shop."
+        },
+        {
+          "title": "Built-in messaging",
+          "desc": "Communicate with customers directly through the platform. Every inquiry has a message thread — no need for external email chains."
+        },
+        {
+          "title": "Flexible visibility",
+          "desc": "Make your shop fully public, protect it with a password, or restrict it to subscribers only. List it on the marketplace or keep it private. You control who sees what."
+        },
+        {
+          "title": "Branding & about page",
+          "desc": "Upload your logo, set a background colour, write an about page with photos and opening hours. Your shop looks and feels like your own site."
+        },
+        {
+          "title": "Wholesale (B2B)",
+          "desc": "Add a separate price tier for invited trade buyers — importers, restaurants, retailers. Set wholesale prices per wine, enforce minimum order rules, and manage buyer access from one place."
+        }
+      ]
+    },
+    "getStarted": {
+      "title": "Start selling in minutes",
+      "desc": "Create your free account, add your first wine, and open your shop to the world.",
+      "getStartedBtn": "Gte started for free"
+    }
+  },
+  "pricing": {
+    "title": "Simple pricing, no surprises",
+    "desc": "Start free with your first 25 wines. Upgrade to Premium when your collection grows.",
+    "billing": {
+      "title": "Billing",
+      "monthly": "Monthly",
+      "yearly": "Yearly",
+      "forever": "Free Forever"
+    },
+    "forCollectors": {
+      "title": "For Collectors"
+    },
+    "forSellers": {
+      "title": "For independant sellers"
+    },
+    "priceCards": {
+      "discount": [
+        { "label": "off" }
+      ],
+      "free": {
+        "title": "Free",
+        "desc": "Perfect for discovering and sharing your collection.",
+        "badge": "",
+        "features": [
+          { "desc": "Wines in your collection: up to 25", "included": true, "highlight": false },
+          { "desc": "AI photo recognition & analysis", "included": true, "highlight": false },
+          { "desc": "Your own shop with catalog", "included": true, "highlight": false },
+          { "desc": "Subdomain on sharedwines.com", "included": true, "highlight": false },
+          { "desc": "Custom domain: not included", "included": false, "highlight": false },
+          { "desc": "Marketplace for rare vintages", "included": true, "highlight": false },
+          { "desc": "Support: community", "included": true, "highlight": false }
+        ],
+        "button": "Start free"
+      },
+      "premium": {
+        "title": "Premium",
+        "desc": "For enthusiasts who want to catalogue and share their full cellar.",
+        "badge": "Premium",
+        "features": [
+          { "desc": "Wines in your collection: unlimited", "included": true, "highlight": false },
+          { "desc": "AI photo recognition & analysis", "included": true, "highlight": false },
+          { "desc": "Your own shop with catalog", "included": true, "highlight": false },
+          { "desc": "Subdomain on sharedwines.com", "included": true, "highlight": false },
+          { "desc": "Custom domain: included", "included": true, "highlight": true },
+          { "desc": "Marketplace for rare vintages", "included": true, "highlight": false },
+          { "desc": "Support: priority email", "included": true, "highlight": false }
+        ],
+        "button": "Sign up and upgrade"
+      },
+      "premiumShopping": {
+        "title": "Premium Shopping",
+        "desc": "Activate online checkout on your shop. Customers pay straight into your own Stripe or Mollie account — never via Shared Wines.",
+        "badge": "Add-on · per shop",
+        "features": [
+          { "desc": "Stripe & Mollie checkout (iDEAL, card, Bancontact)", "included": true, "highlight": false },
+          { "desc": "Funds go directly to your own account", "included": true, "highlight": false },
+          { "desc": "Automatic PDF invoicing (sequential numbering)", "included": true, "highlight": false },
+          { "desc": "Per-bottle VAT scheme (incl. margin / marge-regeling)", "included": true, "highlight": false },
+          { "desc": "No platform fees on transactions", "included": true, "highlight": false }
+        ],
+        "button": "Create account"
+      },
+      "pro": {
+        "title": "Pro",
+        "desc": "Everything in Premium, plus online payments, complete whitelabeling, and your own newsletter.",
+        "badge": "Pro · Everything",
+        "features": [
+          { "desc": "Everything in Premium", "included": true, "highlight": true },
+          { "desc": "Online payments — your own account", "included": true, "highlight": false },
+          { "desc": "Complete whitelabeling — no Shared Wines branding", "included": true, "highlight": true },
+          { "desc": "Newsletter to your own customers & subscribers", "included": true, "highlight": true }
+        ],
+        "button": "Sign up and upgrade"
+      }
+    },
+    "faq": {
+      "title": "Frequently asked questions",
+      "list": [
+        {
+          "title": "What happens when I reach my 25th wine?",
+          "desc": "Your existing wines stay accessible. To add more, upgrade to Premium or remove existing wines."
+        },
+        {
+          "title": "Can I cancel my subscription?",
+          "desc": "Yes, anytime from your account settings. You keep Premium access until the end of the paid period."
+        },
+        {
+          "title": "What if I already connected a custom domain and then downgrade?",
+          "desc": "Already-connected domains keep working. You won't be able to add a new domain or change the existing one until you upgrade again."
+        },
+        {
+          "title": "What is Premium Shopping and do I need it?",
+          "desc": "Premium Shopping is a per-shop add-on (€20/month or €200/year) that lets you accept online payments through your own Stripe or Mollie account. Without it, your shop still works fine — customers send inquiries you handle manually. Only activate it when you actually want online checkout."
+        }
+      ]
+    }
+  }
+}

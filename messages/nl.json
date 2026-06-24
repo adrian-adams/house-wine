@@ -1,0 +1,402 @@
+{
+  "nav": {
+    "siteMenu": [
+      { "slug": "Marktplaats" },
+      { "slug": "Shops" },
+      { "slug": "Ontdek" },
+      { "slug": "Functies" },
+      { "slug": "Prijzen" }
+    ],
+    "userMenu": [
+      { "slug": "Inloggen" },
+      { "slug": "Registeren" }
+    ]
+  },
+  "footer": {
+    "desc": "Beheer je wijncollectie met AI-gestuurde intelligentie. Organiseer, catalogiseer en presenteer je wijnen met gemak.",
+    "disclaimer": "Shared Wines. Alle rechten voorbehouden.",
+    "quickLinks": {
+      "title": "Snelle Links",
+      "list": [
+        { "link": "Marktplaats" },
+        { "link": "Functies" },
+        { "link": "Wijnaanbiedingen" },
+        { "link": "Over ons" },
+        { "link": "Inloggen" }
+      ]
+    },
+    "forProfessionals": {
+      "title": "Voor Professionals",
+      "list": [
+        { "link": "Online verkoop" },
+        { "link": "Groothandel (B2B)" },
+        { "link": "Boekhoudkoppeling" },
+        { "link": "Geplande drops" },
+        { "link": "Bouw een community" }
+      ]
+    },
+    "moreInformation": {
+      "title": "Meer Informante",
+      "list": [
+        { "link": "Een betere marktplaats voor wijn" },
+        { "link": "Voor en door liefhebbers" },
+        { "link": "Makkelijk jouw wijncollectie delen" },
+        { "link": "Een betere prijs voor koper en verkoper" },
+        { "link": "De secundaire wijnmarkt" },
+        { "link": "Bourgogne Wijnen" },
+        { "link": "Druivenrassen" }
+      ]
+    },
+    "legal": {
+      "title": "Juridisch",
+      "list": [
+        { "link": "Algemene voorwaarden" },
+        { "link": "Privacybeleid" },
+        { "link": "Contact" }
+      ]
+    }
+  },
+  "logIn": { 
+    "title": "Welkom Terug",
+    "email": "E-mail",
+    "password": "Wachtwoord",
+    "errorMessage": "Invalid login credentials",
+    "forgotPassword": "Wachtwoord vergeten?",
+    "signIn": "Inloggen",
+    "signUp": "Geen account? Registreren",
+    "backToHome": "Terug naar Home"
+  },
+  "register": {
+    "title": "Begin met het Beheren van je Wijncollectie",
+    "desc": "Sluit je aan bij duizenden wijnliefhebbers en verkopers. Volledig gratis.",
+    "subDesc": "Geen creditcard nodig",
+    "createAccount": {
+      "title": "Maak je Account aan",
+      "email": "E-mail",
+      "password": "Wachtwoord",
+      "errorMessage": "",
+      "signUpMessage": "Shared Wines brengt kopers en verkopers samen — de individuele verkopers, niet Shared Wines, zijn verantwoordelijk voor de wijnen die zij aanbieden en verkopen. We raden je aan contact op te nemen met de verkoper, te vragen naar herkomst, bewaring en staat, en de details af te stemmen voordat je koopt.",
+      "acceptTerms": "Ik heb de algemene voorwaarden en het privacybeleid gelezen en ga hiermee akkoord.",
+      "termsAndCoditions": "Algemene voorwaarden",
+      "privacyPolicy": "Privacybeleid",
+      "signUpBtn": "Registreren",
+      "signInBtn": "Heb je al een account? Inloggen",
+      "backToHomeBtn": "Terug naar Home"
+    },
+    "features": [
+      { 
+        "title": "AI Wijnlabel Scanner",
+        "desc": "Maak een foto van elk wijnlabel en laat AI naam, producent, jaargang, regio en meer herkennen."
+      },
+      { 
+        "title": "Je Eigen Wijnshop",
+        "desc": "Maak een mooie online winkel voor je wijnen met je eigen subdomein, huisstijl en winkelwagen."
+      },
+      { 
+        "title": "Collectiebeheer",
+        "desc": "Beheer je kelder met gedetailleerde proefnotities, aankoopprijzen en drinkvensters."
+      },
+      { 
+        "title": "Wijnmarktplaats",
+        "desc": "Koop en verkoop wijnen met andere verzamelaars. Stuur aanvragen, onderhandel over prijzen en sluit deals."
+      },
+      { 
+        "title": "Inzichten & Statistieken",
+        "desc": "Bekijk je collectiewaarde, regionale verdeling, jaarganggrafieken en drinktijdlijn in één oogopslag."
+      }
+    ]
+  },
+  "home": {
+    "hero": {
+      "title": "Het platform voor onafhankelijke <i>verkopers, liefhebbers</i> en <i>wijndomeinen</i>",
+      "desc_1": "Catalogiseer je collectie met AI, open je eigen online shop en verken de marktplaats.",
+      "registerBtn": "Register",
+      "marketplaceBtn": "Naar de marktplaats",
+      "desc_2": "Start gratis met je eerste 25 wijnen. Upgrade voor onbeperkt. <link>Bekijk prijzen</link>"
+    },
+    "perks": [
+      { "desc": "Catalogiseer je kelder" },
+      { "desc": "Koop bij onafhankelijke verkopers" },
+      { "desc": "Maak je eigen shop" }
+    ],
+    "newArrivals": {
+      "title": "Nieuwe Aanwinsten",
+      "desc": "Ontdek de nieuwste toevoegingen aan onze marktplaats",
+      "marketplaceBtn": "Bekijk Marktplaats"
+    },
+    "aiPowered": {
+
+    },
+    "powerfulFeatures": {
+      "title": "Krachtige Functies",
+      "desc": "Van AI-fotoherkenning en slimme organisatie tot geplande releases, online betalingen en B2B-groothandel — alles om je wijncollectie professioneel te beheren en verkopen",
+      "cards": [
+        {
+          "title": "AI-gestuurde Analyse",
+          "desc": "Je kelder in kaart brengen was nog nooit zo makkelijk. Maak een foto van je wijnfles en onze AI extraheert automatisch alle details: naam, producent, jaargang, regio en meer."
+        },
+        {
+          "title": "Openbare Wijnshops",
+          "desc": "Maak mooie, aanpasbare openbare shops om je collectie te presenteren. Deel met klanten, vrienden, of gebruik het voor je bedrijf. Compleet met categorieën en aanvraagbeheer."
+        },
+        {
+          "title": "Slimme Organisatie",
+          "desc": "Filter en doorzoek je collectie op land, regio, jaargang en type. Organiseer wijnen in shops met aangepaste categorieën. Houd aantallen en prijzen moeiteloos bij."
+        },
+        {
+          "title": "Beeldoptimalisatie",
+          "desc": "AI-gestuurde beeldverbetering optimaliseert automatisch belichting en perspectief. Verwijder achtergronden en snij afbeeldingen bij voor professionele productfoto's die perfect zijn voor je shop."
+        },
+        {
+          "title": "Aanvragen & Verkoop",
+          "desc": "Beheer klantvragen en winkelwagenverzoeken van je openbare shops. Volg bezorgvoorkeuren, bekijk winkelwageninhoud en reageer op klantberichten op één plek."
+        },
+        {
+          "title": "Veilig & Privé",
+          "desc": "Je collectie is veilig opgeslagen en standaard privé. Kies welke shops je openbaar maakt en beheer de toegang tot je wijnvoorraad. Volledig accountbeheer en beveiligingsopties."
+        },
+        {
+          "title": "Geplande releases (drops)",
+          "desc": "Plan een release in de toekomst, laat een aftelteller zien, en geef abonnees vroegtijdig toegang. Perfect voor en primeur, allocaties en limited-edition bottelingen die op een vast moment live moeten gaan."
+        },
+        {
+          "title": "Online betalen (iDEAL, Mollie, Stripe)",
+          "desc": "Activeer Premium Shopping en koppel je eigen Stripe- of Mollie-account. Klanten betalen direct met iDEAL, Bancontact, SEPA, creditcard of Apple Pay — het geld komt op jouw rekening. Elke betaalde bestelling krijgt automatisch een doorlopend genummerde PDF-factuur."
+        },
+        {
+          "title": "Groothandel (B2B)",
+          "desc": "Voeg een aparte prijstier toe voor importeurs, restaurants en wijnhandels. Nodig handelskopers per e-mail uit, stel groothandelsprijzen per wijn in, en dwing minimumbestelregels af in de winkelmand — zonder je consumentenprijzen aan te tasten."
+        }
+      ]
+    },
+    "featuredShops": {
+      "title": "",
+      "desc": "",
+      "cards": [
+        {
+          "desc": "",
+          "latesetAdditions": ""
+        }
+      ]
+    },
+    "startYourCollection": {
+      "title": "Klaar om je Collectie te Starten?",
+      "desc": "Sluit je vandaag aan bij Shared Wines en transformeer hoe je je wijncollectie beheert",
+      "signUpBtn": "Gratis Registeren"
+    }
+  },
+  "about": {
+    "title": "Over Shared Wines",
+    "desc": "Shared Wines stelt onafhankelijke wijnverzamelaars, liefhebbers en wijndomeinen in staat hun collecties eenvoudig te beheren, presenteren en verkopen. Als alternatief voor grote, anonieme wijnmarktplaatsen en veilinghuizen richt Shared Wines zich op individuen die op een persoonlijkere manier willen delen of verkopen. Aangedreven door AI en gebouwd door een mede-wijnliefhebber.",
+    "aboutStory": [
+      { 
+        "title": "Catalogiseer je collectie",
+        "desc": "Fotografeer elke fles en onze AI leest het etiket: producent, jaargang, regio, druivenras. Geen getyp. Of je nu een dozijn flessen hebt of een volle kelder, alles blijft overzichtelijk en doorzoekbaar."
+      },
+      { 
+        "title": "Open je eigen shop",
+        "desc": "Zet je collectie (of een deel ervan) eenvoudig om in een shop. Maak die openbaar, met wachtwoord beveiligd of alleen op uitnodiging. Bepaal de prijzen, voeg je eigen branding toe en kom rechtstreeks in contact met kopers, zonder commissie op verkopen. Online betalingen, automatische facturatie en groothandelsprijzen voor handelskopers zitten er allemaal in."
+      },
+      { 
+        "title": "Verken de marktplaats",
+        "desc": "Ontdek shops van onafhankelijke verzamelaars en handelaren over de hele wereld. Filter op land, regio, jaargang of prijs. Vind iets wat je aanspreekt — neem direct contact op."
+      }
+    ],
+    "commitment": {
+      "desc": "Geen technische kennis nodig. Voeg gewoon je wijnen toe. <br>Gebouwd in Amsterdam, door en voor mensen die van wijn houden."
+    },
+    "startYourAccount": {
+      "startYourAccountBtn": "Start je gratis account"
+    }
+  },
+  "features": {
+    "title": "Wijncollectie-tools voor liefhebbers en professionals",
+    "desc": "Shared Wines brengt AI-gestuurde catalogisering, mooie openbare shops en slimme organisatie samen — zodat je je collectie met gemak kunt beheren, delen en verkopen.",
+    "featuresMain": [
+      {
+        "title": "AI-gestuurde wijnanalyse",
+        "desc": "Maak een foto van een fles — of een hele kist — en onze AI leest het etiket om producent, jaargang, regio, druivenrassen en meer te extraheren. Geen typen nodig. Werkt voor enkele flessen en wijnaanbiedingen en bundels ook."
+      },
+      {
+        "title": "Openbare wijnshops & de secundaire wijnmarkt",
+        "desc": "Maak van je collectie een echte shop met een eigen subdomein. Perfect voor de secundaire wijnmarkt: particuliere verzamelaars, handelaren en wijnclubs kunnen flessen listen, prijzen instellen en aanvragen ontvangen. Shops kunnen openbaar, met wachtwoord beveiligd of alleen op uitnodiging zijn."
+      },
+      {
+        "title": "Wijn delen en ontdekken",
+        "desc": "Wijn delen staat centraal bij Shared Wines. Deel een link naar je shop, laat abonnees dagelijks updates ontvangen wanneer je nieuwe wijnen toevoegt, of nodig specifieke mensen uit voor een privélijst. Ideaal voor het delen met vrienden, klanten of je mailinglijst."
+      },
+      {
+        "title": "Organisatie die meegroeit",
+        "desc": "Filter op land, regio, druivenras, jaargang en type. Gebruik aangepaste categorieën per shop. Houd aantallen, prijzen en conditie bij. Of je nu een dozijn flessen hebt of een kelder vol, alles blijft doorzoekbaar en beheersbaar."
+      }
+    ],
+    "shopYourWay": {
+      "title": "Jouw wijnwinkel, op jouw manier",
+      "desc": "Shared Wines geeft je een complete online wijnwinkel met tools speciaal gebouwd voor wijnverkopers. Geen technische kennis nodig — voeg je wijnen toe en begin met verkopen.",
+      "list": [
+        {
+          "title": "Direct een shop",
+          "desc": "Op het moment dat je je aanmeldt wordt er een shop voor je aangemaakt. Zet hem openbaar, kies een subdomein, upload je logo en je bent live. Voeg wijnen toe door foto’s te maken — onze AI vult de details in."
+        },
+        {
+          "title": "Eigen domeinnaam",
+          "desc": "Koppel je eigen domeinnaam en draai je shop op een URL die bij je merk past. DNS-instelling wordt stap voor stap begeleid en SSL is automatisch."
+        },
+        {
+          "title": "Winkelwagen & aanvragen",
+          "desc": "Klanten bladeren door je wijnen, voegen flessen toe aan een winkelwagen, stellen eventueel hun eigen prijs voor als je tegenbiedingen toestaat, en sturen één aanvraag. Jij accepteert, wijst af, of zet het direct om naar een verkoop — of laat klanten direct online afrekenen."
+        },
+        {
+          "title": "Online betalen met Stripe of Mollie",
+          "desc": "Activeer Premium Shopping (€20/maand of €200/jaar) en koppel je eigen Stripe- of Mollie-account. Klanten rekenen direct af op je shop — met iDEAL, creditcard of Bancontact — en het geld komt rechtstreeks op jouw rekening, zonder tussenkomst van Shared Wines."
+        },
+        {
+          "title": "Automatische facturatie",
+          "desc": "Bij elke betaalde bestelling wordt automatisch een PDF-factuur met opvolgend nummer gegenereerd en als bijlage naar de klant gemaild. Marge-regeling wordt per fles ondersteund — normale btw, marge en vrijgesteld in één cart, met de juiste vermelding op de factuur."
+        },
+        {
+          "title": "Verkopen & omzet bijhouden",
+          "desc": "Registreer verkopen handmatig of converteer aanvragen. Volg omzet, kosten, winst en conversieratio. Zie maandelijkse trends en identificeer je bestverkopende flessen."
+        },
+        {
+          "title": "Shop statistieken",
+          "desc": "Bekijk hoeveel bezoekers je shop krijgt, welke wijnen het meest bekeken worden, hoeveel er aan de winkelwagen en favorieten worden toegevoegd. Wekelijkse statistiek-e-mails houden je op de hoogte zonder in te loggen."
+        },
+        {
+          "title": "Abonneebeheer",
+          "desc": "Laat bezoekers zich abonneren voor dagelijkse of wekelijkse overzichten van nieuwe wijnen. Bepaal wie zich kan abonneren — open, alleen op uitnodiging, of via verwijslinks. Je ziet elke abonnee en kunt de toegang beheren."
+        },
+        {
+          "title": "Categorieën & uitgelichte wijnen",
+          "desc": "Organiseer je wijnen in categorieën en subcategorieën. Markeer specifieke flessen als uitgelicht. Klanten kunnen filteren en zoeken op producent, land, jaargang, druivenras en type."
+        },
+        {
+          "title": "Bezorgopties",
+          "desc": "Configureer afhalen, verzending of aangepaste bezorgmethoden met prijzen. Klanten kiezen hun voorkeur bij het indienen van een aanvraag."
+        },
+        {
+          "title": "Producentenpagina’s",
+          "desc": "Maak speciale pagina’s voor de producenten die je voert. Elke producent krijgt een eigen profiel met logo, beschrijving en een overzicht van al hun wijnen in jouw shop."
+        },
+        {
+          "title": "Ingebouwde berichten",
+          "desc": "Communiceer met klanten rechtstreeks via het platform. Elke aanvraag heeft een berichtenthread — geen externe e-mailketens nodig."
+        },
+        {
+          "title": "Flexibele zichtbaarheid",
+          "desc": "Maak je shop volledig openbaar, bescherm hem met een wachtwoord, of beperk tot abonnees. Vermeld hem op de marktplaats of houd hem privé. Jij bepaalt wie wat ziet."
+        },
+        {
+          "title": "Huisstijl & over-pagina",
+          "desc": "Upload je logo, stel een achtergrondkleur in, schrijf een over-pagina met foto’s en openingstijden. Je shop ziet eruit als je eigen website."
+        },
+        {
+          "title": "Groothandel (B2B)",
+          "desc": "Voeg een aparte prijstier toe voor uitgenodigde handelskopers — importeurs, restaurants, retailers. Stel groothandelsprijzen per wijn in, dwing minimumbestelregels af, en beheer alle kopers vanaf één plek."
+        }
+      ]
+    },
+    "getStarted": {
+      "title": "Begin binnen minuten met verkopen",
+      "desc": "Maak je gratis account aan, voeg je eerste wijn toe en open je shop voor de wereld.",
+      "getStartedBtn": "Gratis ann de slag"
+    }
+  },
+  "pricing": {
+    "title": "Eenvoudige prijzen, zonder verrassingen",
+    "desc": "Start gratis met je eerste 25 wijnen. Upgrade naar Premium wanneer je collectie groeit.",
+    "billing": {
+      "title": "Factureer",
+      "monthly": "Maandelijks",
+      "yearly": "Jaarlijks",
+      "forever": "Voor Altijd"
+    },
+    "forCollectors": {
+      "title": "voor Verzamelaars"
+    },
+    "forSellers": {
+      "title": "Voor Onafhankelijke Verkopers"
+    },
+    "priceCards": {
+      "discount": [
+        { "label": "korting" }
+      ],
+      "free": {
+        "title": "Gratis",
+        "desc": "Perfect om je collectie te ontdekken en te delen.",
+        "badge": "",
+        "features": [
+          { "desc": "Wijnen in je collectie: tot 25" },
+          { "desc": "AI-fotoherkenning & analyse" },
+          { "desc": "Eigen shop met catalogus" },
+          { "desc": "Subdomain on sharedwines.com" },
+          { "desc": "Eigen domein: niet inbegrepen" },
+          { "desc": "Marktplaats voor zeldzame jaargangen" },
+          { "desc": "Ondersteuning: community" }
+        ],
+        "button": "Start gratis"
+      },
+      "premium": {
+        "title": "Premium",
+        "desc": "Voor liefhebbers die hun volledige kelder willen catalogiseren en delen.",
+        "badge": "Premium",
+        "features": [
+          { "desc": "Wijnen in je collectie: onbeperkt" },
+          { "desc": "AI-fotoherkenning & analyse" },
+          { "desc": "Eigen shop met catalogus" },
+          { "desc": "Subdomein op sharedwines.com" },
+          { "desc": "Eigen domein: inbegrepen" },
+          { "desc": "Marktplaats voor zeldzame jaargangen" },
+          { "desc": "Ondersteuning: prioriteit per e-mail" }
+        ],
+        "button": "Account maken en upgraden"
+      },
+      "premiumShopping": {
+        "title": "Premium Shopping",
+        "desc": "Activeer online afrekenen op je shop. Klanten betalen rechtstreeks op je eigen Stripe- of Mollie-account — nooit via Shared Wines.",
+        "badge": "Add-on · per shop",
+        "features": [
+          { "desc": "Stripe & Mollie afrekenen (iDEAL, creditcard, Bancontact)" },
+          { "desc": "Geld komt rechtstreeks op je eigen rekening" },
+          { "desc": "Automatische PDF-facturatie (opvolgende nummering)" },
+          { "desc": "BTW per fles instelbaar (incl. marge-regeling)" },
+          { "desc": "Geen platformkosten op transacties" }
+        ],
+        "button": "Account maken"
+      },
+      "pro": {
+        "title": "Pro",
+        "desc": "Alles uit Premium, plus online betalingen, volledige whitelabeling en je eigen nieuwsbrief.",
+        "badge": "Pro · Alles-in-één",
+        "features": [
+          { "desc": "Alles uit Premium" },
+          { "desc": "Online betalingen — op je eigen rekening" },
+          { "desc": "Volledige whitelabeling — geen Shared Wines-branding" },
+          { "desc": "Nieuwsbrief naar je eigen klanten & abonnees" }
+        ],
+        "button": "Accouint maken en upgraden"
+      }
+    },
+    "faq": {
+      "title": "Veelgestelde vragen",
+      "list": [
+        {
+          "title": "Wat gebeurt er als ik mijn 25e wijn bereik?",
+          "desc": "Je bestaande wijnen blijven gewoon toegankelijk. Je kunt pas weer een wijn toevoegen na een upgrade naar Premium, of door bestaande wijnen te verwijderen."
+        },
+        {
+          "title": "Kan ik mijn abonnement opzeggen?",
+          "desc": "Ja, op elk moment vanuit je accountinstellingen. Je houdt Premium-toegang tot het einde van de betaalde periode."
+        },
+        {
+          "title": "Wat als ik al een eigen domein heb gekoppeld en daarna downgrade?",
+          "desc": "Reeds gekoppelde domeinen blijven werken. Je kunt geen nieuw domein toevoegen of het bestaande wijzigen totdat je weer upgradet."
+        },
+        {
+          "title": "Wat is Premium Shopping en heb ik het nodig?",
+          "desc": "Premium Shopping is een add-on per shop (€20/maand of €200/jaar) waarmee je online betalingen aanneemt via je eigen Stripe- of Mollie-account. Zonder dit blijft je shop prima werken — klanten sturen aanvragen die jij handmatig afhandelt. Activeer het pas als je daadwerkelijk online wilt afrekenen."
+        }
+      ]
+    }
+  }
+} 

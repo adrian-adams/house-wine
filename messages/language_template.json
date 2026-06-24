@@ -1,0 +1,405 @@
+{
+  "nav": {
+    "marketplace": "",
+    "shops": "",
+    "about": "",
+    "features": "",
+    "pricing": "",
+    "login": "",
+    "register": ""
+  },
+  "footer": {
+    "desc": "",
+    "quickLinks": {
+      "title": "",
+      "list": [
+        { "link": "" },
+        { "link": "" },
+        { "link": "" },
+        { "link": "" },
+        { "link": "" }
+      ]
+    },
+    "forProfessionals": {
+      "title": "",
+      "list": [
+        { "link": "" },
+        { "link": "" },
+        { "link": "" },
+        { "link": "" },
+        { "link": "" }
+      ]
+    },
+    "moreInformation": {
+      "title": "",
+      "list": [
+        { "link": "" },
+        { "link": "" },
+        { "link": "" },
+        { "link": "" },
+        { "link": "" },
+        { "link": "" },
+        { "link": "" }
+      ]
+    },
+    "legal": {
+      "title": "",
+      "list": [
+        { "link": "" },
+        { "link": "" },
+        { "link": "" }
+      ]
+    }
+  },
+  "logIn": { 
+    "title": "",
+    "email": "",
+    "password": "",
+    "errorMessage": "",
+    "forgotPassword": "",
+    "signIn": "",
+    "signUp": "",
+    "backToHome": ""
+  },
+  "register": {
+    "title": "",
+    "desc": "",
+    "subDesc": "",
+    "createAccount": {
+      "title": "",
+      "email": "",
+      "password": "",
+      "errorMessage": "",
+      "signUpMessage": "",
+      "acceptTerms": "",
+      "termsAndCoditions": "",
+      "privacyPolicy": "",
+      "signUpBtn": "",
+      "signInBtn": "",
+      "backToHomeBtn": ""
+    },
+    "features": [
+      { 
+        "title": "",
+        "desc": ""
+      },
+      { 
+        "title": "",
+        "desc": ""
+      },
+      { 
+        "title": "",
+        "desc": ""
+      },
+      { 
+        "title": "",
+        "desc": ""
+      },
+      { 
+        "title": "",
+        "desc": ""
+      }
+    ]
+  },
+  "home": {
+    "hero": {
+      "title": "",
+      "desc_1": "",
+      "registerBtn": "Register",
+      "marketplaceBtn": "",
+      "desc_2": ""
+    },
+    "perks": {
+      "desc_1": "",
+      "desc_2": "",
+      "desc_3": ""
+    },
+    "newArrivals": {
+      "title": "",
+      "desc_1": "",
+      "marketplaceBtn": ""
+    },
+    "aiPowered": {
+
+    },
+    "powerfulFeatures": {
+      "title": "",
+      "desc_1": "",
+      "cards": [
+        {
+          "title": "",
+          "desc": ""
+        },
+        {
+          "title": "",
+          "desc": ""
+        },
+        {
+          "title": "",
+          "desc": ""
+        },
+        {
+          "title": "",
+          "desc": ""
+        },
+        {
+          "title": "",
+          "desc": ""
+        },
+        {
+          "title": "",
+          "desc": ""
+        },
+        {
+          "title": "",
+          "desc": ""
+        },
+        {
+          "title": "",
+          "desc": ""
+        },
+        {
+          "title": "",
+          "desc": ""
+        }
+      ]
+    },
+    "featuredShops": {
+      "title": "",
+      "desc": "",
+      "cards": [
+        {
+          "desc": "",
+          "latesetAdditions": ""
+        }
+      ]
+    }
+  },
+  "about": {
+    "title": "",
+    "desc": "",
+    "backstory": {
+      "title":"",
+      "desc_1": "",
+      "desc_2": "",
+      "desc_3": ""
+    },
+    "ourMission": {
+      "title": "",
+      "desc": ""
+    },
+    "keyFeatures": {
+      "title": "",
+      "list": [
+        { "desc": "<title></title>" },
+        { "desc": "<title></title>" },
+        { "desc": "<title></title>" },
+        { "desc": "<title></title>" },
+        { "desc": "<title></title>" }
+      ]
+    },
+    "whoWeServe": {
+      "title": "",
+      "desc": "",
+      "list": [
+        { "desc": "" },
+        { "desc": "" },
+        { "desc": "" },
+        { "desc": "" },
+        { "desc": "" }
+      ]
+    }
+  },
+  "features": {
+    "title": "",
+    "desc": "",
+    "featuresMain": [
+      {
+        "title": "",
+        "desc": ""
+      },
+      {
+        "title": "",
+        "desc": ""
+      },
+      {
+        "title": "",
+        "desc": ""
+      },
+      {
+        "title": "",
+        "desc": ""
+      }
+    ],
+    "shopYourWay": [
+      {
+        "title": "",
+        "desc": ""
+      },
+      {
+        "title": "",
+        "desc": ""
+      },
+      {
+        "title": "",
+        "desc": ""
+      },
+      {
+        "title": "",
+        "desc": ""
+      },
+      {
+        "title": "",
+        "desc": ""
+      },
+      {
+        "title": "",
+        "desc": ""
+      },
+      {
+        "title": "",
+        "desc": ""
+      },
+      {
+        "title": "",
+        "desc": ""
+      },
+      {
+        "title": "",
+        "desc": ""
+      },
+      {
+        "title": "",
+        "desc": ""
+      },
+      {
+        "title": "",
+        "desc": ""
+      },
+      {
+        "title": "",
+        "desc": ""
+      },
+      {
+        "title": "",
+        "desc": ""
+      },
+      {
+        "title": "",
+        "desc": ""
+      },
+      {
+        "title": "",
+        "desc": ""
+      },
+      {
+        "title": "",
+        "desc": ""
+      }
+    ],
+    "getStarted": {
+      "title": "",
+      "desc": "",
+      "getStartedBtn": ""
+    }
+  },
+  "pricing": {
+    "title": "",
+    "desc": "",
+    "billing": {
+      "title": "",
+      "monthly": "",
+      "yearly": "",
+      "forever": ""
+    },
+    "forCollectors": {
+      "title": ""
+    },
+    "forSellers": {
+      "title": ""
+    },
+    "priceCards": {
+      "discount": [
+        { "label": "" }
+      ],
+      "free": {
+        "title": "",
+        "desc": "",
+        "badge": "",
+        "features": [
+          { "desc": "", "included": true, "highlight": false },
+          { "desc": "", "included": true, "highlight": false },
+          { "desc": "", "included": true, "highlight": false },
+          { "desc": "", "included": true, "highlight": false },
+          { "desc": "", "included": false, "highlight": false },
+          { "desc": "", "included": true, "highlight": false },
+          { "desc": "", "included": true, "highlight": false }
+        ],
+        "button": "Start free"
+      },
+      "premium": {
+        "title": "",
+        "desc": "",
+        "badge": "",
+        "features": [
+          { "desc": "", "included": true, "highlight": false },
+          { "desc": "", "included": true, "highlight": false },
+          { "desc": "", "included": true, "highlight": false },
+          { "desc": "", "included": true, "highlight": false },
+          { "desc": "", "included": true, "highlight": true },
+          { "desc": "", "included": true, "highlight": false },
+          { "desc": "", "included": true, "highlight": false }
+        ],
+        "button": ""
+      },
+      "premiumShoppers": {
+        "title": "",
+        "desc": "",
+        "badge": "",
+        "features": [
+          { "desc": "", "included": true, "highlight": false },
+          { "desc": "", "included": true, "highlight": false },
+          { "desc": "", "included": true, "highlight": false },
+          { "desc": "", "included": true, "highlight": false },
+          { "desc": "", "included": true, "highlight": false },
+          { "desc": "", "included": true, "highlight": false },
+          { "desc": "", "included": true, "highlight": false }
+        ],
+        "button": ""
+      },
+      "pro": {
+        "title": "",
+        "desc": "",
+        "badge": "",
+        "features": [
+          { "desc": "", "included": true, "highlight": false },
+          { "desc": "", "included": true, "highlight": false },
+          { "desc": "", "included": true, "highlight": false },
+          { "desc": "", "included": true, "highlight": false },
+          { "desc": "", "included": true, "highlight": false },
+          { "desc": "", "included": true, "highlight": false },
+          { "desc": "", "included": true, "highlight": false }
+        ],
+        "button": ""
+      }
+    },
+    "faq": [
+      {
+        "title": "",
+        "desc": ""
+      },
+      {
+        "title": "",
+        "desc": ""
+      },
+      {
+        "title": "",
+        "desc": ""
+      },
+      {
+        "title": "",
+        "desc": ""
+      }
+    ]
+  }
+}

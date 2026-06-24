@@ -1,10 +1,12 @@
 import React from 'react'
 // Queries
 import { getProductsByTag } from "@/lib/queries/products";
+// Next-Intl
+import { getTranslations } from 'next-intl/server';
 // NextJS
-import Link from 'next/link'
+import Link from 'next/link';
 // Components
-import { Button } from '@/components/ui/button'
+import { Button } from '@/components/ui/button';
 import HeroSwiperEffectFlow from '../swiper/HeroSwiperEffectFlow';
 
 interface ButtonUI {
@@ -28,24 +30,34 @@ function HeroButton({ text, internalUrl, variant }: ButtonUI) {
 
 export default async function Hero() {
     const products = await getProductsByTag("homeFeatured", "promoTag");
+    const t = await getTranslations('home.hero');
+
+    const ENtitle = t.rich('title', {
+        i: (chunks) =>
+            <i>{chunks}</i>
+    });
+
+    const ENdesc_2 = t.rich('desc_2', {
+        link: (chunks) =>
+            <Link href="/pricing" className="underline">
+                {chunks}
+            </Link>
+    });
 
     return (
         <div className="h-screen bg-hw-heritage-park/80 text-white p-10 text-center md:text-start flex flex-col md:flex-row gap-6 items-center justify-between overflow-hidden">
-            <div className="w-full lg:w-6/12 pt-20 md:pt-50">
-                <h1 className="font-instrument-sarif text-3xl md:text-5xl">
-                    The platform for independent <i>sellers, enthusiasts</i> and <i>wine estates</i>
+            <div className="w-full lg:w-6/12 pt-20 md:pt-50 space-y-4">
+                <h1 className="font-instrument-sarif text-3xl md:text-5xl leading-tight">
+                    {ENtitle}
                 </h1>
-                <p>Shop from independent sellers, track your cellar with AI, and sell or share through your own online shop.</p>
+                <p>{t('desc_1')}.</p>
                 <div className="flex flex-col items-center md:items-start gap-4">
                     <div className="md:max-w-8/12 grid grid-cols-2 gap-2">
-                        <HeroButton internalUrl="#" text="Register" />
-                        <HeroButton internalUrl="#" text="View Marketplace" />
+                        <HeroButton internalUrl="#" text={t('registerBtn')} />
+                        <HeroButton internalUrl="#" text={t('marketplaceBtn')} />
                     </div>
                     <p className="text-sm">
-                        Start free with your first 25 wines. Upgrade for unlimited.
-                        <Link href="#" className="underline">
-                            See pricing
-                        </Link>
+                        {ENdesc_2}
                     </p>
                 </div>
             </div>

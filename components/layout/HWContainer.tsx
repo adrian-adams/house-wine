@@ -2,7 +2,9 @@
 
 import React from 'react'
 // NextJS
-import { usePathname } from "next/navigation";
+// import { usePathname } from "next/navigation";
+// i18n
+import { usePathname } from '@/i18n/routing'
 // Types
 import { BaseComponentsUI } from '@/types/ui'
 

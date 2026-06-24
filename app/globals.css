@@ -184,6 +184,20 @@
     height: var(--spacing-hw-nav-height);
   }
 
+  footer {
+    .hw-links {
+      @apply space-y-3 py-4 w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6;
+    }
+
+    .hw-links h2 {
+      @apply text-[clamp(0.75rem,5vw,1rem)] leading-snug pb-2;
+    }
+
+    .hw-links li {
+      @apply text-sm hover:underline;
+    }
+  }
+
   h1, h2, h3, h4, h5, h6 {
     @apply font-instrument-sarif leading-snug;
   }
