@@ -200,7 +200,7 @@
     "sidebarFilter": {
       "title": "Filters",
       "availability": [
-        { "value": "UitverkochtTonen", "name": "Uitverkocht tonen" }
+        { "value": "true", "name": "Uitverkocht tonen" }
       ],
       "wineType": {
         "title": "Wijntype"

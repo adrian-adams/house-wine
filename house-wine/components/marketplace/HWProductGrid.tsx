@@ -1,33 +1,74 @@
-import React from 'react'
+"use client"
+
 // Types
-import HWProductCard, { HWMarketplaceFooter, ProductCardProps } from '../cards/HWProductCard'
-import { ProductCardUI } from '@/types/ui'
+import HWProductCard, { HWMarketplaceFooter } from '../cards/HWProductCard'
+import { ProductUI } from '@/types/ui'
+// Motion
+import { motion, Variants } from 'motion/react'
 
 interface ProductGridProps {
-    data: ProductCardUI[]
+    data: ProductUI[]
+}
+
+const gridVariants: Variants = {
+    hidden: { opacity: 1 },
+    show: {
+        opacity: 1,
+        transition: {
+            delayChildren: 0.1,
+            staggerChildren: 0.1,
+        }
+    }
+}
+
+const cardVariants: Variants = {
+    hidden: {
+        opacity: 0,
+        y: 50
+    },
+    show: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 0.3,
+            ease: "easeIn"
+        }
+    }
 }
 
 export default function HWProductGrid({ data }: ProductGridProps) {
 
     return (
-        <ul className="hw-grid">
-            {data.map((product, index) => (
-                <li key={index}>
+        <motion.ul
+            className="hw-product-grid"
+            variants={gridVariants}
+            initial="hidden"
+            animate="show"
+        >
+            {data.map((product) => (
+                <motion.li
+                    key={product.id}
+                    variants={cardVariants}
+                    whileHover={{ y: -5 }}
+                >
                     <HWProductCard
                         variant="Marketplace"
-                        src={product.images[0]}
-                        alt={product.title}
+                        src={product.imageUrl ?? ""}
+                        alt={product.name ?? "House Wine"}
+                        promoTag={product.promoTag}
+                        availability={product.availability}
+                        quantity={product.quantity}
                         footer={
                             <HWMarketplaceFooter
-                                title={product.title}
+                                name={product.name}
                                 producer={product.producer}
-                                year={product.vintageYear}
-                                quantity={5}
+                                vintage={product.vintage}
+                                price={product.price}
                             />
                         }
                     />
-                </li>
+                </motion.li>
             ))}
-        </ul>
+        </motion.ul>
     )
 }

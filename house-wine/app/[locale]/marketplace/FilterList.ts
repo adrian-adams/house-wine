@@ -1,4 +1,4 @@
-export const wineType: { value: string, name: string}[] = [
+export const wineTypeArr: { value: string, name: string}[] = [
     { value: "dessert", name: 'Dessert' },
     { value: "fortified", name: 'Fortified' },
     { value: "orange", name: 'Orange' },
@@ -9,23 +9,23 @@ export const wineType: { value: string, name: string}[] = [
     { value: "white", name: 'White' }
 ]
 
-export const country: { value: string, name: string}[] = [
+export const countryListArr: { value: string, name: string}[] = [
     { value: "Argentina", name: 'Argentina' },
-    { value: "belgium", name: 'Belgium' },
-    { value: "chile", name: 'Chile' },
-    { value: "france", name: 'France' },
-    { value: "germany", name: 'Germany' },
-    { value: "italy", name: 'Italy' },
-    { value: "newZealand", name: 'New Zealand' },
-    { value: "portugal", name: 'Portugal' },
-    { value: "southAfrica", name: 'South Africa' },
-    { value: "spain", name: 'Spain' },
-    { value: "unitedStates", name: 'United States' },
-    { value: "usa", name: 'USA' },
+    { value: "Belgium", name: 'Belgium' },
+    { value: "Chile", name: 'Chile' },
+    { value: "France", name: 'France' },
+    { value: "Germany", name: 'Germany' },
+    { value: "Italy", name: 'Italy' },
+    { value: "New Zealand", name: 'New Zealand' },
+    { value: "Portugal", name: 'Portugal' },
+    { value: "South Africa", name: 'South Africa' },
+    { value: "Spain", name: 'Spain' },
+    { value: "United States", name: 'United States' },
+    { value: "USA", name: 'USA' },
 ]
 
-export const bottleSize: { value: string, name: string}[] = [
-    { value: "allSizes", name: 'All sizes' },
+export const bottleSizeArr: { value: string, name: string}[] = [
+    { value: "all", name: 'All sizes' },
     { value: "375ml", name: '375ml' },
     { value: "500ml", name: '500ml' },
     { value: "750ml", name: '750ml' },

@@ -1,6 +1,6 @@
 import React from 'react'
 // Types
-import { ContentUI } from '@/types/ui'
+import { ContentUI, ProductUI } from '@/types/ui'
 // NextJS
 import Image from 'next/image'
 import Link from 'next/link'
@@ -18,8 +18,9 @@ import {
     CardTitle,
 } from "@/components/ui/card"
 import { Badge } from '@/components/ui/badge'
+import { Button } from '../ui/button'
 // Lucide
-import { Euro, Wine, Dot } from 'lucide-react';
+import { Euro, Wine, Dot, CirclePlus } from 'lucide-react';
 
 
 export interface ProductFooter extends ContentUI {
@@ -29,23 +30,23 @@ export interface ProductFooter extends ContentUI {
     producer?: string
 }
 
-export function HWHeroFooter({ title, producer, year, quantity }: ProductFooter) {
+export function HWHeroFooter({ name, producer, vintage, quantity }: ProductUI) {
     return (
         <>
             <div className="font-bold text-start w-full">
-                <p className="truncate">{title}</p>
+                <p className="truncate">{name}</p>
             </div>
             <div className="w-full flex flex-row items-center justify-between">
                 <div className="flex flex-row items-center">
-                    <span className={`truncate text-wrap ${year && "max-w-16"}`}>{producer}</span>
-                    {year && (
+                    <span className={`truncate text-wrap ${vintage && "max-w-16"}`}>{producer}</span>
+                    {vintage && (
                         <span className="flex flex-row items-center">
                             <Dot />
-                            {year}
+                            {vintage}
                         </span>
                     )}
                 </div>
-                {quantity > 0 && (
+                {quantity !== undefined && quantity > 0 && (
                     <Badge className="bg-hw-dead-sea-mud">
                         <span>
                             {quantity}
@@ -57,12 +58,12 @@ export function HWHeroFooter({ title, producer, year, quantity }: ProductFooter)
     )
 }
 
-export function HWNewArrivalsFooter({ title, producer, year, price }: ProductFooter) {
+export function HWNewArrivalsFooter({ name, producer, vintage, price }: ProductUI) {
     return (
         <>
             <div className="flex flex-col flex-1 gap-1 text-start w-full">
                 <p className="font-instrument-sarif">
-                    {title}
+                    {name}
                 </p>
                 <p className="text-hw-cigar-smoke">
                     {producer}
@@ -70,9 +71,9 @@ export function HWNewArrivalsFooter({ title, producer, year, price }: ProductFoo
             </div>
             <div className="flex flex-row items-center justify-between w-full">
                 <p className="text-hw-cigar-smoke">
-                    {year}
+                    {vintage}
                 </p>
-                <span className={`flex flex-row items-center font-bold ${!year && 'justify-end'}`}>
+                <span className={`flex flex-row items-center font-bold ${!vintage && 'justify-end'}`}>
                     <Euro size={14} />
                     {price}
                 </span>
@@ -81,24 +82,31 @@ export function HWNewArrivalsFooter({ title, producer, year, price }: ProductFoo
     )
 }
 
-export function HWMarketplaceFooter({ title, producer, year, price, quantity }: ProductFooter) {
+export function HWMarketplaceFooter({ name, producer, vintage, price, quantity }: ProductUI) {
     return (
         <>
-            <div>
-                {title}
-                <span className="flex flex-row items-center">
-                    <Euro />
+            <div className="flex flex-row items-center justify-between gap-4 w-full">
+                <p className="truncate">
+                    {name}
+                </p>
+                <span className="flex flex-row items-center font-bold">
+                    <Euro className="size-4" />
                     {price}
                 </span>
             </div>
-            <div>
-                <span>
-                    {producer}
-                    {year}
-                </span>
-                <Badge className="bg-hw-lily-pad-pond">
-                    {quantity}
-                </Badge>
+            <div className="flex flex-row items-center justify-between gap-4 w-full">
+                <p className="flex flex-row items-center text-xs">
+                    <span className="max-w-29 truncate text-neutral-700 flex-2">{producer}</span>
+                    <span className="flex flex-row items-center flex-1.5">
+                        <Dot />
+                        {vintage !== 0 ? (
+                            <span>{vintage}</span>
+                        ) : (
+                            <>N/A</>
+                        )
+                        }
+                    </span>
+                </p>
             </div>
         </>
     )
@@ -106,36 +114,56 @@ export function HWMarketplaceFooter({ title, producer, year, price, quantity }: 
 
 type Variant = 'Hero' | 'New Arrivals' | 'Marketplace';
 
-export interface ProductCardProps extends ContentUI {
+export interface ProductCardProps extends ProductUI {
     src: string
     alt: string
     footer?: React.ReactNode
     variant: Variant
-    isNew?: boolean
     logoUrl?: string
 }
 
-export default function HWProductCard({ logoUrl, isNew, src, alt, footer, variant }: ProductCardProps) {
+export default function HWProductCard({ promoTag, src, alt, footer, variant, availability, quantity, slug }: ProductCardProps) {
     return (
         <Card className={cn(
-            "m-2 h-80",
-            variant === "Hero" && "h-80",
-            variant === "New Arrivals" && "h-80",
-            variant === "Marketplace" && "h-80"
+            "group",
+            variant === "Hero" && "h-80 m-2",
+            variant === "New Arrivals" && "h-80 m-2",
+            variant === "Marketplace" && "h-70"
         )}>
             <div className="relative flex-4">
-                {isNew && (
-                    <Badge className="absolute -bottom-2 left-2 z-20 bg-hw-thyme">
+                {/* Promo Tag */}
+                {promoTag?.includes('newArrivals') && (
+                    <Badge className="absolute -top-2 left-2 z-10 bg-hw-thyme">
                         NEW
                     </Badge>
                 )}
+                {/* Quantity */}
+
+                <span className="absolute -top-2 right-2 z-10">
+                    <Badge className="bg-neutral-500">
+                        {availability ? (
+                            <span>{quantity}</span>
+                        ) : (
+                            <span>Sold Out</span>
+                        )}
+                    </Badge>
+                </span>
+                {/* View More */}
+                <Link href={slug ?? ''}>
+                    <Button className="lg:opacity-0 group-hover:lg:opacity-100 cursor-pointer absolute bottom-0 right-6/12 translate-x-6/12 z-20 py-2 bg-neutral-600">
+                        View More
+                    </Button>
+                </Link>
+
+                {/* Image */}
                 {src ? (
                     <Image
                         src={src}
                         alt={alt}
                         fill
                         sizes="(max-width: 768px) 100vw, 50vw"
-                        className="object-contain p-4"
+                        className="object-contain p-4 z-10"
+                        loading="lazy"
                     />
                 ) : (
                     <span className="h-full flex flex-col items-center justify-center gap-4">
@@ -148,7 +176,7 @@ export default function HWProductCard({ logoUrl, isNew, src, alt, footer, varian
                 "flex flex-col h-full",
                 variant === "Hero" && "flex-1 justify-between gap-2 text-xs",
                 variant === "New Arrivals" && "flex-2 bg-transparent border-t-0 gap-2 text-[13px]",
-                variant === "Marketplace" && "flex-1"
+                variant === "Marketplace" && "flex-1 gap-2"
             )}>
                 {footer}
             </CardFooter>

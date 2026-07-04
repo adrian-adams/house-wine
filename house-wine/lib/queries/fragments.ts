@@ -20,6 +20,7 @@ export const PRODUCT_FIELDS = `
         slug
     },
     labelCondition,
+    promoTag,
     "images": images[].asset->url,
     availability,
     quantity

@@ -1,18 +1,35 @@
-import React from 'react'
-// Next-Intl
-import { useTranslations } from 'next-intl';
-// Types, Lists & Queries
-import { wineType, country, bottleSize } from '@/app/[locale]/marketplace/FilterList';
 import { getAllProducts } from '@/lib/queries/products';
+import { mapProduct, SearchParams } from '@/types/ui';
 // Components
-import Marketplace from '@/components/marketplace/Marketplace';
+import HWProductGrid from '@/components/marketplace/HWProductGrid';
+import HWNoResults from '@/components/marketplace/HWNoResults';
 
-export default async function page() {
-    const products = await getAllProducts()
+export default async function page({ searchParams }: { searchParams: Promise<SearchParams> }) {
+    // const t = await getTranslations('marketplace');
+    // const orderFiltersArr = t.raw('orderFilter') as { name: string, value: string }[];
+    // const availabilityArr = t.raw('sidebarFilter.availability') as { name: string, value: string }[];
+
+    const { search, sort, country, type, size, soldOut } = await searchParams;
+    const raw = await getAllProducts({ search, sort, country, type, size, soldOut });
+    const products = raw.map(mapProduct);
+    const allProducts = await getAllProducts({});
 
     return (
-        <>
-            <Marketplace props={products} />
-        </>
+        <div className="marketplace">
+            <div className="bg-neutral-200 p-8 space-y-2">
+                <p>
+                    {allProducts.length !== products.length && (
+                        <span className="text-neutral-700">
+                            {products.length} of
+                        </span>
+                    )} {allProducts.length} wines
+                </p>
+                {products.length === 0 ? (
+                    <HWNoResults search={search} />
+                ) : (
+                    <HWProductGrid data={products} />
+                )}
+            </div>
+        </div>
     )
 }

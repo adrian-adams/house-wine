@@ -1,34 +1,26 @@
 import React from 'react'
 // Types
-import { ContentUI } from '@/types/ui'
+import { SideBarFilterProps } from '@/types/ui'
 // Components
 import {
     Select,
     SelectContent,
     SelectGroup,
     SelectItem,
-    SelectLabel,
     SelectTrigger,
     SelectValue,
 } from "@/components/ui/select"
 import { Label } from '@/components/ui/label'
 
-interface SelectUI {
-    value: string
-    name: string
-}
-
-interface SelectProps extends ContentUI {
-    data: SelectUI[]
+interface SelectProps extends SideBarFilterProps {
     label?: string
+    defaultValue: string
 }
 
-export default function SelectFilter({ data, title, label }: SelectProps) {
-    // const orderFilters = t.raw('orderFilter') as { name: string, value: string }[];
-
+export default function HWSelectFilter({ data, defaultValue, label, onValueChange }: SelectProps) {
     return (
         <div className="block sm:flex-1">
-            <Select defaultValue={title}>
+            <Select defaultValue={defaultValue} onValueChange={onValueChange}>
                 {label && (
                     <Label>
                         <h3>

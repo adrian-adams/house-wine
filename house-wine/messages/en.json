@@ -201,7 +201,7 @@
     "sidebarFilter": {
       "title": "Filters",
       "availability": [
-        { "value": "showsSoldOut", "name": "Shows sold out" }
+        { "value": "true", "name": "Shows sold out" }
       ],
       "wineType": {
         "title": "Wine type"
