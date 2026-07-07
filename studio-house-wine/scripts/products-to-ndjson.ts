@@ -14,9 +14,11 @@ const assetMap: Record<string, string> = JSON.parse(fs.readFileSync(ASSET_MAP_FI
 interface ProductRow {
     name: string
     producer: string
+    description: string
     vintage: string
     price: string
     availability: string
+    quantity: string
     country: string
     region: string
     vineyard: string
@@ -108,10 +110,12 @@ fs.createReadStream(CSV_FILE)
             _id: `product-${slug}`,
             name: row.name,
             slug: { _type: 'slug', current: slug },
+            description: row.description,
             producer: row.producer,
             vintage: parseInt(row.vintage) || undefined,
             price: parseFloat(row.price) || undefined,
-            availability: row.availability || undefined,
+            availability: row.availability !== undefined && row.availability !== '' ? row.availability === 'true' : undefined,
+            quantity: parseInt(row.quantity) || undefined,
             country: row.country || undefined,
             region: row.region || undefined,
             vineyard: row.vineyard || undefined,

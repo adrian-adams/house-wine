@@ -11,7 +11,7 @@ const client = createClient({
 
 async function deleteOldProducts() {
     const oldDocs: { _id: string }[] = await client.fetch(
-        `*[_type == "stores" && !(_id match "stores-*")]{ _id }`
+        `*[_type == "product" && !(_id match "product-*")]{ _id }`
     )
 
     console.log(`Found ${oldDocs.length} old documents to delete`)
@@ -25,3 +25,13 @@ async function deleteOldProducts() {
 }
 
 deleteOldProducts().catch(console.error)
+
+// Run commands
+
+/*
+
+npx tsc scripts/delete-old-products.ts --outDir scripts/dist --module CommonJS --target ES2020 --esModuleInterop --skipLibCheck --resolveJsonModule
+
+node scripts/dist/delete-old-products.js
+
+*/

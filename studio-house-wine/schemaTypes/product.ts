@@ -26,7 +26,7 @@ export default defineType({
                 source: (doc: any) => {
                     const name = doc.name || ''
                     const producer = doc.producer || ''
-                    const vintage = doc.vintage || ''
+                    const vintage = doc.vintage || '0'
                     return `${producer}-${name}-${vintage}`
                 },
                 slugify: (input: string) =>
@@ -37,6 +37,11 @@ export default defineType({
                         .slice(0, 96)             // max length
             },
             validation: (Rule) => Rule.required()
+        }),
+        defineField({
+            name: 'description',
+            title: 'Description',
+            type: 'text'
         }),
         defineField({
             name: 'producer',
@@ -58,12 +63,6 @@ export default defineType({
             name: 'availability',
             title: 'Availability',
             type: 'boolean',
-            // options: {
-            //     list: [
-            //         { title: 'In Stock', value: 'inStock' },
-            //         { title: 'Out of Stock', value: 'outOfStock' }
-            //     ]
-            // }
             // Managed on MongoDB
         }),
         defineField({
