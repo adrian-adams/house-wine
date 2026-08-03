@@ -21,7 +21,7 @@ export default function Pricing() {
     const [billingCycle, setBillingCycle] = useState<BillingCycle>('monthly');
 
     return (
-        <div className="pricing">
+        <div className="pricing hw-content-block">
             <section className="w-full md:w-8/12 mx-auto px-4 flex flex-col items-center justify-center gap-4 text-center">
                 <h1>
                     {t('title')}

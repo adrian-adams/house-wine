@@ -8,10 +8,12 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { usePathname } from '@/i18n/routing'
 // Types
 import { BaseComponentsUI } from '@/types/ui'
+import { routes } from '@/lib/routes'
 
 export default function HWContainer({ children }: BaseComponentsUI) {
     const pathname = usePathname();
-    const fullWidthPages = pathname === "/" || pathname === "/marketplace";
+    const slug = routes.products;
+    const fullWidthPages = pathname === "/" || pathname === "/marketplace" || pathname === `/products${slug}`;
     const isMarketplace = pathname === "/marketplace";
 
     return (
@@ -19,14 +21,14 @@ export default function HWContainer({ children }: BaseComponentsUI) {
             'bg-hw-shea min-h-screen flex flex-col flex-1',
             pathname === "/" ? "" : "pt-hw-nav-height"
         )}>
-            <div className={cn(
+            {/* <div className={cn(
                 '',
                 // isMarketplace ? "flex-1 flex flex-col min-h-0 overflow-hidden" : "",
                 // fullWidthPages && !isMarketplace ? "home" : "",
-                fullWidthPages ? "home" : "w-full sm:w-10/12 2xl:w-7/12 mx-auto px-4 py-10 s,pace-y-6"
-            )}>
-                {children}
-            </div>
+                fullWidthPages ? "home" : "w-full sm:w-10/12 2xl:w-7/12 mx-auto px-4 py-10 space-y-6"
+            )}> */}
+            {children}
+            {/* </div> */}
         </main>
     )
 }

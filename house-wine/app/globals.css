@@ -105,7 +105,7 @@
   --accent-foreground: oklch(0.205 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
+  --input: var(--color-neutral-600);
   --ring: oklch(0.708 0 0);
   --chart-1: oklch(0.87 0 0);
   --chart-2: oklch(0.556 0 0);
@@ -165,7 +165,7 @@
   --accent-foreground: oklch(0.985 0 0);
   --destructive: oklch(0.704 0.191 22.216);
   --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
+  --input: oklch(1 0 0 / 50%);
   --ring: oklch(0.556 0 0);
   --chart-1: oklch(0.87 0 0);
   --chart-2: oklch(0.556 0 0);
@@ -213,6 +213,10 @@
     }
   }
 
+  p {
+    @apply whitespace-pre-line;
+  }
+
   h1, h2, h3, h4, h5, h6 {
     @apply font-instrument-sarif leading-snug;
   }
@@ -245,7 +249,8 @@
 }
 
 .marketplace {
-  @apply z-20;
+  /* @apply z-20; */
+
   h2, h3 {
     @apply  text-neutral-700 pb-1;
   }
@@ -288,6 +293,35 @@
   }
 }
 
+.legal-agreements {
+  h1 {
+    @apply pb-10;
+    font-size: clamp(1.25rem,5vw,2rem);
+  }
+
+  h2 {
+    @apply pb-2;
+    font-size: clamp(1rem,5vw,1.5rem);
+  }
+
+  h3 {
+    @apply pb-2;
+    font-size: clamp(0.95rem,5vw,1.25rem);
+  }
+
+  h4 {
+    font-size: clamp(0.75rem,5vw,0.85rem) !important;
+  }
+
+  p, li {
+    @apply text-neutral-800;
+  }
+
+  ul {
+    @apply list-disc ps-6 my-2;
+  }
+}
+
 /***************** Third Party ***************** /
 /* Swiper */
   /* #newArrivalsSwiper {  
@@ -297,6 +331,10 @@
   } */
   
 /*****************  Utilities *****************/
+@utility hw-content-block {
+  @apply w-full sm:w-10/12 2xl:w-7/12 mx-auto px-4 py-10 space-y-6;
+}
+
 @utility hw-text-box-6 {
   @apply w-full md:w-6/12 mx-auto text-center;
 }
@@ -319,7 +357,7 @@
 }
 
 @utility hw-section-block {
-  @apply space-y-6 bg-hw-white-desert p-8 rounded-xl border border-hw-heritage-park shadow;
+  @apply space-y-6 bg-white p-8 rounded-xl border border-hw-heritage-park shadow;
 
   h2, h3, h4, h5, h6 {
     @apply font-instrument-sarif
@@ -336,4 +374,8 @@
 
 @utility hw-billing-active {
   @apply bg-hw-dead-sea-mud! text-hw-white!;
+}
+
+@utility hw-legal-list-block {
+  @apply p-4 my-2 bg-neutral-200 border-2 border-neutral-400 rounded-xl;
 }

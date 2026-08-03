@@ -72,6 +72,15 @@
     "subDesc": "No credit card required",
     "createAccount": {
       "title": "Create Your Account",
+      "formFields": [
+        { "value": "email",
+          "label": "Email"
+       },
+       {
+        "value": "password",
+        "label": "Password"
+       }
+      ],
       "email": "Email",
       "password": "Password",
       "errorMessage": "",
@@ -79,8 +88,8 @@
       "acceptTerms": "I have read and agree to the Terms & Conditions and Privacy Policy.",
       "termsAndCoditions": "Terms & Conditions",
       "privacyPolicy": "Privacy Policy",
-      "signUpBtn": "Sing Up",
-      "signInBtn": "Already have an account? Sign in",
+      "signUpBtn": "Sign Up",
+      "signInBtn": "<Link>Already have an account? Sign in</Link>",
       "backToHomeBtn": "Back to Home"
     },
     "features": [
@@ -187,6 +196,8 @@
     }
   },
   "marketplace": {
+    "preWineQty": "of",
+    "wineQty": "wines",
     "searchPlaceholder": {
       "placeholder": "Search wines..."
     },
@@ -220,6 +231,123 @@
         "title": "Vintage",
         "selectLabel": "All vintages"
       }
+    },
+    "cart": {
+      "cartStore": {
+        "cartHeader": {
+          "title": "Cart"
+        },
+        "productCard": {
+          "newBadge": "New",
+          "soldOut": "Sold Out",
+          "viewMore": "View More",
+          "addToCart": "Add to Cart",
+          "addedToCart": "Added to Cart",
+          "imgNotFound": "Image coming soon"
+        },
+        "cartBody": {
+          "badge": "left",
+          "maxQtyAlert": "Max quantity selected",
+          "emptyCart" : {
+            "title": "Your cart is empty",
+            "desc": "Continue Shopping"
+          }
+        },
+        "cartFooter": {
+          "total": "Total",
+          "viewDisclaimer": "View Disclaimer",
+          "closeDisclaimer": "Close Disclaimer",
+          "sendRequest": "Send a request",
+          "clearCart": "Clear Cart",
+          "disclaimer": {
+            "title": "You're buying from an independent seller",
+            "desc": "Taste of Life is an independent seller — House Wines is the platform that connects you. Payment, shipping, and delivery are arranged directly with shop."
+          }
+        }
+      },
+      "orderForm": {
+        "formHeader": {
+          "title": "Send a Request"
+        },
+        "formBody": {
+          "buyerDetails": [
+            { "value": "firstName", "label": "First Name" },
+            { "value": "lastName", "label": "Last Name" },
+            { "value": "email", "label": "Email"},
+            { "value": "number", "label": "Number" }
+          ],
+          "deliveryDetails": {
+            "deliveryOptions": [
+              { "value": "pickup", "label": "Pickup" },
+              { "value": "shipment", "label": "Shipment" }
+            ],
+            "title": "Delivery Method",
+            "pickup": {
+              "radioLabel": "Pickup",
+              "formBlock": {
+                "legend": "Pickup address"
+              }
+            },
+            "shipment": {
+              "radioLabel": "Shipment",
+              "formBlock": {
+                "legend": "Shipping address",
+                "form": [
+                  { "value": "streetNumber", "label": "No." },
+                  { "value": "street1", "label": "Street" },
+                  { "value": "street2", "label": "Apartment, suite, etc. (optional)" },
+                  { "value": "postalCode", "label": "Postal Code" },
+                  { "value": "city", "label": "City" }
+                ],
+                "selectLabel": "Countries",
+                "selectPlaceholder": "— Select a Country —"
+              }
+            }
+          },
+          "message": {
+            "title": "Message",
+            "placeholder": "Any additional information or questions..."
+          },
+          "keepUpdated": [
+            {
+              "value": "marketing",
+              "label": "Keep me updated about new wines"
+            }
+          ]
+        },
+        "formFooter": {
+          "backBtn": "Back",
+          "sendRequesBtn": "Send Request"
+        }
+      }
+    }
+  },
+  "products": {
+    "header": {
+      "grapes": "Grape Varieties"
+    },
+    "wineDetails": {
+      "title": "Wine Details",
+      "country": "Country",
+      "region": "Region",
+      "vineyard": "Vineyard",
+      "classification": "Classification",
+      "vintage": "Vintage",
+      "wineType": "Wine Type",
+      "grapes": "Grapes",
+      "bottleSize": "Bottle Size",
+      "alcohol": "Alcohol",
+      "servingTemp": "Serving temperature",
+      "drinkingWindow": "Drinking Window",
+      "packaging": "Packaging",
+      "fillLevel": "Fill Level"
+    },
+    "tasting": {
+      "title": "Tasing Notes"
+    },
+    "related": {
+      "title": "Related",
+      "desc": "Related Wines"
     }
   },
   "about": {
@@ -240,7 +368,7 @@
       }
     ],
     "commitment": {
-      "desc": "No tech skills required. Just add your wines. <br>Built in Amsterdam, by and for people who love wine."
+      "desc": "No tech skills required. Just add your wines. \nBuilt in Amsterdam, by and for people who love wine."
     },
     "startYourAccount": {
       "startYourAccountBtn": "Start your free account"
@@ -434,6 +562,247 @@
           "desc": "Premium Shopping is a per-shop add-on (€20/month or €200/year) that lets you accept online payments through your own Stripe or Mollie account. Without it, your shop still works fine — customers send inquiries you handle manually. Only activate it when you actually want online checkout."
         }
       ]
+    }
+  },
+  "legal": {
+    "terms": {
+      "preTitle": "General",
+      "title": "Terms of Service",
+      "updated": "Last updated",
+      "desc": "These terms apply to your use of the Shared Wines platform. By creating an account or using the platform, you accept them.",
+      "clauses": [
+        { 
+          "title": "Who we are",
+          "desc": "Shared Wines is an initiative by Arno Gregorian, operated through Webroots B.V., registered at Delistraat 8, 1094CV Amsterdam, the Netherlands. Contact: <a href='mailto:arno@webroots.nl'>arno@webroots.nl</a>. \n\nThe platform runs on sharedwines.com and gives private collectors and wine merchants the tools to catalogue, share, and sell their wines."
+         },
+         {
+          "title": "Scope",
+          "desc": "These terms apply to anyone visiting or using the Shared Wines platform. Customers of shops hosted on Shared Wines are additionally bound by the shop owner's own terms. If the two conflict, the shop's terms govern the sale transaction; these terms govern your use of the platform itself."
+         },
+         {
+          "title": "Accounts",
+          "desc": "Accounts are bound to an individual or legal entity. You must be at least 18 (wine is not legally available to minors in the Netherlands). Provide accurate information and keep your credentials confidential. \n\n You are responsible for all activity under your account."
+         },
+         {
+          "title": "Acceptable use",
+          "desc": "You may not use Shared Wines for:",
+          "list": [
+            { "desc": "Illegal content, counterfeit goods, or promotion of wines whose provenance cannot be lawfully established" },
+            { "desc": "Spam, automated scraping, or stress-testing the platform" },
+            { "desc": "Circumventing payment limits, payment fraud, or reselling platform access" },
+            { "desc": "Attempting to bypass security mechanisms or access other accounts" },
+            { "desc": "Uploading content that infringes third-party rights (copyright, trademark, image rights, etc.)" }
+          ]
+         },
+         {
+          "title": "Fair-use limits",
+          "desc": "To keep the platform affordable and stable for everyone, the following limits apply per account per calendar month:",
+          "list": [
+            { "desc": "Up to 500 new wines created per month" },
+            { "desc": "Up to 20,000 unique visitor sessions per shop per month" },
+            { "desc": "Up to 500 completed online payments per shop per month (Premium Shopping)" }
+          ]
+         },
+         {
+          "title": "What happens beyond fair use",
+          "desc": "We operate a fair-use policy and always try to reach out before imposing restrictions. For sustained heavy use we may propose a higher plan, apply rate limits, or in extreme cases temporarily pause features. Previously created content (wines, shop, orders) stays accessible."
+         },
+         {
+          "title": "Subscriptions, billing, cancellation",
+          "desc": "Shared Wines offers a free tier and two paid tiers: Premium (€5/month or €50/year) for unlimited wines and a custom domain, and Premium Shopping (€20/month or €200/year per shop) for online payments. Prices include VAT where applicable.\n\nSubscriptions renew automatically until cancelled through the Stripe Billing Portal. We do not refund unused portions of a paid period. You can cancel any time; access continues until the end of the paid period.\n\nSubscription payments to Shared Wines are processed by Stripe. Shared Wines issues invoices for paid subscriptions."
+         },
+         {
+          "title": "Online payments (Premium Shopping) — liability carve-out",
+          "desc": "When you activate Premium Shopping you connect your own Stripe or Mollie account to your shop. Customers pay directly into your account; Shared Wines does not receive or hold customer funds and is not a party to the sale transaction.\n\nStripe and Mollie are independent payment processors with their own terms. Shared Wines is not liable for:",
+          "list": [
+            { "desc": "Outages, delays or errors on Stripe's or Mollie's side" },
+            { "desc": "Declined payments, chargebacks or fraudulent transactions" },
+            { "desc": "Delayed or non-existent payouts by the payment processor" },
+            { "desc": "Errors in your VAT configuration or invoicing" },
+            { "desc": "Disputes between you and your customers about delivery, quality or returns" },
+            { "desc": "Restrictions or account suspensions imposed by Stripe or Mollie" }
+          ]
+         },
+         {
+          "title": "Restrictions or account suspensions imposed by Stripe or Mollie",
+          "desc": "We do our best to keep Shared Wines available 24/7, but we provide no uptime guarantee and explicitly exclude any service-level agreement. Planned maintenance windows are announced in advance where possible. For unplanned outages we work to restore service; we are not liable for lost revenue or indirect damages caused by downtime."
+         },
+         {
+          "title": "Data, ownership and processing",
+          "desc": "You retain full ownership of the content you upload (wine data, photos, descriptions, customer data, etc.). You grant Shared Wines a non-exclusive, royalty-free license to host and display that content as needed to operate the platform.\n\nPersonal data is processed in line with GDPR and our privacy policy. For data belonging to your customers you are the controller and Shared Wines acts as processor. We will enter into a data processing agreement on request."
+         },
+         {
+          "title": "Liability",
+          "desc": "Shared Wines is only liable for direct damages caused by an attributable breach by Shared Wines, capped at the total subscription fees you paid in the 12 months preceding the event causing the damage.\n\nLiability for indirect, consequential or incidental damages, lost profit, missed savings, data loss or reputational harm is excluded, except in cases of willful misconduct or gross negligence."
+         },
+         {
+          "title": "Termination",
+          "desc": "You can close your account at any time from account settings. Shared Wines may suspend or terminate an account for breach of these terms, persistent non-payment or suspected fraud.\n\nAfter termination we provide a reasonable window to export data. We may then delete content, subject to legal retention obligations (e.g. invoicing records)."
+         },
+         {
+          "title": "Changes",
+          "desc": "We may amend these terms from time to time. Material changes are announced at least 30 days in advance by email or in-platform notice. Continuing to use the platform after the effective date constitutes acceptance."
+         },
+         {
+          "title": "Governing law and disputes",
+          "desc": "These terms are governed by Dutch law. Disputes will be submitted to the competent court in Amsterdam, unless mandatory law designates a different court."
+         },
+         {
+          "title": "Contact",
+          "desc": "Questions about these terms? Reach out at arno@webroots.nl.\n\n Webroots B.V. · Delistraat 8, 1094CV Amsterdam, the Netherlands."
+         }
+      ],
+      "footer": {
+        "desc": "Also read our <Link>privacy policy</Link>"
+      }
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "updated": "Last updated",
+      "clauses": {
+        "introduction": {
+          "title": "Introduction",
+          "desc": "Shared Wines (\"we,\" \"our,\" \"or\" \"us\") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our service."
+        },
+        "informationCollection": {
+          "title": "Information We Collect",
+          "list": [
+            {
+              "title": "Account Information",
+              "desc": "When you create an account, we collect your email address and any other information you provide during registration."
+            },
+            {
+              "title": "Wine Collection Data",
+              "desc": "We store information about your wine collection, including images, descriptions, prices, and other details you provide."
+            },
+            {
+              "title": "Usage Data",
+              "desc": "We may collect information about how you access and use our service, including device information, IP addresses, and usage patterns."
+            }
+          ]
+        },
+        "informationUse": {
+          "title": "How We Use Your Information",
+          "list": [
+            { "desc": "To provide, maintain, and improve our services" },
+            { "desc": "To process your requests and transactions" },
+            { "desc": "To send you technical notices and support messages" },
+            { "desc": "To respond to your comments and questions" },
+            { "desc": "To detect, prevent, and address technical issues" }
+          ]
+        },
+        "dataStorage": {
+          "title": "Data Storage and Security",
+          "desc": "We use industry-standard security measures to protect your data. Your information is stored securely using encryption and access controls. However, no method of transmission over the Internet or electronic storage is 100% secure, and we cannot guarantee absolute security."
+        },
+        "dataSharing": {
+          "title": "Data Sharing",
+          "desc": "We do not sell your personal information. We may share your information only in the following circumstances:",
+          "list": [
+            { "desc": "With your explicit consent" },
+            { "desc": "To comply with legal obligations" },
+            { "desc": "To protect our rights and safety" },
+            { "desc": "With service providers who assist in operating our service (under strict confidentiality agreements)"}          
+          ]
+        },
+        "publicShops": {
+          "title": "Public Shops",
+          "desc": "If you choose to make a shop public, the information you include in that shop (wine listings, shop name, description, etc.) will be visible to anyone who accesses the public shop URL. You control which shops are public and can change this setting at any time."
+        },
+        "yourRights": {
+          "title": "Your Rights",
+          "desc": "You have the right to:",
+          "list": [
+            { "desc": "Access and review your personal data" },
+            { "desc": "Request correction of inaccurate data" },
+            { "desc": "Request deletion of your data" },
+            { "desc": "Export your data" },
+            { "desc": "Opt-out of certain communications" }
+          ]
+        },
+        "cookies": {
+          "title": "Cookies and Tracking",
+          "desc": "We use cookies and similar tracking technologies to track activity on our service and hold certain information. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent. See our <Link>Cookie Policy</Link> for more details."
+        },
+        "policyChange": {
+          "title": "Changes to This Policy",
+          "desc": "We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the 'Last update' date."
+        },
+        "contactUs": {
+          "title": "Contact Us",
+          "desc": "If you have any questions about this Privacy Policy, please contact us through our <Link>contact page</Link>."
+        }
+      }
+    },
+    "cookie": {
+      "title": "Cookie Policy",
+      "desc": "This Cookie Policy explains how Shared Wines (\"we\", \"us\", or \"our\") uses cookies and similar technologies when you visit our website. This policy explains what these technologies are and why we use them, as well as your rights to control our use of them.",
+      "cookiesDesc": {
+        "title": "What Are Cookies?",
+        "desc": "Cookies are small text files that are placed on your device when you visit a website. They are widely used to make websites work more efficiently and provide information to website owners.\n\nCookies can be \"persstent\" or \"session\" cookies. Persistent cookies remain on your device after you close your browser, while session cookies are deleted when you close your browser."
+      },
+      "cookiesUse": {
+        "title": "How We Use Cookies",
+        "desc": "We use cookies for the following purposes:",
+        "list": [
+          { "desc": "To maintain your session and authentication state" },
+          { "desc": "To remember your preferences and settings" },
+          { "desc": "To analyse website traffic and user behaviour (analytics)" },
+          { "desc": "To improve website functionality and user experience" }
+        ]
+      },
+      "cookieTypes": {
+        "title": "Types of Cookies We Use",
+        "essentialCookies": {
+          "title": "Essential Cookies",
+          "desc": "These cookies are necessary for the website to function properly. They enable core functionality such as security, network management, and accessibility. These cookies cannot be disabled.",
+          "list": {
+            "preTitle": "Examples:",
+            "list": [
+              { "desc": "<b>sb-auth-token:</b> Stores your authentication session to keep you logged in" },
+              { "desc": "<b>age-verification:</b> Remembers your age verification status" },
+              { "desc": "<b>cookie-consent:</b> Stores your cookie consent preference" }
+            ]
+          }
+        },
+        "analyticsCookies": {
+          "title": "Analytics Cookies",
+          "desc": "These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously. We use Google Analytics for this purpose.",
+          "list": {
+            "preTitle": "Google Analytics Cookies:",
+            "list": [
+              { "desc": "<b>_ga:</b> Used to distinguish users. Expires after 2 years." },
+              { "desc": "<b>_ga_{lt}container-id{gt}:</b> Used to persist session state. Expires after 2 years." },
+              { "desc": "<b>_gid:</b> Used to distinguish users. Expires after 24 hours." },
+              { "desc": "<b>_gat:</b> Used to throttle request rate. Expires after 1 minute." }
+            ],
+            "footer": {
+              "desc": "For more information about Google Analytics cookies, visit",
+              "link": "Google Analytics Cookie Usage"
+            }
+          }
+        }
+      },
+      "managingCookies": {
+        "title": "Managing Cookies",
+        "desc": "You have the right to accept or decline cookies. Most web browsers automatically accept cookies, but you can usually modify your browser settings to decline cookies if you prefer.\n\nIf you choose to decline cookies, you may not be able to fully experience all features of our website.\n\nYou can manage your cookie preferences through:",
+        "list": [
+          { "desc": "Your browser settings (Chrome, Firefox, Safari, Edge, etc.)" },
+          { "desc": "Our cookie consent banner that appears when you first visit our website" }
+        ]
+      },
+      "thirdPartyCookies": {
+        "title": "Third Party Cookies",
+        "desc": "In addition to our own cookies, we may also use various third-party cookies to report usage statistics of the website and deliver advertisements on and through the website.\n\nGoogle Analytics: We use Google Analytics to analyse website usage. Google Analytics uses cookies to collect information about how visitors use our site. This information is used to compile reports and help us improve the site. The cookies collect information in an anonymous form, including the number of visitors to the site, where visitors have come to the site from, and the pages they visited."
+      },
+      "policyUpdates": {
+        "title": "Updates to This Policy",
+        "desc": "We may update this Cookie Policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons. Please revisit this Cookie Policy regularly to stay informed about our use of cookies."
+      },
+      "contactUs": {
+        "title": "Contact Us",
+        "desc": "If you have any questions about our use of cookies or this Cookie Policy, please contact us through our contact page."
+      }
     }
   }
 }

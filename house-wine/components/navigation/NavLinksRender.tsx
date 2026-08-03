@@ -2,17 +2,17 @@ import React from 'react'
 // Next-Intl
 import { useTranslations } from 'next-intl';
 // NextJS
-import Link from 'next/link'
-// Components & Links
+import { Link } from '@/i18n/routing';
+// Routes
 import { navigation, user } from './NavLinks'
 
 export function SiteMenu() {
     const t = useTranslations('nav');
     return (
         <>
-            {navigation.slice(1).map((nav, index) => (
-                <li key={index}>
-                    <Link href={nav.href}>
+            {navigation.filter((item) => item.key !== 'home').map((item, index) => (
+                <li key={item.key}>
+                    <Link href={item.href}>
                         {t(`siteMenu.${index}.slug`)}
                     </Link>
                 </li>
@@ -27,7 +27,7 @@ export function UserMenu() {
     return (
         <>
             {user.map((nav, index) => (
-                <li key={index} className={nav.style}>
+                <li key={nav.key} className={nav.style}>
                     <Link href={nav.href}>
                         {t(`userMenu.${index}.slug`)}
                     </Link>

@@ -14,6 +14,7 @@ import AuthSessionProvider from '@/components/providers/SessionProvider'
 import Navigation from "@/components/navigation/Navigation";
 import Footer from "@/components/footer/Footer";
 import HWContainer from "@/components/layout/HWContainer";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 const instrumentSarif = Instrument_Serif({
   variable: "--font-instrument-sarif",
@@ -45,7 +46,9 @@ export default async function LocaleLayout({ children, params }: { children: Rea
           <Navigation />
           <AuthSessionProvider>
             <HWContainer>
-              {children}
+              <TooltipProvider>
+                {children}
+              </TooltipProvider>
             </HWContainer>
           </AuthSessionProvider>
           <Footer />

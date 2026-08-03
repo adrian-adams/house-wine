@@ -4,9 +4,8 @@ import Link from 'next/link';
 import { routing } from '@/i18n/routing'
 import { getTranslations } from 'next-intl/server'
 // Queries & Types
-import { getAllProducts } from "@/lib/queries/products";
 import { getProductsByTag } from "@/lib/queries/products";
-import { getAllStores, getStoresWithProducts } from "@/lib/queries/stores";
+import { getAllStores } from "@/lib/queries/stores";
 import { getFeaturesByTag } from "@/lib/queries/features";
 // Content Lists
 import { perks, powerfulFeatures } from "./home/HomeLists";
@@ -32,7 +31,7 @@ export default async function Home() {
   ]);
 
   return (
-    <>
+    <div className="home">
       <div>
         {/* HERO */}
         <Hero />
@@ -122,6 +121,6 @@ export default async function Home() {
           </ul>
         </div>
       </section>
-    </>
+    </div>
   );
 }

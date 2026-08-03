@@ -4,7 +4,7 @@ import { getProductsByTag } from "@/lib/queries/products";
 // Next-Intl
 import { getTranslations } from 'next-intl/server';
 // NextJS
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 // Components
 import { Button } from '@/components/ui/button';
 import HeroSwiperEffectFlow from '../swiper/HeroSwiperEffectFlow';

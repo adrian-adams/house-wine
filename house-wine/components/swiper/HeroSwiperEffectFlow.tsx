@@ -8,14 +8,7 @@ import 'swiper/css/effect-coverflow';
 import 'swiper/css/autoplay';
 import { EffectCoverflow, Autoplay } from 'swiper/modules';
 // Components
-import ProductCard from '../cards/products/ProductCard';
-import ProductFooterHero from '../cards/products/ProductFooter_Hero';
-import { ProductCardUI } from '@/types/product-card';
 import HWProductCard, { HWHeroFooter } from '../cards/HWProductCard';
-
-interface ProductCardMap {
-  slides: ProductCardUI[]
-}
 
 export default function HeroSwiperEffectFlow({ slides }: { slides: any[] }) {
   return (
@@ -48,12 +41,12 @@ export default function HeroSwiperEffectFlow({ slides }: { slides: any[] }) {
             variant="Hero"
             src={slide.images[0]}
             alt={slide.title}
-            isNew
+            availability
             footer={
               <HWHeroFooter
-                title={slide.name}
+                name={slide.name}
                 producer={slide.producer}
-                year={slide.vintage}
+                vintage={slide.vintage}
                 quantity={5}
               />
             }

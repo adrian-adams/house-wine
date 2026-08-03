@@ -72,6 +72,15 @@
     "subDesc": "Geen creditcard nodig",
     "createAccount": {
       "title": "Maak je Account aan",
+      "formFields": [
+        { "value": "email",
+          "label": "E-mail"
+       },
+       {
+        "value": "password",
+        "label": "Wachtwoord"
+       }
+      ],
       "email": "E-mail",
       "password": "Wachtwoord",
       "errorMessage": "",
@@ -186,6 +195,8 @@
     }
   },
   "marketplace": {
+    "preWineQty": "van",
+    "wineQty": "wijnen",
     "searchPlaceholder": {
       "placeholder": "Wijnen zoeken..."
     },
@@ -219,6 +230,123 @@
         "title": "Jaargang",
         "selectLabel": "Alle jaargang"
       }
+    },
+    "cart": {
+      "cartStore": {
+        "cartHeader": {
+          "title": "Winkelmand"
+        },
+        "productCard": {
+          "newBadge": "Nieuw",
+          "soldOut": "Uitverkocht",
+          "viewMore": "Meer weergeven",
+          "addToCart": "In winkelwagen",
+          "addedToCart": "Toegevoegd aan winkelwagen",
+          "imgNotFound": "Afbeelding volgt binnenkort"
+        },
+        "cartBody": {
+          "badge": "links",
+          "maxQtyAlert": "Maximale hoeveelheid geselecteerd",
+          "emptyCart" : {
+            "title": "Je winkelwagen is leeg",
+            "desc": "Verder winkelen"
+          }
+        },
+        "cartFooter": {
+          "total": "Totaal",
+          "viewDisclaimer": "Bekijk de disclaimer",
+          "closeDisclaimer": "Disclaimer sluiten",
+          "sendRequest": "Stuur een verzoek",
+          "clearCart": "Winkelwagen leegmaken",
+          "disclaimer": {
+            "title": "Je koopt bij een onafhankelijke verkoper.",
+            "desc": "Taste of Life is een onafhankelijke verkoper – House Wines is het platform dat de verbinding tot stand brengt. Betaling, verzending en levering worden rechtstreeks met de winkel geregeld."
+          }
+        }
+      },
+      "orderForm": {
+        "formHeader": {
+          "title": "Verzoek indienen"
+        },
+        "formBody": {
+          "buyerDetails": [
+            { "value": "firstName", "label": "Voornaam" },
+            { "value": "lastName", "label": "Achternaam" },
+            { "value": "email", "label": "E-mail"},
+            { "value": "number", "label": "Nummer" }
+          ],
+          "deliveryDetails": {
+            "deliveryOptions": [
+              { "value": "pickup", "label": "Ophalen" },
+              { "value": "shipment", "label": "Verzending" }
+            ],
+            "title": "Leveringswijze",
+            "pickup": {
+              "radioLabel": "Ophalen",
+              "formBlock": {
+                "legend": "Ophaaladres"
+              }
+            },
+            "shipment": {
+              "radioLabel": "Verzending",
+              "formBlock": {
+                "legend": "Verzendadres",
+                "form": [
+                  { "value": "streetNumber", "label": "No." },
+                  { "value": "street1", "label": "Straat" },
+                  { "value": "street2", "label": "Appartement, suite, enz. (optioneel)" },
+                  { "value": "postalCode", "label": "Postcode" },
+                  { "value": "city", "label": "Stad" }
+                ],
+                "selectLabel": "Landen",
+                "selectPlaceholder": "— Selecteer een land —"
+              }
+            }
+          },
+          "message": {
+            "title": "Bericht",
+            "placeholder": "Voor eventuele aanvullende informatie of vragen..."
+          },
+          "keepUpdated": [
+            {
+              "value": "marketing",
+              "label": "Houd me op de hoogte van nieuwe wijnen"
+            }
+          ]
+        },
+        "formFooter": {
+          "backBtn": "Rug",
+          "sendRequesBtn": "Verzoek verzenden"
+        }
+      }
+    }
+  },
+  "products": {
+    "header": {
+      "grapes": "Druivenrassen"
+    },
+    "wineDetails": {
+      "title": "Wijndetails",
+      "country": "Land",
+      "region": "Regio",
+      "vineyard": "Wijngaard",
+      "classification": "Classificatie",
+      "vintage": "Jaargang",
+      "wineType": "Wijntype",
+      "grapes": "Druiven",
+      "bottleSize": "Flesformaat",
+      "alcohol": "Alcohol",
+      "servingTemp": "Serveertemperatuur",
+      "drinkingWindow": "Drinkvenster",
+      "packaging": "Verpakking",
+      "fillLevel": "Vulniveau"
+    },
+    "tasting": {
+      "title": "Proefnotities"
+    },
+    "related": {
+      "title": "Gerelateerd",
+      "desc": "Vergelijkbare wijnen"
     }
   },
   "about": {
@@ -433,6 +561,247 @@
           "desc": "Premium Shopping is een add-on per shop (€20/maand of €200/jaar) waarmee je online betalingen aanneemt via je eigen Stripe- of Mollie-account. Zonder dit blijft je shop prima werken — klanten sturen aanvragen die jij handmatig afhandelt. Activeer het pas als je daadwerkelijk online wilt afrekenen."
         }
       ]
+    }
+  },
+  "legal": {
+    "terms": {
+      "preTitle": "Algemeen",
+      "title": "Algemene voorwaarden",
+      "updated": "Laatst bijgewerkt:",
+      "desc": "Deze voorwaarden zijn van toepassing op het gebruik van het Shared Wines platform. Door een account aan te maken of het platform te gebruiken accepteer je deze voorwaarden.",
+      "clauses": [
+        { 
+          "title": "Wie zijn wij",
+          "desc": "Shared Wines is een initiatief van Arno Gregorian, ondergebracht in Webroots B.V., gevestigd aan Delistraat 8, 1094CV Amsterdam, Nederland. Contact via <a href='mailto:arno@webroots.nl'>arno@webroots.nl</a>. <br><br>Het platform draait op sharedwines.com en geeft particulieren en handelaren tools om wijncollecties te catalogiseren, te delen en te verkopen."
+         },
+         {
+          "title": "Toepasselijkheid",
+          "desc": "Deze voorwaarden gelden voor iedereen die het Shared Wines platform bezoekt of gebruikt. Voor klanten van shops op Shared Wines gelden daarnaast de algemene voorwaarden van de betreffende shop. Bij een conflict tussen die twee zijn de shop-voorwaarden leidend voor de verkooptransactie; deze voorwaarden zijn leidend voor het platformgebruik."
+         },
+         {
+          "title": "Account & registratie",
+          "desc": "Een account is persoonsgebonden of gebonden aan een rechtspersoon. Je moet ten minste 18 jaar zijn (wijn is in Nederland niet verkrijgbaar voor minderjarigen). Je verstrekt accurate en actuele informatie en houdt je inloggegevens vertrouwelijk.<br><br>Je bent verantwoordelijk voor al het verkeer dat onder jouw account plaatsvindt."
+         },
+         {
+          "title": "Acceptabel gebruik",
+          "desc": "Je gebruikt Shared Wines niet voor:",
+          "list": [
+            { "desc": "Illegale content, namaak, of het promoten van wijnen waarvan de herkomst niet legaal vastgesteld kan worden" },
+            { "desc": "Spam, geautomatiseerd scrapen, of stress-testen van het platform" },
+            { "desc": "Het omzeilen van betaalbeperkingen, het frauderen met betalingen of het doorverkopen van platformtoegang" },
+            { "desc": "Pogingen om beveiligingsmechanismen te kraken of toegang te krijgen tot andere accounts" },
+            { "desc": "Het uploaden van content die inbreuk maakt op rechten van derden (auteursrecht, merkrecht, portretrecht, etc.)" }
+          ]
+         },
+         {
+          "title": "Fair-use limieten",
+          "desc": "Om het platform betaalbaar en stabiel te houden voor iedereen, gelden de volgende richtwaarden per maand per account:",
+          "list": [
+            { "desc": "Maximaal 500 nieuwe wijnen toegevoegd per maand" },
+            { "desc": "Maximaal 20.000 unieke bezoekerssessies per shop per maand " },
+            { "desc": "Maximaal 500 afgeronde online betalingen per shop per maand (Premium Shopping)" }
+          ]
+         },
+         {
+          "title": "Wat gebeurt er bij overschrijding",
+          "desc": "We hanteren een fair-use beleid: we proberen altijd eerst contact op te nemen voordat we beperkingen instellen. Bij structureel overmatig gebruik kunnen we een hoger abonnement voorstellen, rate-limits instellen, of in extreme gevallen functies tijdelijk pauzeren. Eerder gemaakt werk (wijnen, shop, bestellingen) blijft toegankelijk."
+         },
+         {
+          "title": "Abonnementen, betaling en opzegging",
+          "desc": "Shared Wines biedt een gratis tier en twee betaalde tiers: Premium (€5/maand of €50/jaar) voor onbeperkt wijnen en eigen domein, en Premium Shopping (€20/maand of €200/jaar per shop) voor online betalingen. Prijzen zijn inclusief btw waar van toepassing.\n\nAbonnementen worden automatisch verlengd tot ze worden opgezegd via de Stripe Billing Portal. Reeds betaalde periodes worden niet pro rata gerestitueerd. Opzeggen kan op elk moment; toegang blijft tot het einde van de betaalde periode.\n\nBetalingen voor abonnementen aan Shared Wines lopen via Stripe. Shared Wines verstrekt facturen voor betaalde abonnementen."
+         },
+         {
+          "title": "Online betalingen (Premium Shopping) — beperking van aansprakelijkheid",
+          "desc": "Wanneer je Premium Shopping activeert, koppel je jouw eigen Stripe- of Mollie-account aan jouw shop. Klanten betalen rechtstreeks aan jouw account; Shared Wines ontvangt of houdt geen klantgelden vast en is geen partij bij de verkooptransactie.<br><br>Stripe en Mollie zijn onafhankelijke betaaldienstverleners met hun eigen voorwaarden. Shared Wines is niet aansprakelijk voor:",
+          "list": [
+            { "desc": "Storingen, vertragingen of fouten aan de kant van Stripe of Mollie" },
+            { "desc": "Geweigerde betalingen, chargebacks of frauduleuze transacties" },
+            { "desc": "Vertraagde of niet-uitbetaalde bedragen door de betaaldienstverlener" },
+            { "desc": "Fouten in jouw btw-instellingen of facturatie" },
+            { "desc": "Geschillen tussen jou en je klanten over levering, kwaliteit of retouren" },
+            { "desc": "Beperkingen of accountschorsingen door Stripe of Mollie" }
+          ]
+         },
+         {
+          "title": "Beschikbaarheid en onderhoud",
+          "desc": "We doen ons best om Shared Wines 24/7 beschikbaar te houden, maar we geven géén uptime-garantie en sluiten een SLA expliciet uit. Geplande onderhoudsperiodes worden waar mogelijk vooraf aangekondigd. Bij ongeplande storingen werken we aan herstel; we zijn niet aansprakelijk voor gederfde inkomsten of indirecte schade als gevolg van downtime."
+         },
+         {
+          "title": "Data, eigendom en gegevensverwerking",
+          "desc": "Je behoudt het volledige eigendomsrecht op de content die je uploadt (wijngegevens, foto's, beschrijvingen, klantgegevens, etc.). Je verleent Shared Wines een niet-exclusieve, royaltyvrije licentie om die content te hosten en weer te geven zoals nodig voor het platform.\n\nPersoonsgegevens worden verwerkt conform de AVG en ons privacybeleid. Voor data van jouw klanten ben jij de verwerkingsverantwoordelijke; Shared Wines treedt op als verwerker. Op verzoek sluiten we een verwerkersovereenkomst."
+         },
+         {
+          "title": "Aansprakelijkheid",
+          "desc": "Shared Wines is alleen aansprakelijk voor directe schade die het rechtstreeks gevolg is van een toerekenbare tekortkoming van Shared Wines, gemaximeerd op het totaal van de abonnementsbedragen die je in de twaalf maanden voorafgaand aan het schadeveroorzakend feit aan Shared Wines hebt betaald.\n\nAansprakelijkheid voor indirecte schade, gevolgschade, gederfde winst, gemiste besparingen, verlies van data of reputatieschade is uitgesloten, behalve in geval van opzet of bewuste roekeloosheid."
+         },
+         {
+          "title": "Beëindiging",
+          "desc": "Je kunt je account op elk moment opheffen vanuit je accountinstellingen. Shared Wines kan een account opschorten of beëindigen bij overtreding van deze voorwaarden, structurele wanbetaling of bij vermoeden van fraude.\n\nNa beëindiging krijg je een redelijke termijn om data te exporteren. Daarna kunnen we content verwijderen, behoudens wettelijke bewaarplichten (zoals facturatiegegevens)."
+         },
+         {
+          "title": "Wijzigingen",
+          "desc": "We mogen deze voorwaarden van tijd tot tijd wijzigen. Materiële wijzigingen worden minimaal 30 dagen vooraf per e-mail of via het platform aangekondigd. Door het platform te blijven gebruiken na de ingangsdatum accepteer je de nieuwe versie."
+         },
+         {
+          "title": "Toepasselijk recht en geschillen",
+          "desc": "Op deze voorwaarden is Nederlands recht van toepassing. Geschillen worden voorgelegd aan de bevoegde rechter in Amsterdam, tenzij dwingend recht een andere rechtbank aanwijst."
+         },
+         {
+          "title": "Contact",
+          "desc": "Vragen over deze voorwaarden? Neem contact op via arno@webroots.nl.\n\nWebroots B.V. · Delistraat 8, 1094CV Amsterdam, Nederland."
+         }
+      ],
+      "footer": {
+        "desc": "Lees ook ons <Link>privacybeleid</Link>"
+      }
+    },
+    "privacy": {
+      "title": "Privacybeleid",
+      "updated": "Laatst bijgewerkt",
+      "clauses": {
+        "introduction": {
+          "title": "Inleiding",
+          "desc": "Shared Wines (\"wij\", \"ons\" of \"onze\") zet zich in voor de bescherming van je privacy. Dit Privacybeleid legt uit hoe we je informatie verzamelen, gebruiken, openbaar maken en beschermen wanneer je onze dienst gebruikt."
+        },
+        "informationCollection": {
+          "title": "Informatie die We Verzamelen",
+          "list": [
+            {
+              "title": "Accountgegevens",
+              "desc": "Wanneer je een account aanmaakt, verzamelen we je e-mailadres en eventuele andere informatie die je tijdens de registratie verstrekt."
+            },
+            {
+              "title": "Wijncollectie Gegevens",
+              "desc": "We slaan informatie op over je wijncollectie, inclusief afbeeldingen, beschrijvingen, prijzen en andere details die je verstrekt."
+            },
+            {
+              "title": "Gebruiksgegevens",
+              "desc": "We kunnen informatie verzamelen over hoe je onze dienst gebruikt, inclusief apparaatinformatie, IP-adressen en gebruikspatronen.."
+            }
+          ]
+        },
+        "informationUse": {
+          "title": "Hoe We je Informatie Gebruiken",
+          "list": [
+            { "desc": "Om onze diensten te leveren, onderhouden en verbeteren" },
+            { "desc": "Om je verzoeken en transacties te verwerken" },
+            { "desc": "Om je technische meldingen en ondersteuningsberichten te sturen" },
+            { "desc": "Om te reageren op je opmerkingen en vragen" },
+            { "desc": "Om technische problemen op te sporen, te voorkomen en aan te pakken" }
+          ]
+        },
+        "dataStorage": {
+          "title": "Gegevensopslag en Beveiliging",
+          "desc": "We gebruiken industriestandaard beveiligingsmaatregelen om je gegevens te beschermen. Je informatie wordt veilig opgeslagen met encryptie en toegangscontroles. Geen enkele methode van verzending via internet of elektronische opslag is echter 100% veilig, en we kunnen geen absolute beveiliging garanderen."
+        },
+        "dataSharing": {
+          "title": "Gegevens Delen",
+          "desc": "We verkopen je persoonlijke gegevens niet. We kunnen je informatie alleen delen in de volgende omstandigheden:",
+          "list": [
+            { "desc": "Met je uitdrukkelijke toestemming" },
+            { "desc": "Om te voldoen aan wettelijke verplichtingen" },
+            { "desc": "Om onze rechten en veiligheid te beschermen" },
+            { "desc": "Met dienstverleners die helpen bij het uitvoeren van onze dienst (onder strikte vertrouwelijkheidsovereenkomsten)" }
+          ]
+        },
+        "publicShops": {
+          "title": "Openbare Shops",
+          "desc": "Als je ervoor kiest om een shop openbaar te maken, is de informatie die je in die shop opneemt (wijnvermeldingen, shopnaam, beschrijving, enz.) zichtbaar voor iedereen die de openbare shop-URL bezoekt. Je bepaalt welke shops openbaar zijn en kunt deze instelling op elk moment wijzigen."
+        },
+        "yourRights": {
+          "title": "Je Rechten",
+          "desc": "Je hebt het recht om:",
+          "list": [
+            { "desc": "Je persoonlijke gegevens in te zien en te beoordelen" },
+            { "desc": "Correctie van onjuiste gegevens aan te vragen" },
+            { "desc": "Verwijdering van je gegevens aan te vragen" },
+            { "desc": "Je gegevens te exporteren" },
+            { "desc": "Je af te melden voor bepaalde communicatie" }
+          ]
+        },
+        "cookies": {
+          "title": "Cookies en Tracking",
+          "desc": "We gebruiken cookies en vergelijkbare trackingtechnologieën om activiteit op onze dienst te volgen en bepaalde informatie vast te houden. Je kunt je browser instellen om alle cookies te weigeren of om aan te geven wanneer een cookie wordt verzonden. Zie ons <Link href=\"/legal-agreements/cookie-policy\">Cookiebeleid</Link> voor meer details."
+        },
+        "policyChange": {
+          "title": "Wijzigingen in dit Beleid",
+          "desc": "We kunnen ons Privacybeleid van tijd tot tijd bijwerken. We zullen je op de hoogte stellen van eventuele wijzigingen door het nieuwe Privacybeleid op deze pagina te plaatsen en de datum \"Laatst bijgewerkt\" bij te werken."
+        },
+        "contactUs": {
+          "title": "Contact",
+          "desc": "Als je vragen hebt over dit Privacybeleid, neem dan contact met ons op via onze contactpagina."
+        }
+      }
+    },
+    "cookie": {
+      "title": "Cookiebeleid",
+      "desc": "Dit Cookiebeleid legt uit hoe Shared Wines (\"wij\", \"ons\" of \"onze\") cookies en vergelijkbare technologieën gebruikt wanneer je onze website bezoekt. Dit beleid legt uit wat deze technologieën zijn en waarom we ze gebruiken, evenals je rechten om ons gebruik ervan te beheren.",
+      "cookiesDesc": {
+        "title": "Wat Zijn Cookies?",
+        "desc": "Cookies zijn kleine tekstbestanden die op je apparaat worden geplaatst wanneer je een website bezoekt. Ze worden veel gebruikt om websites efficiënter te laten werken en informatie te verstrekken aan website-eigenaren.\n\nCookies kunnen \"persistent\" of \"sessie\"-cookies zijn. Persistente cookies blijven op je apparaat nadat je je browser sluit, terwijl sessiecookies worden verwijderd wanneer je je browser sluit."
+      },
+      "cookiesUse": {
+        "title": "Hoe We Cookies Gebruiken",
+        "desc": "We gebruiken cookies voor de volgende doeleinden:",
+        "list": [
+          { "desc": "Om je sessie en authenticatiestatus te bewaren" },
+          { "desc": "Om je voorkeuren en instellingen te onthouden" },
+          { "desc": "Om websiteverkeer en gebruikersgedrag te analyseren (analytics)" },
+          { "desc": "Om de functionaliteit en gebruikerservaring van de website te verbeteren" }
+        ]
+      },
+      "cookieTypes": {
+        "title": "Soorten Cookies die We Gebruiken",
+        "essentialCookies": {
+          "title": "Essentiële Cookies",
+          "desc": "Deze cookies zijn noodzakelijk voor het goed functioneren van de website. Ze maken kernfunctionaliteit mogelijk zoals beveiliging, netwerkbeheer en toegankelijkheid. Deze cookies kunnen niet worden uitgeschakeld.",
+          "list": {
+            "preTitle": "Voorbeelden:",
+            "list": [
+              { "desc": "<b>sb-auth-token:</b> Slaat je authenticatiesessie op om je ingelogd te houden" },
+              { "desc": "<b>age-verification:</b> Onthoudt je leeftijdsverificatiestatus" },
+              { "desc": "<b>cookie-consent:</b> Slaat je cookietoestemmingsvoorkeur op" }
+            ]
+          }
+        },
+        "analyticsCookies": {
+          "title": "Analytics Cookies",
+          "desc": "Deze cookies helpen ons te begrijpen hoe bezoekers onze website gebruiken door anoniem informatie te verzamelen en te rapporteren. We gebruiken Google Analytics voor dit doel.",
+          "list": {
+            "preTitle": "Google Analytics Cookies:",
+            "list": [
+              { "desc": "<b>_ga:</b> Wordt gebruikt om gebruikers te onderscheiden. Verloopt na 2 jaar." },
+              { "desc": "<b>_ga_{lt}container-id{gt}:</b>Wordt gebruikt om sessiestatus te bewaren. Verloopt na 2 jaar." },
+              { "desc": "<b>_gid:</b> Wordt gebruikt om gebruikers te onderscheiden. Verloopt na 24 uur." },
+              { "desc": "<b>_gat:</b> Wordt gebruikt om verzoeksfrequentie te beperken. Verloopt na 1 minuut." }
+            ],
+            "footer": {
+              "desc": "Voor meer informatie over Google Analytics cookies, bezoek",
+              "link": "Google Analytics Cookie Usage"
+            }
+          }
+        }
+      },
+      "managingCookies": {
+        "title": "Cookies Beheren",
+        "desc": "Je hebt het recht om cookies te accepteren of te weigeren. De meeste webbrowsers accepteren automatisch cookies, maar je kunt meestal je browserinstellingen aanpassen om cookies te weigeren als je dat verkiest.<br><br>Als je ervoor kiest om cookies te weigeren, kun je mogelijk niet alle functies van onze website volledig ervaren.<br><br>Je kunt je cookievoorkeuren beheren via:",
+        "list": [
+          { "desc": "Je browserinstellingen (Chrome, Firefox, Safari, Edge, enz.)" },
+          { "desc": "Onze cookietoestemmingsbanner die verschijnt wanneer je onze website voor het eerst bezoekt" }
+        ]
+      },
+      "thirdPartyCookies": {
+        "title": "Cookies van Derden",
+        "desc": "Naast onze eigen cookies kunnen we ook verschillende cookies van derden gebruiken om gebruiksstatistieken van de website te rapporteren en advertenties op en via de website te leveren.<br><br>Google Analytics: We gebruiken Google Analytics om websitegebruik te analyseren. Google Analytics gebruikt cookies om informatie te verzamelen over hoe bezoekers onze site gebruiken. Deze informatie wordt gebruikt om rapporten samen te stellen en ons te helpen de site te verbeteren. De cookies verzamelen informatie in een anonieme vorm, inclusief het aantal bezoekers van de site, waar bezoekers vandaan komen en de pagina's die ze hebben bezocht."
+      },
+      "policyUpdates": {
+        "title": "Updates van dit Beleid",
+        "desc": "We kunnen dit Cookiebeleid van tijd tot tijd bijwerken om wijzigingen in onze praktijken weer te geven of om andere operationele, juridische of regelgevende redenen. Bezoek dit Cookiebeleid regelmatig om op de hoogte te blijven van ons gebruik van cookies."
+      },
+      "contactUs": {
+        "title": "Contact",
+        "desc": "Als je vragen hebt over ons gebruik van cookies of dit Cookiebeleid, neem dan contact met ons op via onze contactpagina."
+      }
     }
   }
 } 

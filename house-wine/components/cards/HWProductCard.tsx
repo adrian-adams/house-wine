@@ -1,27 +1,26 @@
+"use client"
+
 import React from 'react'
-// Types
+// Types, Hooks, Routes
 import { ContentUI, ProductUI } from '@/types/ui'
+import { useCleanPathname } from '@/hooks/useCleanPathName'
+import { routes } from '@/lib/routes'
+import { useTranslations } from 'next-intl';
 // NextJS
 import Image from 'next/image'
-import Link from 'next/link'
+// import Link from 'next/link'
+import { Link } from '@/i18n/routing'
 // CSS Utils
 import { cn } from '@/lib/utils'
-import { cva, type VariantProps } from "class-variance-authority"
 // Components
 import {
     Card,
-    CardAction,
-    CardContent,
-    CardDescription,
     CardFooter,
-    CardHeader,
-    CardTitle,
 } from "@/components/ui/card"
 import { Badge } from '@/components/ui/badge'
 import { Button } from '../ui/button'
 // Lucide
-import { Euro, Wine, Dot, CirclePlus } from 'lucide-react';
-
+import { Euro, Wine, Dot } from 'lucide-react';
 
 export interface ProductFooter extends ContentUI {
     price?: number
@@ -82,36 +81,6 @@ export function HWNewArrivalsFooter({ name, producer, vintage, price }: ProductU
     )
 }
 
-export function HWMarketplaceFooter({ name, producer, vintage, price, quantity }: ProductUI) {
-    return (
-        <>
-            <div className="flex flex-row items-center justify-between gap-4 w-full">
-                <p className="truncate">
-                    {name}
-                </p>
-                <span className="flex flex-row items-center font-bold">
-                    <Euro className="size-4" />
-                    {price}
-                </span>
-            </div>
-            <div className="flex flex-row items-center justify-between gap-4 w-full">
-                <p className="flex flex-row items-center text-xs">
-                    <span className="max-w-29 truncate text-neutral-700 flex-2">{producer}</span>
-                    <span className="flex flex-row items-center flex-1.5">
-                        <Dot />
-                        {vintage !== 0 ? (
-                            <span>{vintage}</span>
-                        ) : (
-                            <>N/A</>
-                        )
-                        }
-                    </span>
-                </p>
-            </div>
-        </>
-    )
-}
-
 type Variant = 'Hero' | 'New Arrivals' | 'Marketplace';
 
 export interface ProductCardProps extends ProductUI {
@@ -123,6 +92,10 @@ export interface ProductCardProps extends ProductUI {
 }
 
 export default function HWProductCard({ promoTag, src, alt, footer, variant, availability, quantity, slug }: ProductCardProps) {
+    const { pathname } = useCleanPathname();
+    const market = pathname === '/marketplace';
+    const t = useTranslations('marketplace.cart');
+
     return (
         <Card className={cn(
             "group",
@@ -133,27 +106,35 @@ export default function HWProductCard({ promoTag, src, alt, footer, variant, ava
             <div className="relative flex-4">
                 {/* Promo Tag */}
                 {promoTag?.includes('newArrivals') && (
-                    <Badge className="absolute -top-2 left-2 z-10 bg-hw-thyme">
-                        NEW
+                    <Badge className="absolute -top-2 left-2 z-10 bg-hw-thyme uppercase">
+                        {t('cartStore.productCard.newBadge')}
                     </Badge>
                 )}
-                {/* Quantity */}
 
-                <span className="absolute -top-2 right-2 z-10">
-                    <Badge className="bg-neutral-500">
-                        {availability ? (
-                            <span>{quantity}</span>
-                        ) : (
-                            <span>Sold Out</span>
-                        )}
-                    </Badge>
-                </span>
+                {/* Quantity & Availability */}
+                {market && (
+                    <span className="absolute -top-2 right-2 z-10">
+                        <Badge className="bg-neutral-500">
+                            {availability ? (
+                                <span>{quantity}</span>
+                            ) : (
+                                <span>{t('cartStore.productCard.soldOut')}</span>
+                            )}
+                        </Badge>
+                    </span>
+                )}
+
                 {/* View More */}
-                <Link href={slug ?? ''}>
-                    <Button className="lg:opacity-0 group-hover:lg:opacity-100 cursor-pointer absolute bottom-0 right-6/12 translate-x-6/12 z-20 py-2 bg-neutral-600">
-                        View More
-                    </Button>
-                </Link>
+                {slug && (
+                    <Link href={routes.products(slug)}>
+                        <Button className={cn(
+                            'lg:opacity-0 group-hover:lg:opacity-100 cursor-pointer absolute -bottom-1/12 right-6/12 translate-x-6/12 z-20 py-2 bg-neutral-600',
+                        )}>
+                            {t('cartStore.productCard.viewMore')}
+                        </Button>
+                    </Link>
+                )}
+
 
                 {/* Image */}
                 {src ? (
@@ -168,19 +149,19 @@ export default function HWProductCard({ promoTag, src, alt, footer, variant, ava
                 ) : (
                     <span className="h-full flex flex-col items-center justify-center gap-4">
                         <Wine size={80} />
-                        <p>Image coming soon...</p>
+                        <p className="text-center">{`${t('cartStore.productCard.imgNotFound')}...`}</p>
                     </span>
                 )}
             </div>
             <CardFooter className={cn(
-                "flex flex-col h-full",
+                "flex flex-col h-full relative",
                 variant === "Hero" && "flex-1 justify-between gap-2 text-xs",
                 variant === "New Arrivals" && "flex-2 bg-transparent border-t-0 gap-2 text-[13px]",
                 variant === "Marketplace" && "flex-1 gap-2"
             )}>
                 {footer}
             </CardFooter>
-        </Card>
+        </Card >
     )
 }
 

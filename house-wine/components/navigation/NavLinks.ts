@@ -1,26 +1,25 @@
-// Lists used for NavLinksRender.tsx -> ./NavLinksRender.tsx
+// lib/navigation.ts
+import { routes } from '@/lib/routes';
 
 interface NavLinkUI {
-    name: string
+    key: string       // stable key for translation lookup — not array index
     href: string
     style?: string
 }
 
-type NavLinkArr = NavLinkUI[]
+type NavLinkArr = NavLinkUI[];
 
-// SiteMenu()
 export const navigation: NavLinkArr = [
-    { name: "Home", href: "/" },
-    { name: "Marketplace", href: "/marketplace" },
-    { name: "Shops", href: "/shops" },
-    // { name: "Resources", href: "/resources" },
-    { name: "About", href: "/about" },
-    { name: "Features", href: "/features" },
-    { name: "Pricing", href: "/pricing" },
-]
+    { key: 'home', href: routes.home() },
+    { key: 'marketplace', href: routes.marketplace() },
+    { key: 'shops', href: routes.shops() },
+    // { key: 'resources', href: routes.resources() },
+    { key: 'about', href: routes.about() },
+    { key: 'features', href: routes.features() },
+    { key: 'pricing', href: routes.pricing() },
+];
 
-// UserMenu()
 export const user: NavLinkArr = [
-    { name: "Sign in", href: "/login" },
-    { name: "Sign up", href: "/register", style: "p-3 bg-white shadow rounded-xl text-hw-underworld" },
-]
+    { key: 'signIn', href: routes.login() },
+    { key: 'signUp', href: routes.register(), style: 'p-3 bg-white shadow rounded-xl text-hw-underworld' },
+];

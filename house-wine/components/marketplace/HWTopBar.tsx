@@ -9,6 +9,9 @@ import { useFilters } from '@/hooks/useFilters';
 // Components
 import HWSearchBar from './HWSearchBar'
 import HWSelectFilter from './HWSelectFilter'
+import {
+    SidebarTrigger
+} from "@/components/ui/sidebar"
 
 export default function HWTopBar({
 }: HWTopBarProps) {
@@ -38,20 +41,23 @@ export default function HWTopBar({
     }, [localSearch]);
 
     return (
-        <>
-            <div className="flex flex-col md:flex-row items-center gap-4 w-full">
-                <HWSearchBar
-                    placeholder={t('searchPlaceholder.placeholder')}
-                    value={localSearch}
-                    onChange={e => setLocalSearch(e.target.value)}
-                    loading={searchLoad}
-                />
+        <div className="flex flex-col md:flex-row items-center justify-center gap-4 w-full">
+            <HWSearchBar
+                placeholder={t('searchPlaceholder.placeholder')}
+                value={localSearch}
+                onChange={e => setLocalSearch(e.target.value)}
+                loading={searchLoad}
+                className="w-full sm:w-9/12"
+            />
+            <div className="flex flex-row items-center justify-center gap-2 w-full sm:w-3/12">
+                <SidebarTrigger className="block md:hidden" />
                 <HWSelectFilter
                     data={orderFiltersArr}
                     defaultValue={orderFiltersArr[0].value}
                     onValueChange={val => updateParam('sort', val)}
+                    className="w-full"
                 />
             </div>
-        </>
+        </div>
     )
 }

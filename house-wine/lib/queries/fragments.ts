@@ -3,6 +3,7 @@ export const PRODUCT_FIELDS = `
     name,
     "slug": slug.current,
     producer,
+    description,
     wineType,
     vintage,
     price,
@@ -12,6 +13,10 @@ export const PRODUCT_FIELDS = `
     classification,
     grapes,
     bottleSize,
+    alcohol,
+    servingTemp,
+    drinkingWindow,
+    tastingNotes,
     packaging,
     fillLevel,
     stores[]->{

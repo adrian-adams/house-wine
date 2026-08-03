@@ -1,6 +1,6 @@
 import { sanityClient } from '../sanity';
 import { PRODUCT_FIELDS } from './fragments';
-import { SearchParams } from '@/types/ui';
+import { SearchParams, ProductApiResponse } from '@/types/ui';
 
 type Tags = "homeFeatured" | "newArrivals"
 type Field = "promoTag"
@@ -43,25 +43,27 @@ export async function getAllProducts({
                 : sort === 'vintage'  ? 'vintage asc'
                 : '_createdAt asc'  // default
 
-    return await sanityClient.fetch(`
-        *[${conditions}] {
+    return await sanityClient.fetch(
+        `*[${conditions}] {
             ${PRODUCT_FIELDS}
-        } | order(${order})
-    `)
+        } | order(${order})`,
+        {},
+        { next: { revalidate: 60 } }
+    )
 }
 
-export async function getProductBySlug(slug: string) {
-    return await sanityClient.fetch(`
-        *[_type == "product" && slug.current == $slug][0] {
-            ${PRODUCT_FIELDS}
-        }
-    `, { slug })
+export async function getProductBySlug(slug: string): Promise<ProductApiResponse | null> {
+    return await sanityClient.fetch(
+        `*[_type == "product" && slug.current == $slug][0] {${PRODUCT_FIELDS}}`,
+        { slug },
+        { next: { revalidate: 60 } }
+    )
 }
 
 export async function getProductsByTag(tag: Tags, field: Field) {
-    return await sanityClient.fetch(`
-        *[_type == "product" && "${tag}" in ${field}] {
-            ${PRODUCT_FIELDS}
-        }
-    `)
+    return await sanityClient.fetch(
+        `*[_type == "product" && "${tag}" in ${field}] {${PRODUCT_FIELDS}}`,
+        {},
+        { next: { revalidate: 60 } }
+    )
 }

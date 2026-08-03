@@ -14,7 +14,7 @@ import { Button } from '@/components/ui/button';
 export default function Features() {
     const t = useTranslations('features')
     return (
-        <>
+        <div className="hw-content-block">
             <section className="space-y-4">
                 <h1>
                     {t('title')}
@@ -26,7 +26,6 @@ export default function Features() {
             <section>
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {featuresMain?.map((item, index) => {
-                        const Icon = item.icon;
                         return (
                             <li key={index}>
                                 <InfoCardsFeatures
@@ -80,6 +79,6 @@ export default function Features() {
                     </Button>
                 </Link>
             </section>
-        </>
+        </div>
     )
 }

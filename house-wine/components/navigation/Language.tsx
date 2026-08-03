@@ -5,15 +5,12 @@ import React from 'react'
 import { useLocale } from 'next-intl'
 import { useRouter, usePathname } from '@/i18n/routing'
 // Components
-import LanguageSVG from '../svgs/LanguageSVG'
 import {
     Select,
     SelectContent,
     SelectGroup,
     SelectItem,
-    SelectTrigger,
     HW_SelectTrigger,
-    SelectValue,
 } from "@/components/ui/select"
 
 interface LanguageArr {

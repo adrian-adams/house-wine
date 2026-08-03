@@ -6,8 +6,6 @@ import type { Metadata } from "next";
 import { Check } from 'lucide-react';
 // Types & Lists
 import { aboutImages, keyFeatures, whoWeServe } from './AboutLists';
-// Components
-import HWImage from '@/components/layout/HWImage';
 
 export const metadata: Metadata = {
     title: "About House Wine",
@@ -16,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function about() {
     return (
-        <>
+        <div className="hw-content-block">
             <section className="space-y-4">
                 <h1>About House Wine</h1>
                 <p>
@@ -75,6 +73,6 @@ export default function about() {
                     ))}
                 </ul>
             </section>
-        </>
+        </div>
     )
 }

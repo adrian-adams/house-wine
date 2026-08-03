@@ -1,0 +1,99 @@
+import React from 'react'
+
+// Translations
+import { useTranslations } from 'next-intl';
+import { richField } from '@/lib/i18n/richField';
+import { routes } from '@/lib/routes';
+// Next.js
+import type { Metadata } from "next";
+import Link from 'next/link'
+// Components
+import { ContentBlock } from '@/components/legal/ContentBlock';
+import { Separator } from '@/components/ui/separator';
+
+const metadata: Metadata = {
+
+}
+
+export default function Terms() {
+    const t = useTranslations('legal.terms');
+
+    const {
+        rootTermsList,
+        acceptableUseList,
+        fairUseList,
+        onlinePaymentList,
+        privacyPolicyLink
+    } = {
+        rootTermsList: t.raw('clauses') as { title: string, desc: string }[],
+        acceptableUseList: t.raw(`clauses.${[3]}.list`) as { desc: string }[],
+        fairUseList: t.raw(`clauses.${[4]}.list`) as { desc: string }[],
+        onlinePaymentList: t.raw(`clauses.${[7]}.list`) as { desc: string }[],
+        privacyPolicyLink: richField({
+            t: t as any,
+            textField: 'footer.desc',
+            extraTags: {
+                Link: (chunks: any) =>
+                    <Link
+                        href={routes.privacy()}
+                        className="underline underline-offset-6"
+                    >
+                        {chunks}
+                    </Link>
+            }
+        })
+    }
+
+    return (
+        <div>
+            <section className="space-y-3">
+                <p className="uppercase">{t('preTitle')}</p>
+                <h1 className="pb-0!">{t('title')}</h1>
+                <p>{t('updated')}: 14 May, 2026</p>
+                <p>{t('desc')}</p>
+            </section>
+            <br /><br />
+            <section>
+                <ol className="space-y-6 list-decimal">
+                    {rootTermsList.map((i, index) => (
+                        <li key={i.title}>
+                            <h2>{i.title}</h2>
+                            <p>{i.desc}</p>
+                            {index === 3 &&
+                                <ul>
+                                    {acceptableUseList.map((i, index) => (
+                                        <li key={index}>
+                                            {i.desc}
+                                        </li>
+                                    ))}
+                                </ul>
+                            }
+                            {index === 4 &&
+                                <ul>
+                                    {fairUseList.map((i, index) => (
+                                        <li key={index}>
+                                            {i.desc}
+                                        </li>
+                                    ))}
+                                </ul>
+                            }
+                            {index === 7 &&
+                                <ul>
+                                    {onlinePaymentList.map((i, index) => (
+                                        <li key={index}>
+                                            {i.desc}
+                                        </li>
+                                    ))}
+                                </ul>
+                            }
+                        </li>
+                    ))}
+                </ol>
+            </section>
+            <Separator className="mt-10 mb-6 bg-neutral-500" />
+            <section>
+                <p>{privacyPolicyLink}</p>
+            </section>
+        </div >
+    )
+}

@@ -2,7 +2,7 @@ import React from 'react'
 // Next-Intl
 import { useTranslations } from 'next-intl';
 // Nextjs
-import Link from 'next/link'
+import { Link } from '@/i18n/routing';
 // Queries, Types & Lists
 import { ContentUI } from '@/types/ui'
 import { PriceListUI } from '@/app/[locale]/pricing/PriceList'

@@ -24,17 +24,17 @@ export default defineType({
             type: 'slug',
             options: {
                 source: (doc: any) => {
-                    const name = doc.name || ''
-                    const producer = doc.producer || ''
-                    const vintage = doc.vintage || '0'
-                    return `${producer}-${name}-${vintage}`
+                    const parts = [doc.producer, doc.name, doc.vintage].filter(Boolean);
+                    return parts.join('-');
                 },
                 slugify: (input: string) =>
                     input
                         .toLowerCase()
-                        .replace(/\s+/g, '-')     // spaces to hyphens
-                        .replace(/[^\w-]/g, '')    // remove special characters
-                        .slice(0, 96)             // max length
+                        .replace(/\s+/g, '-')
+                        .replace(/[^\w-]/g, '')
+                        .replace(/-+/g, '-')
+                        .replace(/^-|-$/g, '')
+                        .slice(0, 96)
             },
             validation: (Rule) => Rule.required()
         }),
@@ -125,6 +125,21 @@ export default defineType({
             type: 'string'
         }),
         defineField({
+            name: 'alcohol',
+            title: 'Alcohol',
+            type: 'number'
+        }),
+        defineField({
+            name: 'servingTemp',
+            title: 'Serving Temperature',
+            type: 'string'
+        }),
+        defineField({
+            name: 'drinkingWindow',
+            title: 'Drinking Window',
+            type: 'string'
+        }),
+        defineField({
             name: 'packaging',
             title: 'Packaging',
             type: 'string',
@@ -191,6 +206,11 @@ export default defineType({
         defineField({
             name: 'labelCondition',
             title: 'Label Condition',
+            type: 'text'
+        }),
+        defineField({
+            name: 'tastingNotes',
+            title: 'Tasting Notes',
             type: 'text'
         }),
         defineField({

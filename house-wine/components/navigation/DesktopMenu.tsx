@@ -1,8 +1,5 @@
 import React from 'react'
-// NextJS
-import Link from 'next/link'
 // Components & Links
-import { navigation, user } from './NavLinks'
 import Language from './Language'
 import { SiteMenu, UserMenu } from './NavLinksRender'
 

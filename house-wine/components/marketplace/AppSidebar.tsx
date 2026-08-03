@@ -12,9 +12,10 @@ import HWSelectFilter from './HWSelectFilter'
 import {
     Sidebar,
     SidebarContent,
+    SidebarFooter,
     SidebarGroup,
     SidebarHeader,
-    SidebarRail
+    SidebarTrigger,
 } from "@/components/ui/sidebar"
 
 export default function AppSidebar() {
@@ -24,10 +25,11 @@ export default function AppSidebar() {
 
     return (
         <Sidebar className="marketplace">
-            <SidebarHeader>
+            <SidebarHeader className="flex flex-row items-center justify-between">
                 <h2>{t('sidebarFilter.title')}</h2>
+                <SidebarTrigger className="block md:hidden" />
             </SidebarHeader>
-            <SidebarContent>
+            <SidebarContent className="px-6">
                 <SidebarGroup>
                     <HWCheckboxList
                         data={availabilityArr}
@@ -57,6 +59,7 @@ export default function AppSidebar() {
                     />
                 </SidebarGroup>
             </SidebarContent>
+            <SidebarFooter />
         </Sidebar>
     )
 }

@@ -14,10 +14,14 @@ const storeMap = JSON.parse(fs_1.default.readFileSync(STORE_MAP_FILE, 'utf-8'));
 const OUTPUT_FILE = path_1.default.join(__dirname, '../../data/output/products.ndjson');
 const assetMap = JSON.parse(fs_1.default.readFileSync(ASSET_MAP_FILE, 'utf-8'));
 function toSlug(producer, name, vintage) {
-    return `${producer}-${name}-${vintage}`
+    const parts = [producer, name, vintage].filter(Boolean); // drops '', undefined, null
+    return parts
+        .join('-')
         .toLowerCase()
         .replace(/\s+/g, '-')
         .replace(/[^\w-]/g, '')
+        .replace(/-+/g, '-') // collapse any double hyphens
+        .replace(/^-|-$/g, '') // trim leading/trailing hyphens
         .slice(0, 96);
 }
 function splitList(value) {
@@ -95,10 +99,14 @@ fs_1.default.createReadStream(CSV_FILE)
         wineType: row.wineType || undefined,
         grapes: splitList(row.grapes),
         bottleSize: row.bottleSize || undefined,
+        alcohol: parseInt(row.alcohol) || undefined,
+        servingTemp: row.servingTemp || undefined,
+        drinkingWindow: row.drinkingWindow || undefined,
         packaging: row.packaging || undefined,
         fillLevel: row.fillLevel || undefined,
         store: buildStoreRefs(row.store),
         labelCondition: row.labelCondition || undefined,
+        tastingNotes: row.tastingNotes,
         promoTag: splitList(row.promoTag),
         images: buildImages(row.imageFiles),
     };

@@ -38,7 +38,7 @@ export default function HWImage({
     return (
         <div className={`relative ${containerStyles}`}>
             {href ? (
-                <Link href={href} target={target} className="absolute inset-0">
+                <Link href={(href) as any} target={target} className="absolute inset-0">
                     <ImageFill src={src} alt={alt} sizes={sizes} imageStyles={imageStyles} />
                 </Link>
             ) : (

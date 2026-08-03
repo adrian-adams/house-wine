@@ -24,23 +24,32 @@ interface ProductRow {
     vineyard: string
     classification: string
     wineType: string
+    alcohol: string
+    servingTemp: string
+    drinkingWindow: string
     grapes: string
     bottleSize: string
     packaging: string
     fillLevel: string
     store: string
     labelCondition: string
+    tastingNotes: string
     promoTag: string
     logoFiles: string
     imageFiles: string
 }
 
 function toSlug(producer: string, name: string, vintage: string) {
-    return `${producer}-${name}-${vintage}`
+    const parts = [producer, name, vintage].filter(Boolean); // drops '', undefined, null
+
+    return parts
+        .join('-')
         .toLowerCase()
         .replace(/\s+/g, '-')
         .replace(/[^\w-]/g, '')
-        .slice(0, 96)
+        .replace(/-+/g, '-')      // collapse any double hyphens
+        .replace(/^-|-$/g, '')    // trim leading/trailing hyphens
+        .slice(0, 96);
 }
 
 function splitList(value: string): string[] {
@@ -123,10 +132,14 @@ fs.createReadStream(CSV_FILE)
             wineType: row.wineType || undefined,
             grapes: splitList(row.grapes),
             bottleSize: row.bottleSize || undefined,
+            alcohol: parseInt(row.alcohol) || undefined,
+            servingTemp: row.servingTemp || undefined,
+            drinkingWindow: row.drinkingWindow || undefined,
             packaging: row.packaging || undefined,
             fillLevel: row.fillLevel || undefined,
             store: buildStoreRefs(row.store),
             labelCondition: row.labelCondition || undefined,
+            tastingNotes: row.tastingNotes,
             promoTag: splitList(row.promoTag),
             images: buildImages(row.imageFiles),
         }

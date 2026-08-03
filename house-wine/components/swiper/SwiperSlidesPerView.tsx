@@ -8,7 +8,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
 // Components
-import HWProductCard, { HWNewArrivalsFooter, HWHeroFooter } from '../cards/HWProductCard';
+import HWProductCard, { HWNewArrivalsFooter } from '../cards/HWProductCard';
 import { Button } from '../ui/button';
 // Lucide
 import { ChevronRight, ChevronLeft } from 'lucide-react';
@@ -64,9 +64,9 @@ export default function SwiperSlidesPerView({ slides }: { slides: any[] }) {
                             footer={
                                 <HWNewArrivalsFooter
                                     quantity={5}
-                                    title={slide.name}
+                                    name={slide.name}
                                     producer={slide.producer}
-                                    year={slide.vintage}
+                                    vintage={slide.vintage}
                                     price={slide.price}
                                 />
                             }

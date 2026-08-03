@@ -1,9 +1,6 @@
 import { sanityClient } from '../sanity';
 import { STORES_FIELDS, PRODUCT_FIELDS } from './fragments';
 
-type Tags = "homeFeatured" | "newArrivals"
-type Field = "promoTag"
-
 export async function getAllStores() {
     return await sanityClient.fetch(`
         *[_type == "stores"] {

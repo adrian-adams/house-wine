@@ -17,9 +17,9 @@ interface SelectProps extends SideBarFilterProps {
     defaultValue: string
 }
 
-export default function HWSelectFilter({ data, defaultValue, label, onValueChange }: SelectProps) {
+export default function HWSelectFilter({ data, defaultValue, label, onValueChange, className }: SelectProps) {
     return (
-        <div className="block sm:flex-1">
+        <div className={`${className}`}>
             <Select defaultValue={defaultValue} onValueChange={onValueChange}>
                 {label && (
                     <Label>

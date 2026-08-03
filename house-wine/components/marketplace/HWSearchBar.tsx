@@ -2,9 +2,6 @@
 
 import React from 'react'
 // il8n
-import { useRouter, usePathname } from '@/i18n/routing'
-// Nextjs
-import { useSearchParams } from 'next/navigation'
 // Types
 import { ContentUI } from '@/types/ui';
 // Motion
@@ -26,9 +23,9 @@ interface SearchBarUI extends ContentUI {
     loading: boolean
 }
 
-export default function HWSearchBar({ placeholder, value, onChange, loading }: SearchBarUI) {
+export default function HWSearchBar({ placeholder, value, onChange, loading, className }: SearchBarUI) {
     return (
-        <InputGroup className="flex-5">
+        <InputGroup className={`${className}`}>
             {loading && (
                 <InputGroupAddon align="inline-start">
                     <motion.span
@@ -44,6 +41,9 @@ export default function HWSearchBar({ placeholder, value, onChange, loading }: S
                 placeholder={placeholder}
                 value={value}
                 onChange={onChange}
+                type="text"
+                name="Search Bar"
+                id="searchbar"
             />
             <InputGroupAddon align="inline-end">
                 <Search />
