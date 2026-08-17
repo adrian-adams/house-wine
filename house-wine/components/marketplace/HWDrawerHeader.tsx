@@ -1,9 +1,6 @@
 "use client"
 
-import React, { useState } from 'react'
 // Types, Motion, Zustand
-import { ProductUI, ContentUI } from '@/types/ui'
-import { motion, Variants } from 'motion/react'
 import { useCartStore } from '@/lib/zustand/cart'
 import { useTranslations } from 'next-intl'
 // Components
@@ -17,8 +14,7 @@ import { Badge } from '../ui/badge'
 // Lucide
 import { XCircleIcon, ChevronLeft } from 'lucide-react';
 
-export default function HWDrawerHeader({ children }: ContentUI) {
-    const showDrawer = useCartStore((state) => state.isDrawer);
+export default function HWDrawerHeader() {
     const drawerToggle = useCartStore((state) => state.drawerToggle);
     const isCart = useCartStore((state) => state.isCart);
 
@@ -38,12 +34,12 @@ export default function HWDrawerHeader({ children }: ContentUI) {
 
 export function HWCartHeader() {
     const item = useCartStore((state) => state.itemCount());
-    const t = useTranslations('marketplace.cart');
+    const t = useTranslations('marketplace');
 
     return (
         <div className="h-10 flex flex-row gap-2 items-center justify-center">
             <DrawerTitle className="font-instrument-sarif text-3xl">
-                {t('cartStore.cartHeader.title')}
+                {t('cart.cartStore.cartHeader.title')}
             </DrawerTitle>
             {item > 0 && (
                 <Badge>
@@ -57,7 +53,7 @@ export function HWCartHeader() {
 
 export function HWFormHeader() {
     const cartToggle = useCartStore((state) => state.cartToggle);
-    const t = useTranslations('marketplace.cart');
+    const t = useTranslations('marketplace');
 
     return (
         <div className="h-10 flex flex-row items-center justify-center gap-2">
@@ -65,7 +61,7 @@ export function HWFormHeader() {
                 <ChevronLeft className="size-8" />
             </Button>
             <DrawerTitle className="font-instrument-sarif text-2xl">
-                {t('orderForm.formHeader.title')}
+                {t('cart.orderForm.formHeader.title')}
             </DrawerTitle>
         </div>
     )

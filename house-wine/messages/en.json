@@ -2,7 +2,6 @@
   "nav": {
     "siteMenu": [
       { "slug": "Marketplace" },
-      { "slug": "Shops" },
       { "slug": "About" },
       { "slug": "Features" },
       { "slug": "Pricing" }
@@ -64,7 +63,17 @@
     "forgotPassword": "Forgot password?",
     "signIn": "Sign In",
     "signUp": "Don't have an account? Sign up",
-    "backToHome": "Back to Home"
+    "backToHome": "Back to Home",
+    "fields": [
+      { 
+        "value": "email",
+        "label": "Email"
+      },
+      { 
+        "value": "password",
+        "label": "Password"
+      }
+    ]
   },
   "register": {
     "title": "Start Managing Your Wine Collection",
@@ -73,23 +82,45 @@
     "createAccount": {
       "title": "Create Your Account",
       "formFields": [
-        { "value": "email",
+        {
+          "value": "firstName",
+          "label": "First Name"
+        },
+        {
+          "value": "lastName",
+          "label": "Last Name"
+        },
+        { 
+          "value": "email",
           "label": "Email"
-       },
-       {
-        "value": "password",
-        "label": "Password"
-       }
+        },
+        {
+          "value": "password",
+          "label": "Password"
+        }
       ],
       "email": "Email",
       "password": "Password",
       "errorMessage": "",
       "signUpMessage": "Shared Wines connects buyers and sellers — the individual sellers, not Shared Wines, are responsible for the wines they list and sell. We encourage you to reach out to the seller, ask about provenance, storage and condition, and agree on the details before buying.",
-      "acceptTerms": "I have read and agree to the Terms & Conditions and Privacy Policy.",
-      "termsAndCoditions": "Terms & Conditions",
+      "permissions": [
+        {
+          "value": "acceptTerms",
+          "label": "I have read and agree to the Terms & Conditions and Privacy Policy."
+        },
+        {
+          "value": "marketing",
+          "label": "Sign up for marketing updates and emails."
+        }
+      ],
+      "termsAndConditions": "Terms & Conditions",
       "privacyPolicy": "Privacy Policy",
       "signUpBtn": "Sign Up",
       "signInBtn": "<Link>Already have an account? Sign in</Link>",
+      "google": {
+        "button": "Sign up with Google",
+        "disclaimer": "By continuing with Google, you agree to our Terms and Privacy Policy."
+      },
       "backToHomeBtn": "Back to Home"
     },
     "features": [
@@ -573,7 +604,7 @@
       "clauses": [
         { 
           "title": "Who we are",
-          "desc": "Shared Wines is an initiative by Arno Gregorian, operated through Webroots B.V., registered at Delistraat 8, 1094CV Amsterdam, the Netherlands. Contact: <a href='mailto:arno@webroots.nl'>arno@webroots.nl</a>. \n\nThe platform runs on sharedwines.com and gives private collectors and wine merchants the tools to catalogue, share, and sell their wines."
+          "desc": "Shared Wines is an initiative by Arno Gregorian, operated through Webroots B.V., registered at Delistraat 8, 1094CV Amsterdam, the Netherlands. Contact: arno@webroots.nl. \n\nThe platform runs on sharedwines.com and gives private collectors and wine merchants the tools to catalogue, share, and sell their wines."
          },
          {
           "title": "Scope",

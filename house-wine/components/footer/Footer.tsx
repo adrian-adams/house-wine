@@ -21,7 +21,7 @@ export default function Footer() {
         <footer className="flex flex-col items-center justify-between gap-8 h-full md:h-[calc(100vh-30%)] p-4 md:py-10 md:px-20 bg-hw-dead-sea-mud text-hw-coastal-fog">
             <section className="flex flex-col lg:flex-row gap-8 items-start px-4">
                 <div className="flex flex-col gap-4">
-                    <HouseWineLogo width={100} height={100} />
+                    <HouseWineLogo />
                     <p>{t('desc')}</p>
                     <ul className="flex flex-row gap-4 items-center">
                         <SocialLinks link="#" target="_blank">
@@ -36,7 +36,7 @@ export default function Footer() {
                     <ul>
                         <h2>{t('quickLinks.title')}</h2>
                         {quickLinks?.map((item, index) => (
-                            <li key={index}>
+                            <li key={item.name}>
                                 <Link href={item.href}>
                                     {t(`quickLinks.list.${index}.link`)}
                                 </Link>
@@ -46,7 +46,7 @@ export default function Footer() {
                     <ul>
                         <h2>{t('forProfessionals.title')}</h2>
                         {forProfessionals?.map((item, index) => (
-                            <li key={index}>
+                            <li key={item.name}>
                                 <Link href={item.href}>
                                     {t(`forProfessionals.list.${index}.link`)}
                                 </Link>
@@ -56,7 +56,7 @@ export default function Footer() {
                     <ul>
                         <h2>{t('moreInformation.title')}</h2>
                         {moreInformation?.map((item, index) => (
-                            <li key={index}>
+                            <li key={item.name}>
                                 <Link href={item.href}>
                                     {t(`moreInformation.list.${index}.link`)}
                                 </Link>
@@ -66,7 +66,7 @@ export default function Footer() {
                     <ul>
                         <h2>{t('legal.title')}</h2>
                         {legal?.map((item, index) => (
-                            <li key={index}>
+                            <li key={item.name}>
                                 <Link href={item.href}>
                                     {t(`legal.list.${index}.link`)}
                                 </Link>

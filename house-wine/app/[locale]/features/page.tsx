@@ -7,9 +7,14 @@ import { useTranslations } from 'next-intl';
 import { featuresMain, shopYourWay } from './FeaturesList'
 // Nextjs
 import Link from 'next/link';
+import type { Metadata } from "next";
 // Components
 import InfoCardsFeatures from '@/components/cards/InfoCards_Features'
 import { Button } from '@/components/ui/button';
+
+export const metadata: Metadata = {
+    title: "House Wine - Features"
+}
 
 export default function Features() {
     const t = useTranslations('features')
@@ -51,7 +56,6 @@ export default function Features() {
             <section>
                 <ul className="hw-grid">
                     {shopYourWay?.map((item, index) => {
-                        const Icon = item.icon;
                         return (
                             <li key={index}>
                                 <InfoCardsFeatures

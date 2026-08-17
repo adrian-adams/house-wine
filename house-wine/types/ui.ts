@@ -24,6 +24,7 @@ export interface FormSection_TextProps extends ShadcnInputsListeners {
         className?: string
         placeholder?: string
         required?: boolean
+        showPassword?: boolean
     }[]
     values: Record<string, string>
     errors?: Record<string, string>
@@ -60,6 +61,7 @@ export interface FormSection_CheckboxProps {
     checked: boolean
     onCheckedChange: (checked: boolean) => void
     legend?: string
+    errors?: Record<string, string>
 }
 
 export interface FormSection_RadioProps {
@@ -261,9 +263,15 @@ export interface OrderRequestPayload extends OrderRequestFormState {
 /********************************/ 
 
 export interface RegistrationFormState {
-    newUser: {
+    user: {
+        firstName: string
+        lastName: string
         email: string
         password: string  
+        authProvider: 'credentials' | 'google'
     }
-    checkbox: boolean
+    permissions: {
+        acceptTerms: boolean
+        marketing: boolean
+    }
 }

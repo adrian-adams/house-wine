@@ -8,7 +8,7 @@ if (!MONGODB_URI) {
     throw new Error('MONGODB_URI is not defined in .env.local')
 }
 
-let cached = global.mongoose
+let cached = global.mongoose;
 
 if (!cached) {
     cached = global.mongoose = { conn: null, promise: null }

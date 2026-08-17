@@ -8,10 +8,9 @@ import { routes } from '@/lib/routes';
 import type { Metadata } from "next";
 import Link from 'next/link'
 // Components
-import { ContentBlock } from '@/components/legal/ContentBlock';
 import { Separator } from '@/components/ui/separator';
 
-const metadata: Metadata = {
+export const metadata: Metadata = {
 
 }
 
@@ -26,6 +25,10 @@ export default function Terms() {
         privacyPolicyLink
     } = {
         rootTermsList: t.raw('clauses') as { title: string, desc: string }[],
+        // rootTermsList: richField({
+        //     t: t as any,
+        //     textField: `clauses`
+        // }),
         acceptableUseList: t.raw(`clauses.${[3]}.list`) as { desc: string }[],
         fairUseList: t.raw(`clauses.${[4]}.list`) as { desc: string }[],
         onlinePaymentList: t.raw(`clauses.${[7]}.list`) as { desc: string }[],

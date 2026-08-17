@@ -4,7 +4,6 @@ import React, { useState, useEffect } from 'react'
 // Next-Intl
 import { useTranslations } from 'next-intl';
 // Types, Lists, Queries & Parameters
-import { HWTopBarProps } from '@/types/ui';
 import { useFilters } from '@/hooks/useFilters';
 // Components
 import HWSearchBar from './HWSearchBar'
@@ -13,8 +12,7 @@ import {
     SidebarTrigger
 } from "@/components/ui/sidebar"
 
-export default function HWTopBar({
-}: HWTopBarProps) {
+export default function HWTopBar() {
     const t = useTranslations('marketplace');
     const orderFiltersArr = t.raw('orderFilter') as { name: string, value: string }[];
     const { updateParam } = useFilters()

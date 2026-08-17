@@ -10,8 +10,9 @@ import Link from 'next/link'
 // Components
 import { ContentBlock } from '@/components/legal/ContentBlock';
 
-const metadata: Metadata = {
-
+export const metadata: Metadata = {
+    title: 'Pivacy Policy',
+    description: 'Shared Wines ("we," "our," "or" "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our service.'
 }
 
 export default function PrivacyPolicy() {

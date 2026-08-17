@@ -1,4 +1,3 @@
-import { motion } from "motion/react";
 import { Variants } from "motion/react";
 
 export const fadeIn: Variants = {

@@ -49,7 +49,6 @@ const cardVariants: Variants = {
 }
 
 export default function HWProductGrid({ data }: ProductGridProps) {
-    const showDrawer = useCartStore((state) => state.isDrawer);
     const drawerToggle = useCartStore((state) => state.drawerToggle);
     const items = useCartStore((state) => state.items);
     const isCart = useCartStore((state) => state.isCart)

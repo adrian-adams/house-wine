@@ -12,7 +12,7 @@ type NavLinkArr = NavLinkUI[];
 export const navigation: NavLinkArr = [
     { key: 'home', href: routes.home() },
     { key: 'marketplace', href: routes.marketplace() },
-    { key: 'shops', href: routes.shops() },
+    // { key: 'shops', href: routes.shops() },
     // { key: 'resources', href: routes.resources() },
     { key: 'about', href: routes.about() },
     { key: 'features', href: routes.features() },

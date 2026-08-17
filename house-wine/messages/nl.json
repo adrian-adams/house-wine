@@ -2,7 +2,6 @@
   "nav": {
     "siteMenu": [
       { "slug": "Marktplaats" },
-      { "slug": "Shops" },
       { "slug": "Ontdek" },
       { "slug": "Functies" },
       { "slug": "Prijzen" }
@@ -64,7 +63,17 @@
     "forgotPassword": "Wachtwoord vergeten?",
     "signIn": "Inloggen",
     "signUp": "Geen account? Registreren",
-    "backToHome": "Terug naar Home"
+    "backToHome": "Terug naar Home",
+    "fields": [
+      { 
+        "value": "email",
+        "label": "E-mail"
+      },
+      { 
+        "value": "password",
+        "label": "Wachtwoord"
+      }
+    ]
   },
   "register": {
     "title": "Begin met het Beheren van je Wijncollectie",
@@ -73,6 +82,14 @@
     "createAccount": {
       "title": "Maak je Account aan",
       "formFields": [
+        {
+          "value": "firstName",
+          "label": "Voornaam"
+        },
+        {
+          "value": "lastName",
+          "label": "Achternaam"
+        },
         { "value": "email",
           "label": "E-mail"
        },
@@ -85,11 +102,24 @@
       "password": "Wachtwoord",
       "errorMessage": "",
       "signUpMessage": "Shared Wines brengt kopers en verkopers samen — de individuele verkopers, niet Shared Wines, zijn verantwoordelijk voor de wijnen die zij aanbieden en verkopen. We raden je aan contact op te nemen met de verkoper, te vragen naar herkomst, bewaring en staat, en de details af te stemmen voordat je koopt.",
-      "acceptTerms": "Ik heb de algemene voorwaarden en het privacybeleid gelezen en ga hiermee akkoord.",
-      "termsAndCoditions": "Algemene voorwaarden",
+      "permissions": [
+          {
+            "value": "acceptTerms",
+            "label": "Ik heb de algemene voorwaarden en het privacybeleid gelezen en ga hiermee akkoord."
+          },
+          {
+            "value": "marketing",
+            "label": "Meld u aan voor marketingupdates en e-mails."
+          }
+      ],
+      "termsAndConditions": "Algemene voorwaarden",
       "privacyPolicy": "Privacybeleid",
       "signUpBtn": "Registreren",
       "signInBtn": "Heb je al een account? Inloggen",
+      "google": {
+        "button": "Meld je aan met Google",
+        "disclaimer": "Door verder te gaan met Google ga je akkoord met onze voorwaarden en ons privacybeleid."
+      },
       "backToHomeBtn": "Terug naar Home"
     },
     "features": [
@@ -572,7 +602,7 @@
       "clauses": [
         { 
           "title": "Wie zijn wij",
-          "desc": "Shared Wines is een initiatief van Arno Gregorian, ondergebracht in Webroots B.V., gevestigd aan Delistraat 8, 1094CV Amsterdam, Nederland. Contact via <a href='mailto:arno@webroots.nl'>arno@webroots.nl</a>. <br><br>Het platform draait op sharedwines.com en geeft particulieren en handelaren tools om wijncollecties te catalogiseren, te delen en te verkopen."
+          "desc": "Shared Wines is een initiatief van Arno Gregorian, ondergebracht in Webroots B.V., gevestigd aan Delistraat 8, 1094CV Amsterdam, Nederland. Contact via arno@webroots.nl. <br><br>Het platform draait op sharedwines.com en geeft particulieren en handelaren tools om wijncollecties te catalogiseren, te delen en te verkopen."
          },
          {
           "title": "Toepasselijkheid",

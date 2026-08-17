@@ -53,7 +53,7 @@ const OrderRequestItemSchema = new Schema<OrderRequestItem>(
     }
 );
 
-const OrderRequestAddressSchema = new Schema<OrderRequestAddress>(
+export const OrderRequestAddressSchema = new Schema<OrderRequestAddress>(
     {
         streetNumber: { type: String, required: true },
         street1: { type: String, required: true },
@@ -116,6 +116,4 @@ const OrderRequestSchema = new Schema<OrderRequestDocument>(
     }
 );
 
-export const OrderRequest = 
-    models.OrderRequest || 
-    model<OrderRequestDocument>("OrderRequest", OrderRequestSchema);
+export const OrderRequest = models.OrderRequest || model<OrderRequestDocument>("OrderRequest", OrderRequestSchema);

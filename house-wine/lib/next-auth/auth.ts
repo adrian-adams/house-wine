@@ -1,11 +1,12 @@
-// house-wine/lib/auth.ts
-
 import { NextAuthOptions } from 'next-auth'
 import GoogleProvider from 'next-auth/providers/google'
 import CredentialsProvider from 'next-auth/providers/credentials'
 import bcrypt from 'bcryptjs'
-import { connectDB } from './mongodb'
-import User from '@/models/User'
+import { connectDB } from '@/lib/mongodb/connectDB'
+import { User } from '@/lib/mongodb/models/User'
+import { sendUserEmails } from '../email/sendUserEmails'
+import { routes } from '../routes'
+
 
 export const authOptions: NextAuthOptions = {
     providers: [
@@ -24,17 +25,17 @@ export const authOptions: NextAuthOptions = {
                     throw new Error('Invalid credentials')
                 }
 
-                await connectDB()
+                await connectDB();
 
-                const user = await User.findOne({ email: credentials.email })
+                const foundUser = await User.findOne({ 'user.email': credentials.email })
 
-                if (!user || !user.password) {
+                if (!foundUser || !foundUser.user.password) {
                     throw new Error('No user found')
                 }
 
                 const isPasswordValid = await bcrypt.compare(
                     credentials.password,
-                    user.password
+                    foundUser.user.password
                 )
 
                 if (!isPasswordValid) {
@@ -42,10 +43,9 @@ export const authOptions: NextAuthOptions = {
                 }
 
                 return {
-                    id: user._id.toString(),
-                    email: user.email,
-                    name: user.name,
-                    role: user.role
+                    id: foundUser.userId,
+                    email: foundUser.user.email,
+                    name: `${foundUser.user.firstName} ${foundUser.user.lastName}`
                 }
             }
         })
@@ -56,38 +56,49 @@ export const authOptions: NextAuthOptions = {
             if (account?.provider === 'google') {
                 await connectDB()
 
-                const existingUser = await User.findOne({ email: user.email })
+                const existingUser = await User.findOne({ 'user.email': user.email })
 
-                if (!existingUser) {
-                    // Create new user from Google account
-                    await User.create({
-                        name: user.name,
-                        email: user.email,
-                        password: '',   // no password for Google users
-                        role: 'user'
+                if(!existingUser) {
+                    const [firstName, ...rest] = (user.name ?? '').split(' ');
+                    const lastName = rest.join(' ') || firstName;
+
+                    const newUser = await User.create({
+                        user: {
+                            firstName,
+                            lastName,
+                            email: user.email,
+                            authProvider: 'google'
+                        },
+                        permissions: {
+                            acceptTerms: true,
+                            marketing: false
+                        }
+                    });
+
+                    sendUserEmails(newUser).catch((err) => {
+                        console.error('sendUserEmails failed unexpectedly:  ', err)
                     })
                 }
             }
+
             return true
         },
         async jwt({ token, user }) {
             if (user) {
                 token.id = user.id
-                token.role = (user as any).role
             }
             return token
         },
         async session({ session, token }) {
             if (session.user) {
                 (session.user as any).id = token.id;
-                (session.user as any).role = token.role
             }
             return session
         }
     },
     pages: {
-        signIn: '/login',       // your custom login page
-        error: '/login',        // redirect errors to login page
+        signIn: routes.register(),       // your custom login page
+        error: routes.register(),        // redirect errors to login page
     },
     session: {
         strategy: 'jwt'

@@ -50,7 +50,7 @@ export default function StoreCart() {
 export function StoreCardList() {
     const items = useCartStore((state) => state.items);
     const drawerToggle = useCartStore((state) => state.drawerToggle)
-    const t = useTranslations('marketplace.cart');
+    const t = useTranslations('marketplace');
 
     const listVariants: Variants = {
         hidden: { opacity: 1 },
@@ -89,13 +89,13 @@ export function StoreCardList() {
             {items.length === 0 && (
                 <div className="flex flex-col items-center justify-center gap-2 py-8 text-xl">
                     <p className="text-neutral-800">
-                        {t('cartStore.cartBody.emptyCart.title')}
+                        {t('cart.cartStore.cartBody.emptyCart.title')}
                     </p>
                     <DrawerClose
                         className="px-4 py-2 bg-neutral-950 rounded-xl text-white cursor-pointer hover:opacity-80"
                         onClick={drawerToggle}
                     >
-                        {t('cartStore.cartBody.emptyCart.desc')}
+                        {t('cart.cartStore.cartBody.emptyCart.desc')}
                     </DrawerClose>
                 </div>
             )}
@@ -115,7 +115,7 @@ export function StoreCard({ productId }: StoreCardProps) {
     const item = useCartStore((state) => state.items.find((i) => i.productId === productId));
     const { orderQuantity, stockLevel } = item ?? {};
     const maxQty = stockLevel === orderQuantity;
-    const t = useTranslations('marketplace.cart');
+    const t = useTranslations('marketplace');
 
     return (
         <AnimatePresence>
@@ -144,7 +144,7 @@ export function StoreCard({ productId }: StoreCardProps) {
                     "text-xs text-red-500 py-1 bg-neutral-200 my-2 rounded-sm border border-neutral-600 transition-all duration-300 ease-in-out",
                     maxQty ? "block opacity-100" : "opacity-0"
                 )}>
-                    {t('cartStore.cartBody.maxQtyAlert')}
+                    {t('cart.cartStore.cartBody.maxQtyAlert')}
                 </p>
             </motion.div>
         </AnimatePresence>
@@ -262,7 +262,7 @@ export function StoreRemoveProduct({ productId }: StoreCardProps) {
     const item = useCartStore((state) => state.items.find((i) => i.productId === productId));
     const removeItem = useCartStore((state) => state.removeItem);
     const { orderQuantity, stockLevel } = item ?? {};
-    const t = useTranslations('marketplace.cart');
+    const t = useTranslations('marketplace');
 
     return (
         <div className="flex flex-col items-center justify-center gap-2">
@@ -270,7 +270,7 @@ export function StoreRemoveProduct({ productId }: StoreCardProps) {
                 'w-15',
                 orderQuantity === stockLevel && 'bg-red-700 font-bold'
             )} >
-                {(stockLevel ?? 0) - (orderQuantity ?? 0)} {t('cartStore.cartBody.badge')}
+                {(stockLevel ?? 0) - (orderQuantity ?? 0)} {t('cart.cartStore.cartBody.badge')}
             </Badge>
             <Button
                 className='group max-w-xs hover:bg-red-300'
@@ -290,13 +290,13 @@ export function StoreFooter() {
     const subTotal = useCartStore((state) => state.subTotal())
     const itemQty = useCartStore((state) => state.items)
     const cartToggle = useCartStore((state) => state.cartToggle)
-    const t = useTranslations('marketplace.cart');
+    const t = useTranslations('marketplace');
 
     return (
         <DrawerFooter className="space-y-2 border-t border-neutral-400">
             <div className="flex flex-row items-center justify-between font-semibold">
                 <h3 className="text-xl font-ibm-plex-sans">
-                    {`${t('cartStore.cartFooter.total')}:`}
+                    {`${t('cart.cartStore.cartFooter.total')}:`}
                 </h3>
                 <p className="flex flex-row items-center text-xl"><Euro className="size-4.5" />{subTotal}</p>
             </div>
@@ -311,8 +311,8 @@ export function StoreFooter() {
                             className="pb-4 -z-999 relative"
                         >
                             <StoreDisclaimer
-                                label={t('cartStore.cartFooter.disclaimer.title')}
-                                desc={t('cartStore.cartFooter.disclaimer.desc')}
+                                label={t('cart.cartStore.cartFooter.disclaimer.title')}
+                                desc={t('cart.cartStore.cartFooter.disclaimer.desc')}
                             />
                         </motion.div>
                     </AnimatePresence>
@@ -325,15 +325,15 @@ export function StoreFooter() {
                         )}
                         onClick={cartToggle}
                     >
-                        {t('cartStore.cartFooter.sendRequest')}
+                        {t('cart.cartStore.cartFooter.sendRequest')}
                     </Button>
                     <CollapsibleTrigger asChild>
                         <Button className='' onClick={() => setOpenDisclaimer(!openDisclaimer)}>
                             {openDisclaimer
                                 ?
-                                <p>{t('cartStore.cartFooter.closeDisclaimer')}</p>
+                                <p>{t('cart.cartStore.cartFooter.closeDisclaimer')}</p>
                                 :
-                                <p>{t('cartStore.cartFooter.viewDisclaimer')}</p>
+                                <p>{t('cart.cartStore.cartFooter.viewDisclaimer')}</p>
                             }
                         </Button>
                     </CollapsibleTrigger>
@@ -344,7 +344,7 @@ export function StoreFooter() {
                     onClick={() => clearCart()}
                     className="w-full"
                 >
-                    {t('cartStore.cartFooter.clearCart')}
+                    {t('cart.cartStore.cartFooter.clearCart')}
                 </Button>
             )}
         </DrawerFooter>

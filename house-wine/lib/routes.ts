@@ -11,7 +11,7 @@ export const routes = {
     login: () => '/login' as Route,
     register: () => '/register' as Route,
     cookie: () => '/legal-agreements/cookie-policy' as Route,
-    terms: () => '/legal-agreements/terms-and-cnodtions' as Route,
+    terms: () => '/legal-agreements/terms-and-conditions' as Route,
     privacy: () => '/legal-agreements/privacy-policy' as Route,
     contact: () => '/contact-us' as Route
 } as const;

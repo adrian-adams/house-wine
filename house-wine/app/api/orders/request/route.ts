@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { connectDB } from "@/lib/mongodb/connectDB";
 import { OrderRequest } from "@/lib/mongodb/models/OrderRequest";
 import { orderRequestPayloadSchema } from "@/lib/validation/orderRequest_Validation";
+import { sendOrderEmails } from "@/lib/email/sendOrderEmails";
 
 export async function POST(req: NextRequest) {
     try {
@@ -19,7 +20,15 @@ export async function POST(req: NextRequest) {
         await connectDB();
         const order = await OrderRequest.create(result.data);
 
-        return NextResponse.json({ success: true, orderId: order._id }, { status: 201 });
+        sendOrderEmails(order).catch((err) => {
+            console.error("sendOrderEmails failed unexpectedly:", err);
+        });
+
+        return NextResponse.json(
+            { success: true, orderId: order._id }, 
+            { status: 201 }
+        );
+        
     } catch (error) {
         if (error instanceof Error) {
             console.error("Order request failed:", error.message);

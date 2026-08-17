@@ -1,12 +1,19 @@
-export const quickLinks = [
-    { name: "Marketplace", href: "#" },
-    { name: "Features", href: "#" },
+import { routes } from "@/lib/routes"
+
+interface LinkProps {
+    name: string
+    href: string
+}
+
+export const quickLinks: LinkProps[] = [
+    { name: "Marketplace", href: routes.marketplace() },
+    { name: "Features", href: routes.features() },
     { name: "Wine Deals", href: "#" },
-    { name: "About", href: "#" },
-    { name: "Sign In", href: "#" },
+    { name: "About", href: routes.features() },
+    { name: "Sign In", href: routes.login() },
 ]
 
-export const forProfessionals = [
+export const forProfessionals: LinkProps[] = [
     { name: "Online sales", href: "#" },
     { name: "Wholesale (B2B)", href: "#" },
     { name: "Bookeeping intergations", href: "#" },
@@ -14,7 +21,7 @@ export const forProfessionals = [
     { name: "Build a community", href: "#" },
 ]
 
-export const moreInformation = [
+export const moreInformation: LinkProps[] = [
     { name: "A better marketplace for wine", href: "#" },
     { name: "By and for enthusiasts", href: "#" },
     { name: "Easily share your wine collection", href: "#" },
@@ -24,8 +31,8 @@ export const moreInformation = [
     { name: "Grape Varieties", href: "#" }
 ]
 
-export const legal = [
-    { name: "Terms & Conditions", href: "#" },
-    { name: "Privacy Policy", href: "#" },
+export const legal: LinkProps[] = [
+    { name: "Terms & Conditions", href: routes.terms() },
+    { name: "Privacy Policy", href: routes.privacy() },
     { name: "Contact", href: "#" },
 ]

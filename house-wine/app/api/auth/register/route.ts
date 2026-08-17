@@ -1,49 +1,64 @@
+import { NextRequest, NextResponse } from "next/server"
 import { connectDB } from '@/lib/mongodb/connectDB'
-import User from '@/models/User'
+import { User } from '@/lib/mongodb/models/User'
 import bcrypt from 'bcryptjs'
-import { NextResponse } from 'next/server'
+import { userSignUpPayloadSchema } from "@/lib/zod/userSignUp"
+import { sendUserEmails } from "@/lib/email/sendUserEmails"
 
-export async function POST(req: Request) {
+export async function POST(request: NextRequest) {
     try {
-        const { name, email, password } = await req.json()
+        const body = await request.json();
+        const result = userSignUpPayloadSchema.safeParse(body);
 
-        if (!name || !email || !password) {
+        if (!result.success) {
             return NextResponse.json(
-                { message: 'All fields are required' },
+                { success: false, errors: result.error.issues },
                 { status: 400 }
+            );
+        } 
+
+        await connectDB();
+
+        const exisitingUser = await User.findOne({ 'user.email': result.data.user.email });
+        if (exisitingUser) {
+            return NextResponse.json(
+                { success: false, error: 'An account with this email already exists.' },
+                { status: 409 }
             )
         }
+        
+        const hashedPassword = await bcrypt.hash(result.data.user.password, 12);
 
-        await connectDB()
+        const user = await User.create({
+            ...result.data,
+            user: {
+                ...result.data.user,
+                password: hashedPassword,
+                authProvider: 'credentials'
+            }
+        });
 
-        const existingUser = await User.findOne({ email })
-
-        if (existingUser) {
-            return NextResponse.json(
-                { message: 'User already exists' },
-                { status: 400 }
-            )
-        }
-
-        const hashedPassword = await bcrypt.hash(password, 12)
-
-        await User.create({
-            name,
-            email,
-            password: hashedPassword,
-            role: 'user'
-        })
+        sendUserEmails(user).catch((err) => {
+            console.error("sendUserEmails failed unexpectedly: ", err);
+        });
 
         return NextResponse.json(
-            { message: '✅ User created successfully' },
+            { success: true, userId: user.userId },
             { status: 201 }
-        )
+        );
 
     } catch (error: any) {
-        console.error('❌ Register error:', error) // ← full error in terminal
+        if (error instanceof Error) {
+            console.error("Create user failed: ", error.message);
+            return NextResponse.json(
+                { success: false, error: error.message },
+                { status: 500 }
+            )
+        }
+
         return NextResponse.json(
-            { message: '❌ Something went wrong', error: error.message }, // ← send message not object
+            { success: false, error: "Unknown error occured" },
             { status: 500 }
-        )
+        );
     }
 }

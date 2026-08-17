@@ -179,7 +179,7 @@ export function FormSection_TextArea({ onAreaChange, legend, label, inputName, v
     )
 }
 
-export function FormSection_Checkbox({ onCheckedChange, checked, legend, data }: FormSection_CheckboxProps) {
+export function FormSection_Checkbox({ onCheckedChange, checked, legend, data, errors }: FormSection_CheckboxProps) {
     return (
         <FormSection_Container legend={legend}>
             {data.map((field) => (
@@ -191,7 +191,10 @@ export function FormSection_Checkbox({ onCheckedChange, checked, legend, data }:
                         checked={checked}
                         onCheckedChange={onCheckedChange}
                     />
-                    <Label htmlFor={field.value}>{field.label}</Label>
+                    <Label htmlFor={field.value} className="leading-normal">{field.label}</Label>
+                    {errors?.[field.value] && (
+                        <p className="text-red-600 text-xs">{errors[field.value ?? ""]}</p>
+                    )}
                 </FieldGroup>
             ))}
         </FormSection_Container >

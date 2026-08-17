@@ -379,3 +379,7 @@
 @utility hw-legal-list-block {
   @apply p-4 my-2 bg-neutral-200 border-2 border-neutral-400 rounded-xl;
 }
+;
+@utility hw-user-log-form {
+  @apply w-full bg-white p-8 rounded-xl text-center space-y-6 border border-neutral-500;
+}

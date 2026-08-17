@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@base-ui/react": "^1.6.0",
+    "@react-email/components": "^1.0.12",
+    "@react-email/render": "^2.1.0",
     "@sanity/client": "^7.22.1",
     "bcryptjs": "^3.0.3",
     "class-variance-authority": "^0.7.1",
@@ -45,5 +47,8 @@
   },
   "allowScripts": {
     "@base-ui/react@1.6.0": true
+  },
+  "engines": {
+    "node": ">=20.0.0 <26.0.0"
   }
 }

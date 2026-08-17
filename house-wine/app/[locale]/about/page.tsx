@@ -25,7 +25,7 @@ export default function about() {
             <section className="hw-section-block">
                 <h2>An initiative by Arno Gregorian</h2>
                 <div className="space-y-3">
-                    <p>House Wine is an initiative by Arno Gregorian. I'm a great wine lover—I love drinking, sharing, and collecting wine. I also enjoy making my own wine at home and have had the amazing experience of helping out on a vineyard in the Rhône Valley.</p>
+                    <p>House Wine is an initiative by Arno Gregorian. I&#39;m a great wine lover—I love drinking, sharing, and collecting wine. I also enjoy making my own wine at home and have had the amazing experience of helping out on a vineyard in the Rhône Valley.</p>
                     <p>My personal taste runs to beautiful old Grenache, Nebbiolo, and Pinot Noir. Armenian wines hold a special place in my heart.</p>
                     <p>I built House Wine so that people like us—collectors, enthusiasts, and anyone who loves sharing good wine—can catalogue, present, and share their bottles without the hassle. I hope you enjoy using it as much as I enjoy building it.</p>
                 </div>
@@ -45,7 +45,7 @@ export default function about() {
 
             <section className="hw-section-block">
                 <h2>Our Mission</h2>
-                <p>We combine the power of artificial intelligence with intuitive design to make wine collection management accessible to everyone. Whether you're cataloguing a personal cellar or running a shop on the secondary wine market, House Wine gives you one place to organise, share, and sell.</p>
+                <p>We combine the power of artificial intelligence with intuitive design to make wine collection management accessible to everyone. Whether you&#39;re cataloguing a personal cellar or running a shop on the secondary wine market, House Wine gives you one place to organise, share, and sell.</p>
             </section>
 
             <section className="hw-section-block">

@@ -1,23 +1,36 @@
 import mongoose, {Schema, Document} from 'mongoose';
 
 export interface IUser extends Document {
-    name: string
+    userID: string
+    firstName: string
+    lastName: string
     email: string
     password: string
     role: 'user' | 'admin'
     addresses: {
-        street: string
+        street1: string
+        street2: string
         city: string
         province: string
         postalCode: string
         country: string
         isDefault: boolean
     }[]
+    acceptTerms: boolean
+    marketing: boolean
     createdAt: Date
 }
 
 const UserSchema = new Schema<IUser>({
-    name: {
+    userID: {
+        type: String
+    },
+    firstName: {
+        type: String,
+        required: true,
+        trim: true
+    },
+    lastName: {
         type: String,
         required: true,
         trim: true
@@ -45,6 +58,14 @@ const UserSchema = new Schema<IUser>({
         postalCode: String,
         country: String,
         isDefault: { type: Boolean, default: false }
+    },
+    acceptTerms: {
+        type: Boolean,
+        required: true
+    },
+    marketing: {
+        type: Boolean,
+        required: false
     }
 }, {timestamps: true})
 

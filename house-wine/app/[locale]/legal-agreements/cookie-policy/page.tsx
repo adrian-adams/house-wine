@@ -8,8 +8,10 @@ import type { Metadata } from "next";
 // Components
 import { ContentBlock } from '@/components/legal/ContentBlock';
 
-const metadata: Metadata = {
-
+export const metadata: Metadata = {
+    title: 'Cookie Policy',
+    description: 'This Cookie Policy explains how Shared Wines ("we", "us", or "our") uses cookies and similar technologies when you visit our website. This policy explains what these technologies are and why we use them, as well as your rights to control our use of them.',
+    keywords: ['Cookie', 'Policy', 'Wines']
 }
 
 export default function CookiePolicy() {
@@ -68,6 +70,7 @@ export default function CookiePolicy() {
     }
 
     const ENlists = {
+        cookieUse: EN.howWeUseCookies.list,
         essentialCookies: EN.typesOfCookiesWeUse.essentialCookies.list.list,
         analyticCookies: EN.typesOfCookiesWeUse.analyticCookies.list.list,
         managingCookies: EN.managingCookies.list
@@ -88,11 +91,11 @@ export default function CookiePolicy() {
                     list
                 >
                     <ul>
-                        {EN.howWeUseCookies.list.map((i, index) => (
+                        {ENlists.cookieUse.map((i, index) => (
                             <li key={index}>
                                 {richField({
                                     t: t as any,
-                                    textField: `cookieTypes.essentialCookies.list.list.${index}.desc`
+                                    textField: `cookiesUse.list.${index}.desc`
                                 })}
                             </li>
                         ))}

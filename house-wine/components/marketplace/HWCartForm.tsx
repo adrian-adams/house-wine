@@ -43,7 +43,6 @@ export default function CartForm() {
 
     const cartToggle = useCartStore((state) => state.cartToggle);
     const showThankYou = useCartStore((state) => state.showThankYou);
-    const showDrawer = useCartStore((state) => state.isDrawer);
     const drawerToggle = useCartStore((state) => state.drawerToggle);
 
     const initialState: OrderRequestFormState = {

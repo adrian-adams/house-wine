@@ -11,6 +11,22 @@ export const accountPerks: Pick<ContentUI, "title" | "icon">[] = [
 
 export const createAccountConfig: FormSection_TextProps["data"] = [
     {
+        value: "firstName",
+        label: "First Name",
+        inputType: "text",
+        placeholder: "John",
+        required: true,
+        className: "md:col-span-2"
+    },
+    {
+        value: "lastName",
+        label: "Last Name",
+        inputType: "text",
+        placeholder: "Doe",
+        required: true,
+        className: "md:col-span-2"
+    },
+    {
         value: "email",
         label: "Email",
         inputType: "text",
@@ -25,3 +41,15 @@ export const createAccountConfig: FormSection_TextProps["data"] = [
         required: true
     }
 ];
+
+
+export const checkboxConfig: FormSection_CheckboxProps["data"] = [
+    {
+        value: "userAgreement",
+        label: ""
+    },
+    {
+        value: "marketing",
+        label: ""
+    }
+]

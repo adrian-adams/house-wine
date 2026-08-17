@@ -94,7 +94,7 @@ export interface ProductCardProps extends ProductUI {
 export default function HWProductCard({ promoTag, src, alt, footer, variant, availability, quantity, slug }: ProductCardProps) {
     const { pathname } = useCleanPathname();
     const market = pathname === '/marketplace';
-    const t = useTranslations('marketplace.cart');
+    const t = useTranslations('marketplace');
 
     return (
         <Card className={cn(
@@ -107,7 +107,7 @@ export default function HWProductCard({ promoTag, src, alt, footer, variant, ava
                 {/* Promo Tag */}
                 {promoTag?.includes('newArrivals') && (
                     <Badge className="absolute -top-2 left-2 z-10 bg-hw-thyme uppercase">
-                        {t('cartStore.productCard.newBadge')}
+                        {t('cart.cartStore.productCard.newBadge')}
                     </Badge>
                 )}
 
@@ -118,7 +118,7 @@ export default function HWProductCard({ promoTag, src, alt, footer, variant, ava
                             {availability ? (
                                 <span>{quantity}</span>
                             ) : (
-                                <span>{t('cartStore.productCard.soldOut')}</span>
+                                <span>{t('cart.cartStore.productCard.soldOut')}</span>
                             )}
                         </Badge>
                     </span>
@@ -130,7 +130,7 @@ export default function HWProductCard({ promoTag, src, alt, footer, variant, ava
                         <Button className={cn(
                             'lg:opacity-0 group-hover:lg:opacity-100 cursor-pointer absolute -bottom-1/12 right-6/12 translate-x-6/12 z-20 py-2 bg-neutral-600',
                         )}>
-                            {t('cartStore.productCard.viewMore')}
+                            {t('cart.cartStore.productCard.viewMore')}
                         </Button>
                     </Link>
                 )}
@@ -140,7 +140,7 @@ export default function HWProductCard({ promoTag, src, alt, footer, variant, ava
                 {src ? (
                     <Image
                         src={src}
-                        alt={alt}
+                        alt={alt ?? "House Wine"}
                         fill
                         sizes="(max-width: 768px) 100vw, 50vw"
                         className="object-contain p-4 z-10"

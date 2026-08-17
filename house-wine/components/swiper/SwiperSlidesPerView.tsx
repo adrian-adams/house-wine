@@ -41,14 +41,12 @@ export default function SwiperSlidesPerView({ slides }: { slides: any[] }) {
                     },
                 }}
                 // pagination={{ clickable: true }}
-                navigation={{ prevEl: prevRef.current, nextEl: nextRef.current }}
+                navigation={true}
                 // navigation={true}
-                onSwiper={(swiper) => {
-                    if (swiper.params.navigation && typeof swiper.params.navigation === 'object') {
+                onBeforeInit={(swiper) => {
+                    if (typeof swiper.params.navigation !== 'boolean' && swiper.params.navigation) {
                         swiper.params.navigation.prevEl = prevRef.current
                         swiper.params.navigation.nextEl = nextRef.current
-                        swiper.navigation.init()
-                        swiper.navigation.update()
                     }
                 }}
                 modules={[Navigation]}
