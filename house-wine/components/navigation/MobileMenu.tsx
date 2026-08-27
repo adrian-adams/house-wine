@@ -34,7 +34,9 @@ function MobileMenuTrigger({ onClick }: { onClick: () => void }) {
 
 export default function MobileMenu() {
     const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-    const screenWidth = window.innerWidth;
+    const [windowWidth, setWindowWidth] = useState<number>(
+        typeof window !== 'undefined' ? window.innerWidth : 1200
+    );
     const { rawPathname } = useCleanPathname();
 
     useEffect(() => {
@@ -42,12 +44,12 @@ export default function MobileMenu() {
     }, [rawPathname]);
 
     useEffect(() => {
-        if (!isMenuOpen) {
+        if (!isMenuOpen || typeof window === 'undefined') {
             return
         }
 
         function handleResize() {
-            if (window.innerWidth > 768) {
+            if (windowWidth > 768) {
                 setIsMenuOpen(false);
             }
         }
