@@ -1,11 +1,14 @@
 import React from 'react'
 // Types
-import { ProductCardUI } from '@/types/product-card'
 // Components
-import { Badge } from "@/components/ui/badge"
 import { CardFooter } from "@/components/ui/card"
 
-export default function ProductFooterNew({ title, producer, vintageYear, quantity, className, price }: ProductCardUI) {
+export default function ProductFooterNew({ title, producer, vintageYear, price }: {
+    title: string
+    producer: string
+    vintageYear: string
+    price: string
+}) {
     return (
         <CardFooter className="flex flex-col items-start justify-between flex-0.5 gap-2 text-start bg-transparent border-0">
             <div className="flex flex-col flex-1">

@@ -8,7 +8,7 @@ import { useTranslations } from 'next-intl';
 
 // Components
 import { mergeFormData } from '@/components/layout/HWOrderForm'
-
+import { HWMotionContainer, HWMotionItem } from '@/components/layout/HWMotionBox';
 import {
     Dialog,
 } from "@/components/ui/dialog"
@@ -16,7 +16,7 @@ import RegisterForm from '@/components/register/RegisterForm';
 // Lucide
 import { CircleCheck } from 'lucide-react';
 
-export default function page() {
+export default function Register() {
     const t = useTranslations('register');
     const EN = {
         root: {
@@ -73,25 +73,26 @@ export default function page() {
         <Dialog open={thankYouMessage} onOpenChange={setThankYouMessage}>
             <div className="flex flex-col items-center gap-8">
                 {/* Title */}
-                <section className="text-center space-y-4">
+                <HWMotionContainer className="text-center space-y-4">
                     <h1 className="text-[clamp(1.5rem,5vw,2.75rem)]">{EN.root.title}</h1>
                     <p className="text-neutral-700 text-xl">{EN.root.desc}</p>
                     <span className="flex flex-row items-center justify-center gap-2">
                         <CircleCheck className="size-4 fill-green-700 stroke-white" />
                         <p className="text-[clamp(0.65rem,5vw,1rem)] font-semibold text-green-700">
                             {EN.root.subDesc}
-                            {t('createAcc ')}
                         </p>
                     </span>
-                </section>
+                </HWMotionContainer>
                 <section className="flex flex-col-reverse lg:flex-row gap-14 w-full">
-                    <RegisterForm onSuccess={() => setThankYouMessage(true)} />
+                    <HWMotionContainer>
+                        <RegisterForm onSuccess={() => setThankYouMessage(true)} />
+                    </HWMotionContainer>
                     {/* Features List */}
-                    <ul className="space-y-4 w-full">
+                    <HWMotionContainer as='ul' className="space-y-4 w-full">
                         {accountPerks.map((item, index) => {
                             const Icon = item.icon;
                             return (
-                                <li key={item.title} className="p-4 bg-white rounded-xl flex flex-row gap-2 border-2 border-neutral-300">
+                                <HWMotionItem as='li' key={item.title} className="p-4 bg-white rounded-xl flex flex-row gap-2 border-2 border-neutral-300">
                                     {Icon && (
                                         <div className="bg-neutral-300 p-2 inline rounded-md h-fit">
                                             <Icon className="stroke-neutral-700" />
@@ -105,10 +106,10 @@ export default function page() {
                                             {t.raw(`features.${index}.desc`)}
                                         </p>
                                     </div>
-                                </li>
+                                </HWMotionItem>
                             )
                         })}
-                    </ul>
+                    </HWMotionContainer>
                 </section>
             </div>
         </Dialog>

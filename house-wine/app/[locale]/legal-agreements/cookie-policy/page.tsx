@@ -2,7 +2,8 @@ import React from 'react'
 
 // Translations
 import { useTranslations } from 'next-intl';
-import { richField } from '@/lib/i18n/richField';
+import { richField, TFunction } from '@/lib/i18n/richField';
+import { enRoutes } from '@/lib/i18n/routes'
 // Next.js
 import type { Metadata } from "next";
 // Components
@@ -94,7 +95,7 @@ export default function CookiePolicy() {
                         {ENlists.cookieUse.map((i, index) => (
                             <li key={index}>
                                 {richField({
-                                    t: t as any,
+                                    t: { rich: t.rich } as unknown as TFunction,
                                     textField: `cookiesUse.list.${index}.desc`
                                 })}
                             </li>
@@ -115,7 +116,7 @@ export default function CookiePolicy() {
                             {ENlists.essentialCookies.map((item, index) => (
                                 <li key={item.desc}>
                                     {richField({
-                                        t: t as any,
+                                        t: { rich: t.rich } as unknown as TFunction,
                                         textField: `cookieTypes.essentialCookies.list.list.${index}.desc`
                                     })}
                                 </li>
@@ -135,7 +136,7 @@ export default function CookiePolicy() {
                             {ENlists.analyticCookies.map((i, index) => (
                                 <li key={i.desc}>
                                     {richField({
-                                        t: t as any,
+                                        t: { rich: t.rich } as unknown as TFunction,
                                         textField: `cookieTypes.analyticsCookies.list.list.${index}.desc`
                                     })}
                                 </li>
@@ -152,7 +153,7 @@ export default function CookiePolicy() {
                         {ENlists.managingCookies.map((i, index) => (
                             <li key={i.desc}>
                                 {richField({
-                                    t: t as any,
+                                    t: { rich: t.rich } as unknown as TFunction,
                                     textField: `managingCookies.list.${index}.desc`
                                 })}
                             </li>

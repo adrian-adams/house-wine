@@ -1,4 +1,3 @@
-import React from 'react'
 // Typescript
 import { BaseComponentsUI } from '@/types/ui'
 // NextJS
@@ -8,7 +7,6 @@ import Link from 'next/link'
 import { Button } from "@/components/ui/button"
 import {
     Card,
-    CardContent,
     CardDescription,
     CardFooter,
     CardHeader,

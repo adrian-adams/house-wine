@@ -1,0 +1,39 @@
+name: CI
+
+on:
+    push:
+        branches: [main]
+    pull_request:
+        branches: [main]
+
+jobs: 
+    build:
+        runs-on: ubuntu-latest
+        defaults:
+            run:
+                working-directory: house-wine
+
+        steps:
+            -   name: Checkout code
+                uses: actions/checkout@v4
+
+            -   name: Set up Node
+                uses: actions/setup-node@v4
+                with: 
+                    node-version-file: house-wine/.nvmrc
+                    cache: 'npm'
+                    cache-dependancy-path: house-wine/package-lock.json
+
+            -   name: Install dependencies
+                run: npm ci
+
+            -   name: Lint
+                run: npm run lint
+
+            -   name: Type check
+                run: npx tsc --noEmit
+                
+            -   name: Build
+                run: npm run build
+
+            

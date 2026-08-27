@@ -1,17 +1,23 @@
 {
   "nav": {
     "siteMenu": [
-      { "slug": "Marktplaats" },
-      { "slug": "Ontdek" },
-      { "slug": "Functies" },
-      { "slug": "Prijzen" }
+      { "slug": "marketplace", "label": "Marktplaats" },
+      { "slug": "about", "label": "Ontdek" },
+      { "slug": "features", "label": "Functies" },
+      { "slug": "shops", "label": "Winkels" },
+      { "slug": "pricing", "label": "Prijzen" }
     ],
     "userMenu": [
-      { "slug": "Inloggen" },
-      { "slug": "Registeren" }
+      { "slug": "login", "label": "Inloggen" },
+      { "slug": "register", "label": "Registeren" }
     ]
   },
   "footer": {
+    "signUp": {
+      "title": "Klaar om je Collectie te Starten?",
+      "desc": "Sluit je vandaag aan bij Shared Wines en transformeer hoe je je wijncollectie beheert",
+      "btn": "Gratis Registeren"
+    },
     "desc": "Beheer je wijncollectie met AI-gestuurde intelligentie. Organiseer, catalogiseer en presenteer je wijnen met gemak.",
     "disclaimer": "Shared Wines. Alle rechten voorbehouden.",
     "quickLinks": {
@@ -380,8 +386,57 @@
     }
   },
   "about": {
-    "title": "Over Shared Wines",
-    "desc": "Shared Wines stelt onafhankelijke wijnverzamelaars, liefhebbers en wijndomeinen in staat hun collecties eenvoudig te beheren, presenteren en verkopen. Als alternatief voor grote, anonieme wijnmarktplaatsen en veilinghuizen richt Shared Wines zich op individuen die op een persoonlijkere manier willen delen of verkopen. Aangedreven door AI en gebouwd door een mede-wijnliefhebber.",
+    "title": "Over House Wines",
+    "desc": "Met House Wine kunnen onafhankelijke wijnverzamelaars, liefhebbers en wijnhuizen hun collecties eenvoudig beheren, presenteren en verkopen. Als alternatief voor grote, anonieme wijnmarktplaatsen en veilinghuizen richt House Wine zich op particulieren die hun wijn op een persoonlijkere manier willen delen of verkopen. Aangedreven door AI en ontwikkeld door een medewijnliefhebber.",
+    "initiative": {
+      "title": "Een initiatief van Arno Gregorian",
+      "desc": "House Wine is een initiatief van Arno Gregorian. Ik ben een groot wijnliefhebber: ik drink, deel en verzamel graag wijn. Ook maak ik met veel plezier thuis mijn eigen wijn en heb ik de geweldige ervaring opgedaan om mee te helpen op een wijngaard in de Rhône-vallei.\n\nPersoonlijk heb ik een voorkeur voor prachtige, gerijpte Grenache, Nebbiolo en Pinot Noir. Ook Armeense wijnen hebben een speciaal plekje in mijn hart.\n\nIk heb House Wine ontwikkeld zodat mensen zoals wij – verzamelaars, liefhebbers en iedereen die graag goede wijn deelt – hun flessen zonder gedoe kunnen catalogiseren, presenteren en delen. Ik hoop dat je er net zoveel plezier aan beleeft als ik aan het bouwen ervan."
+    },
+    "ourMission": {
+      "title": "Onze missie",
+      "desc": "We combineren de kracht van kunstmatige intelligentie met intuïtief design om het beheer van wijncollecties voor iedereen toegankelijk te maken. Of je nu een privékelder inventariseert of een winkel op de secundaire wijnmarkt runt: House Wine biedt één plek om je wijnen te organiseren, te delen en te verkopen."
+    },
+    "keyFeatures": {
+      "title": "Belangrijkste kenmerken",
+      "list": [
+        { 
+          "desc": "<b>Beeldanalyse op basis van AI:</b>Maak een foto van je wijnfles en laat onze AI automatisch de producent, het oogstjaar, de regio en meer extraheren." 
+        },
+        {
+          "desc": "<b>Openbare wijnwinkels:</b>Maak aanpasbare shops om je collectie te presenteren – openbaar, beveiligd met een wachtwoord of alleen op uitnodiging."
+        },
+        {
+          "desc": "<b>Slimme organisatie:</b>Filter op land, regio, oogstjaar, type en aangepaste categorieën."
+        },
+        {
+          "desc": "<b>Beeldverbetering:</b>Optimaliseer en verbeter automatisch afbeeldingen van flessen voor een professionele uitstraling.."
+        },
+        {
+          "desc": "<b>Klantvragen:</b>Beheer winkelwagenverzoeken en berichten van je winkel op één plek.."
+        }
+      ]
+    },
+    "whoWeServe": {
+      "title": "Voor wie wij werken",
+      "listTitle": "Huiswijn is voor:",
+      "list": [
+        { 
+          "desc": "Wijnverzamelaars die hun persoonlijke collecties beheren" 
+        },
+        {
+          "desc": "Wijnverkopers en -handelaren"
+        },
+        {
+          "desc": "Restaurants en sommeliers"
+        },
+        {
+          "desc": "Wijnliefhebbers die hun wijnvoorraad ordenen"
+        },
+        {
+          "desc": "Iedereen die zijn wijncollectie wil tonen of delen"
+        }
+      ]
+    },
     "aboutStory": [
       { 
         "title": "Catalogiseer je collectie",

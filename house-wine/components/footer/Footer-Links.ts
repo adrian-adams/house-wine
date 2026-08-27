@@ -1,8 +1,9 @@
-import { routes } from "@/lib/routes"
+import { routes } from "@/lib/routes";
+import type { Route } from "next";
 
 interface LinkProps {
     name: string
-    href: string
+    href: Route | "#"
 }
 
 export const quickLinks: LinkProps[] = [

@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/accordion"
 import PriceCard from '@/components/cards/price/PriceCard'
 import Billing from '@/components/cards/price/Billing'
+import { HWMotionContainer, HWMotionItem } from '@/components/layout/HWMotionBox'
 
 export default function Pricing() {
     const t = useTranslations('pricing');
@@ -22,7 +23,7 @@ export default function Pricing() {
 
     return (
         <div className="pricing hw-content-block">
-            <section className="w-full md:w-8/12 mx-auto px-4 flex flex-col items-center justify-center gap-4 text-center">
+            <HWMotionContainer className="w-full md:w-8/12 mx-auto px-4 flex flex-col items-center justify-center gap-4 text-center">
                 <h1>
                     {t('title')}
                 </h1>
@@ -30,8 +31,8 @@ export default function Pricing() {
                     {t('desc')}
                 </p>
                 <Billing value={billingCycle} onChange={setBillingCycle} />
-            </section>
-            <section>
+            </HWMotionContainer>
+            <HWMotionContainer>
                 <h2>{t('forCollectors.title')}</h2>
                 <div className="hw-pricing-grid">
                     <PriceCard
@@ -53,8 +54,8 @@ export default function Pricing() {
                         href="/register"
                     />
                 </div>
-            </section>
-            <section>
+            </HWMotionContainer>
+            <HWMotionContainer>
                 <h2>{t('forSellers.title')}</h2>
                 <div className="hw-pricing-grid">
                     <PriceCard
@@ -78,22 +79,27 @@ export default function Pricing() {
                         href="/register"
                     />
                 </div>
-            </section>
-            <section>
+            </HWMotionContainer>
+            <HWMotionContainer>
                 <h2>{t('faq.title')}</h2>
-                <Accordion type="single" collapsible className="space-y-4">
-                    {FAQ.map((item, index) => (
-                        <AccordionItem key={index} value={item.value} className="bg-white px-4 py-2 rounded-md">
-                            <AccordionTrigger className="font-ibm-plex-sans cursor-pointer">
-                                {t(`faq.list.${index}.title`)}
-                            </AccordionTrigger>
-                            <AccordionContent className="h-full pt-2">
-                                {t(`faq.list.${index}.desc`)}
-                            </AccordionContent>
-                        </AccordionItem>
-                    ))}
+                <Accordion type="single" collapsible >
+                    <HWMotionContainer as='ul' className="space-y-4">
+                        {FAQ.map((item, index) => (
+                            <HWMotionItem key={index} className="list-style-none">
+                                <AccordionItem value={item.value} className="bg-white px-4 py-2 rounded-md ">
+                                    <AccordionTrigger className="font-ibm-plex-sans cursor-pointer">
+                                        {t(`faq.list.${index}.title`)}
+                                    </AccordionTrigger>
+                                    <AccordionContent className="h-full pt-2">
+                                        {t(`faq.list.${index}.desc`)}
+                                    </AccordionContent>
+                                </AccordionItem>
+                            </HWMotionItem>
+                        ))}
+                    </HWMotionContainer>
+
                 </Accordion>
-            </section>
+            </HWMotionContainer>
         </div>
     )
 }

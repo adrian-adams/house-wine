@@ -1,4 +1,3 @@
-import { useState } from 'react'
 // il8n
 import { useTranslations } from 'next-intl'
 // Components

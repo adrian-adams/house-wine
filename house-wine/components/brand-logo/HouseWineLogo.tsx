@@ -7,8 +7,8 @@ import { BaseComponentsUI } from '@/types/ui'
 import { routes } from '@/lib/routes'
 
 interface HouseBrandLogoUI extends BaseComponentsUI {
-    width: number
-    height: number
+    width?: number
+    height?: number
 }
 
 export default function HouseWineLogo({ width, height, className }: HouseBrandLogoUI) {

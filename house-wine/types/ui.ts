@@ -87,6 +87,7 @@ export interface ContentUI extends BaseComponentsUI {
     iconStyles?: string
     iconSize?: string
     content?: string
+    className?: string
 }
 
 // Product related Props
@@ -123,7 +124,7 @@ export interface ProductApiResponse {
     description?: string
     producer?: string
     wineType?: string
-    vintage?: number
+    vintage?: number | string
     price?: number
     country?: string
     region?: string

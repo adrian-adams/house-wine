@@ -29,8 +29,8 @@ export default function GallerySwiper({ images, name }: SwiperProps) {
             <Swiper
                 // CSS custom properties typed via React.CSSProperties cast to avoid TS error
                 style={{
-                    ['--swiper-navigation-color' as any]: '#000',
-                    ['--swiper-pagination-color' as any]: '#000',
+                    ['--swiper-navigation-color']: '#000',
+                    ['--swiper-pagination-color']: '#000',
                 } as React.CSSProperties}
                 spaceBetween={10}
                 navigation={true}

@@ -2,7 +2,7 @@ import React from 'react'
 
 // Translations
 import { useTranslations } from 'next-intl';
-import { richField } from '@/lib/i18n/richField';
+import { richField, TFunction } from '@/lib/i18n/richField';
 import { routes } from '@/lib/routes';
 // Next.js
 import type { Metadata } from "next";
@@ -25,18 +25,14 @@ export default function Terms() {
         privacyPolicyLink
     } = {
         rootTermsList: t.raw('clauses') as { title: string, desc: string }[],
-        // rootTermsList: richField({
-        //     t: t as any,
-        //     textField: `clauses`
-        // }),
         acceptableUseList: t.raw(`clauses.${[3]}.list`) as { desc: string }[],
         fairUseList: t.raw(`clauses.${[4]}.list`) as { desc: string }[],
         onlinePaymentList: t.raw(`clauses.${[7]}.list`) as { desc: string }[],
         privacyPolicyLink: richField({
-            t: t as any,
+            t: { rich: t.rich } as unknown as TFunction,
             textField: 'footer.desc',
             extraTags: {
-                Link: (chunks: any) =>
+                Link: (chunks: React.ReactNode) =>
                     <Link
                         href={routes.privacy()}
                         className="underline underline-offset-6"

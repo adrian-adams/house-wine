@@ -25,20 +25,19 @@ export default function Navigation() {
 
     return (
         <nav
-            className={cn("w-full fixed px-4 md:px-8 py-4 flex flex-row items-center justify-between z-20 text-[0.90rem] transition-all ease-in-out duration-300 font-semibold backdrop-blur-xl",
+            className={cn(
+                "w-full fixed px-4 md:px-8 py-4 flex flex-row items-center justify-between z-30 text-[0.90rem] transition-all ease-in-out duration-300 font-semibold backdrop-blur-xl",
                 scrolled ?
-                    " bg-white/80 text-hw-underworld border-b border-hw-cigar-smoke md:h-18" :
-                    `${pathname === "/" ? "bg-transparent text-hw-shea" : "bg-white/80"}`
+                    "bg-white/80 text-hw-underworld border-b border-hw-cigar-smoke md:h-20" :
+                    `${pathname === "/" ? "bg-transparent text-neutral-900 md:text-neutral-200" : "bg-white/80"}`
             )}
         >
-            <span className={`${scrolled ? 'scale-70' : ''} transition-all duration-150 ease-in-out`}>
+            <span className={`${scrolled && 'md:scale-70'} transition-all duration-150 ease-in-out`}>
                 <HouseWineLogo width={125} height={125} />
             </span>
 
-            <div className="relative w-full flex flex-row items-start justify-end">
-                <DesktopMenu />
-                <MobileMenu />
-            </div>
+            <DesktopMenu />
+            <MobileMenu />
         </nav >
     )
 }

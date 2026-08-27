@@ -18,21 +18,16 @@ export default function HWTopBar() {
     const { updateParam } = useFilters()
 
     const [localSearch, setLocalSearch] = useState('');
-    const [searchLoad, setSearchLoad] = useState<boolean>(false);
 
     useEffect(() => {
         if (!localSearch) {
             updateParam('search', localSearch);
-            setSearchLoad(false);
             return;
         }
 
-        setSearchLoad(true);
-
         const timeout = setTimeout(() => {
             updateParam('search', localSearch);
-            setSearchLoad(false);
-        }, 400);
+        }, 500);
 
         return () => clearTimeout(timeout);
 
@@ -44,10 +39,9 @@ export default function HWTopBar() {
                 placeholder={t('searchPlaceholder.placeholder')}
                 value={localSearch}
                 onChange={e => setLocalSearch(e.target.value)}
-                loading={searchLoad}
-                className="w-full sm:w-9/12"
+                className="w-full md:w-9/12"
             />
-            <div className="flex flex-row items-center justify-center gap-2 w-full sm:w-3/12">
+            <div className="flex flex-row items-center justify-center gap-2 w-full md:w-3/12">
                 <SidebarTrigger className="block md:hidden" />
                 <HWSelectFilter
                     data={orderFiltersArr}

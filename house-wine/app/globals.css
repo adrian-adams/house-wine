@@ -197,6 +197,7 @@
 
   nav {
     height: var(--spacing-hw-nav-height);
+    z-index: 999;
   }
 
   footer {
@@ -241,10 +242,6 @@
 
   section > div {
     @apply w-full sm:w-10/12 2xl:w-8/12 mx-auto space-y-6;
-  }
-
-  section:nth-of-type(even) {
-    @apply bg-neutral-100;
   }
 }
 

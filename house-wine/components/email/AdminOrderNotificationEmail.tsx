@@ -1,5 +1,4 @@
-import React from 'react'
-import { Section, Text, Heading, Hr } from '@react-email/components'
+import { Text, Heading, Hr } from '@react-email/components'
 import EmailLayout from './EmailLayout'
 
 interface AdminOrderNotificationEmailProps {

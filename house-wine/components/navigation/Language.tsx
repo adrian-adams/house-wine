@@ -4,6 +4,8 @@ import React from 'react'
 // Next Intl
 import { useLocale } from 'next-intl'
 import { useRouter, usePathname } from '@/i18n/routing'
+// Nextjs
+import Image from 'next/image'
 // Components
 import {
     Select,
@@ -12,15 +14,17 @@ import {
     SelectItem,
     HW_SelectTrigger,
 } from "@/components/ui/select"
+import LanguageSVG from '@/components/svgs/LanguageSVG'
 
 interface LanguageArr {
     name: string
     value: string
+    icon: string
 }
 
 const languages: LanguageArr[] = [
-    { name: 'Nederlands', value: 'nl' },
-    { name: 'English', value: 'en' },
+    { name: 'Nederlands', value: 'nl', icon: '/navigation/language/netherlands-flag.svg' },
+    { name: 'English', value: 'en', icon: '/navigation/language/uk-flag.svg' }
 ]
 
 export default function Language() {
@@ -33,10 +37,24 @@ export default function Language() {
     }
 
     return (
-        <span className="relative flex flex-row items-center justify-center gap-1 hover:bg-gray-600/20 rounded-2xl px-3 py-1.5 cursor-pointer">
+        <span className="relative flex flex-row items-center justify-center gap-1 hover:bg-gray-600/20 rounded-2xl px-3 py-1 cursor-pointer outline-2 outline-neutral-500">
             <Select onValueChange={handleChange}>
-                <HW_SelectTrigger className="h-8 w-8" >
-                    {/* <SelectValue /> */}
+                <HW_SelectTrigger className="space-x-2 " >
+                    <LanguageSVG />
+                    <span className="text-sm uppercase">{locale}</span>
+                    {languages.filter(i => i.value === locale).map((lng) => (
+                        <span key={lng.name}>
+                            {lng.icon &&
+                                <Image
+                                    src={lng.icon}
+                                    alt={lng.name ?? "House Wine Languages"}
+                                    width={18}
+                                    height={18}
+                                    className="object-contain ms-1"
+                                />
+                            }
+                        </span>
+                    ))}
                 </HW_SelectTrigger>
                 <SelectContent className="z-999" position='popper' sideOffset={5} align="start">
                     <SelectGroup>
@@ -44,15 +62,23 @@ export default function Language() {
                             <SelectItem
                                 key={index}
                                 value={lng.value}
-                                className={`${lng.value === locale ? 'font-bold' : ''}`}
+                                className={`${lng.value === locale && 'font-bold'} relative`}
                             >
-                                {lng.name}
+                                <span>{lng.name}</span>
+                                {lng.icon &&
+                                    <Image
+                                        src={lng.icon}
+                                        alt={lng.name ?? "House Wine Languages"}
+                                        width={18}
+                                        height={18}
+                                        className="object-contain absolute right-2"
+                                    />
+                                }
                             </SelectItem>
                         ))}
                     </SelectGroup>
                 </SelectContent>
             </Select>
-            <span className="text-sm uppercase">{locale}</span>
         </span>
     )
 }

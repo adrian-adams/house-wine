@@ -5,84 +5,90 @@ import React from 'react'
 import { useTranslations } from 'next-intl';
 // Types, Queries & Lists
 import { featuresMain, shopYourWay } from './FeaturesList'
+import { routes } from '@/lib/routes';
 // Nextjs
 import Link from 'next/link';
 import type { Metadata } from "next";
 // Components
 import InfoCardsFeatures from '@/components/cards/InfoCards_Features'
-import { Button } from '@/components/ui/button';
+import { Button } from '@/components/ui/button'
+import { HWMotionContainer, HWMotionItem } from '@/components/layout/HWMotionBox';
 
 export const metadata: Metadata = {
-    title: "House Wine - Features"
+    title: "House Wine - Features",
+    description: "House Wines brings together AI-powered cataloguing, beautiful public shops, and smart organisation—so you can manage, share, and sell from your collection with ease."
 }
 
 export default function Features() {
-    const t = useTranslations('features')
+    const t = useTranslations('features');
+
     return (
         <div className="hw-content-block">
-            <section className="space-y-4">
+            <HWMotionContainer className="space-y-4">
                 <h1>
                     {t('title')}
                 </h1>
                 <p>
                     {t('desc')}
                 </p>
-            </section>
-            <section>
-                <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            </HWMotionContainer>
+            <HWMotionContainer>
+                <HWMotionContainer as='ul' className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {featuresMain?.map((item, index) => {
                         return (
-                            <li key={index}>
+                            <HWMotionItem as='li' key={item.title}>
                                 <InfoCardsFeatures
                                     icon={item.icon}
                                     iconStyles={item.style}
                                     iconSize='30'
                                     title={t(`featuresMain.${index}.title`)}
                                     desc={t(`featuresMain.${index}.desc`)}
+                                    className={item.className}
                                 />
-                            </li>
+                            </HWMotionItem>
                         )
                     })}
-                </ul>
-            </section>
-            <section className="space-y-4">
+                </HWMotionContainer>
+            </HWMotionContainer>
+            <HWMotionContainer className="space-y-4">
                 <h2>
                     {t('shopYourWay.title')}
                 </h2>
                 <p>
                     {t('shopYourWay.desc')}
                 </p>
-            </section>
-            <section>
-                <ul className="hw-grid">
+            </HWMotionContainer>
+            <HWMotionContainer>
+                <HWMotionContainer as='ul' className="hw-grid">
                     {shopYourWay?.map((item, index) => {
                         return (
-                            <li key={index}>
+                            <HWMotionItem as='li' key={item.title}>
                                 <InfoCardsFeatures
                                     icon={item.icon}
                                     iconStyles={item.style}
                                     iconSize='30'
                                     title={t(`shopYourWay.list.${index}.title`)}
                                     desc={t(`shopYourWay.list.${index}.desc`)}
+                                    className={item.className}
                                 />
-                            </li>
+                            </HWMotionItem>
                         )
                     })}
-                </ul>
-            </section>
-            <section className="hw-section-block bg-hw-white">
+                </HWMotionContainer>
+            </HWMotionContainer>
+            <HWMotionContainer className="hw-section-block bg-hw-white">
                 <h2>
                     {t('getStarted.title')}
                 </h2>
                 <p>
                     {t('getStarted.desc')}
                 </p>
-                <Link href="#">
+                <Link href={routes.register()}>
                     <Button className="bg-hw-dead-sea-mud p-6">
                         {t('getStarted.getStartedBtn')}
                     </Button>
                 </Link>
-            </section>
+            </HWMotionContainer>
         </div>
     )
 }

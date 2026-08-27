@@ -20,7 +20,7 @@ interface SearchBarUI extends ContentUI {
     placeholder: string,
     value: string
     onChange: React.ChangeEventHandler<HTMLInputElement>
-    loading: boolean
+    loading?: boolean
 }
 
 export default function HWSearchBar({ placeholder, value, onChange, loading, className }: SearchBarUI) {

@@ -18,6 +18,7 @@ import {
 } from "@/components/ui/table"
 import { Separator } from '@/components/ui/separator'
 import GallerySwiper from '@/components/swiper/ProductsSwiperGallery'
+import { HWMotionContainer, HWMotionItem } from '@/components/layout/HWMotionBox'
 
 export async function generateMetadata({ params }: ProductPageProps) {
     const { slug } = await params;
@@ -43,7 +44,7 @@ export default async function page({ params }: ProductPageProps) {
     }
 
     const product = mapProduct(staticData);
-    const productInfo = getProductInfo(product, wineDetails)
+    const productInfo = getProductInfo(product, (key: string) => wineDetails(key as any))
 
     return (
         <div className="px-4 py-6 w-full md:w-10/12 mx-auto">
@@ -89,16 +90,18 @@ export default async function page({ params }: ProductPageProps) {
                     <h2 className="text-3xl pb-2">{wineDetails('title')}</h2>
                     <Table>
                         <TableBody>
-                            {productInfo.map((item) => (
-                                <TableRow key={item.title}>
-                                    <TableCell className="w-2/12 text-neutral-700 font-medium px-0">
-                                        {item.title}
-                                    </TableCell>
-                                    <TableCell className={`${item.style} px-2`}>
-                                        {item.desc}
-                                    </TableCell>
-                                </TableRow>
-                            ))}
+                            <HWMotionContainer as='div'>
+                                {productInfo.map((item) => (
+                                    <TableRow key={item.title} className="w-full">
+                                        <TableCell className="w-2/12 text-neutral-700 font-medium px-0">
+                                            {item.title}
+                                        </TableCell>
+                                        <TableCell className={`${item.style} px-2`}>
+                                            {item.desc}
+                                        </TableCell>
+                                    </TableRow>
+                                ))}
+                            </HWMotionContainer>
                         </TableBody>
                     </Table>
                 </section>

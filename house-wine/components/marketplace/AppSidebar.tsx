@@ -1,6 +1,5 @@
 "use client"
 
-import React, { useState, useEffect } from 'react'
 // Next-Intl
 import { useTranslations } from 'next-intl';
 // Types, Lists, Queries & Parameters

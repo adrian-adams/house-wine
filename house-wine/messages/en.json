@@ -1,17 +1,23 @@
 {
   "nav": {
     "siteMenu": [
-      { "slug": "Marketplace" },
-      { "slug": "About" },
-      { "slug": "Features" },
-      { "slug": "Pricing" }
+      { "slug": "marketplace", "label": "Marketplace" },
+      { "slug": "about", "label": "About" },
+      { "slug": "features", "label": "Features" },
+      { "slug": "shops", "label": "Shops" },
+      { "slug": "pricing", "label": "Pricing" }
     ],
     "userMenu": [
-      { "slug": "Sign in" },
-      { "slug": "Sign up" }
+      { "slug": "login", "label": "Sign in" },
+      { "slug": "register", "label": "Sign up" }
     ]
   },
   "footer": {
+    "signUp": {
+      "title": "Ready to Start Your Collection?",
+      "desc": "Join Shared Wines today and transform how you manage your wine collection",
+      "btn": "Sign Up Free"
+    },
     "desc": "Manage your wine collection with AI-powered intelligence. Organize, catalog, and showcase your wines with ease.",
     "disclaimer": "Shared Wines. All rights reserved.",
     "quickLinks": {
@@ -382,8 +388,57 @@
     }
   },
   "about": {
-    "title": "About Shared Wines",
-    "desc": "Shared Wines allows independent wine collectors, enthusiasts and estates to manage, showcase, and sell their collections with ease. Offering an alternative to large, anonymous wine marketplaces and auction houses, Shared Wines focuses on individuals who want to share or sell in a more personal way. Powered by AI and built by a fellow wine lover.",
+    "title": "About House Wines",
+    "desc": "House Wine allows independent wine collectors, enthusiasts and estates to manage, showcase, and sell their collections with ease. Offering an alternative to large, anonymous wine marketplaces and auction houses, House Wine focuses on individuals who want to share or sell in a more personal way. Powered by AI and built by a fellow wine lover.",
+    "initiative": {
+      "title": "An initiative by Arno Gregorian",
+      "desc": "House Wine is an initiative by Arno Gregorian. I'm a great wine lover—I love drinking, sharing, and collecting wine. I also enjoy making my own wine at home and have had the amazing experience of helping out on a vineyard in the Rhône Valley.\n\nMy personal taste runs to beautiful old Grenache, Nebbiolo, and Pinot Noir. Armenian wines hold a special place in my heart.\n\nI built House Wine so that people like us—collectors, enthusiasts, and anyone who loves sharing good wine—can catalogue, present, and share their bottles without the hassle. I hope you enjoy using it as much as I enjoy building it."
+    },
+    "ourMission": {
+      "title": "Our Mission",
+      "desc": "We combine the power of artificial intelligence with intuitive design to make wine collection management accessible to everyone. Whether you're cataloguing a personal cellar or running a shop on the secondary wine market, House Wine gives you one place to organise, share, and sell."
+    },
+    "keyFeatures": {
+      "title": "Key Features",
+      "list": [
+        { 
+          "desc": "<b>AI-Powered Image Analysis:</b>Photograph your wine bottle and let our AI extract producer, vintage, region, and more automatically." 
+        },
+        {
+          "desc": "<b>Public Wine Shops:</b>Create customisable shops to showcase your collection—public, password-protected, or invite-only."
+        },
+        {
+          "desc": "<b>Smart Organisation:</b>Filter by country, region, vintage, type, and custom categories."
+        },
+        {
+          "desc": "<b>Image Enhancement:</b>Automatically optimise and enhance bottle images for a professional look."
+        },
+        {
+          "desc": "<b>Customer Inquiries:</b>Manage cart requests and messages from your shop in one place."
+        }
+      ]
+    },
+    "whoWeServe": {
+      "title": "Who We Serve",
+      "listTitle": "House Wine is for:",
+      "list": [
+        { 
+          "desc": "Wine collectors managing personal collections" 
+        },
+        {
+          "desc": "Wine retailers and merchants"
+        },
+        {
+          "desc": "Restaurants and sommeliers"
+        },
+        {
+          "desc": "Wine enthusiasts organising their inventory"
+        },
+        {
+          "desc": "Anyone who wants to showcase or share their wine collection"
+        }
+      ]
+    },
     "aboutStory": [
       { 
         "title": "Catalogue your collection",

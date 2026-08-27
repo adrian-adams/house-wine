@@ -1,9 +1,8 @@
 "use client"
 
-import React, { useState } from 'react'
+import React from 'react'
 // Lists, Zustand, Types, NextIntl
 import {
-    ShadcnInputsListeners,
     FormSection_TextProps,
     FormSection_TextAreaProps,
     FormSection_SelectProps,
@@ -38,15 +37,16 @@ import { Checkbox } from '../ui/checkbox';
 import { Store } from 'lucide-react';
 
 export function mergeFormData(
-    textData: { value: string; label: string }[],
-    configData: { value: string; label: string }[],
+    textData: { value: string; label: string; className?: string }[],
+    configData: { value: string; label: string; className?: string }[],
 ) {
     const configMap = new Map(configData.map((item) => [item.value, item]));
 
     return textData.map((t) => ({
         ...configMap.get(t.value),
         value: t.value,
-        label: t.label
+        label: t.label,
+        className: t.className
     }));
 }
 

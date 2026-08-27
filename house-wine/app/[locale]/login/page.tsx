@@ -22,7 +22,7 @@ interface LoginFormProps {
     }
 }
 
-export default function page() {
+export default function Login() {
     const t = useTranslations('logIn');
 
     const EN = {
@@ -82,7 +82,5 @@ export default function page() {
                 {EN.backToHome}
             </Link>
         </div>
-
-
     )
 }

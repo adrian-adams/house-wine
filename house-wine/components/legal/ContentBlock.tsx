@@ -1,7 +1,7 @@
 interface ContentBlockProps {
     heading?: React.ElementType<any, keyof React.JSX.IntrinsicElements> | undefined
     title: string
-    desc?: string | any
+    desc?: string | React.ReactNode
     children?: React.ReactNode
     listTitle?: string
     list?: boolean

@@ -78,7 +78,7 @@ function HW_SelectTrigger({
     >
       {children}
       <SelectPrimitive.Icon asChild>
-        <LanguageSVG />
+        {/* <LanguageSVG /> */}
       </SelectPrimitive.Icon>
     </SelectPrimitive.Trigger>
   )

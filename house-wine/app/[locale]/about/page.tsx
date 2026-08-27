@@ -1,78 +1,125 @@
 import React from 'react'
+// Next-Intl
+import { useTranslations } from 'next-intl';
+import { richField, TFunction } from '@/lib/i18n/richField';
 // NEXTJS
 import Image from 'next/image'
 import type { Metadata } from "next";
 // Lucide
 import { Check } from 'lucide-react';
-// Types & Lists
-import { aboutImages, keyFeatures, whoWeServe } from './AboutLists';
+// Components
+import { HWMotionContainer, HWMotionItem } from '@/components/layout/HWMotionBox';
 
 export const metadata: Metadata = {
     title: "About House Wine",
     description: "House Wine allows independent wine collectors, enthusiasts and estates to manage, showcase, and sell their collections with ease.",
 };
 
-export default function about() {
+export default function About() {
+    const t = useTranslations('about');
+
+    const EN = {
+        root: {
+            title: t('title'),
+            desc: t('desc')
+        },
+        initiative: {
+            title: t('initiative.title'),
+            desc: t('initiative.desc'),
+            images: [
+                { src: '/about/about-1.webp', alt: 'About House Wine' },
+                { src: '/about/about-2.webp', alt: 'House Wine tasting room' },
+                { src: '/about/about-3.webp', alt: 'Wine collection display' }
+            ] as Record<string, string>[]
+        },
+        ourMission: {
+            title: t('ourMission.title'),
+            desc: t('ourMission.desc')
+        },
+        keyFeatures: {
+            title: t('keyFeatures.title'),
+            list: t.raw('keyFeatures.list') as {
+                desc: string
+            }[]
+        },
+        whoWeServe: {
+            title: t('whoWeServe.title'),
+            listTitle: t('whoWeServe.listTitle'),
+            list: t.raw('whoWeServe.list') as {
+                desc: string
+            }[]
+        },
+    }
+
+    const ENlists = {
+        keyFeatures: EN.keyFeatures.list,
+        whoWeServe: EN.whoWeServe.list,
+        initiativeImages: EN.initiative.images
+    }
+
     return (
         <div className="hw-content-block">
-            <section className="space-y-4">
-                <h1>About House Wine</h1>
-                <p>
-                    House Wine allows independent wine collectors, enthusiasts and estates to manage, showcase, and sell their collections with ease. Offering an alternative to large, anonymous wine marketplaces and auction houses, House Wine focuses on individuals who want to share or sell in a more personal way. Powered by AI and built by a fellow wine lover.
-                </p>
-            </section>
+            <HWMotionContainer className="space-y-4">
+                <h1>{EN.root.title}</h1>
+                <p>{EN.root.desc}</p>
+            </HWMotionContainer>
 
-            <section className="hw-section-block">
-                <h2>An initiative by Arno Gregorian</h2>
+            <HWMotionContainer className="hw-section-block">
+                <h2>{EN.initiative.title}</h2>
                 <div className="space-y-3">
-                    <p>House Wine is an initiative by Arno Gregorian. I&#39;m a great wine lover—I love drinking, sharing, and collecting wine. I also enjoy making my own wine at home and have had the amazing experience of helping out on a vineyard in the Rhône Valley.</p>
-                    <p>My personal taste runs to beautiful old Grenache, Nebbiolo, and Pinot Noir. Armenian wines hold a special place in my heart.</p>
-                    <p>I built House Wine so that people like us—collectors, enthusiasts, and anyone who loves sharing good wine—can catalogue, present, and share their bottles without the hassle. I hope you enjoy using it as much as I enjoy building it.</p>
+                    {EN.initiative.desc}
                 </div>
                 <div className="flex flex-col md:flex-row flex-nowrap items-center justify-between gap-4">
-                    {aboutImages?.map((img, index) => (
+                    {ENlists.initiativeImages?.map((img, index) => ( 
                         <Image
                             key={index}
                             src={img.src ?? ""}
-                            alt={img.alt ?? ""}
+                            alt={img.alt ?? "About House Wines"}
                             width={250}
                             height={333}
                             className="flex-1 min-w-0 max-w-70 rounded-lg border border-primary-200 object-cover"
                         />
                     ))}
                 </div>
-            </section>
+            </HWMotionContainer>
 
-            <section className="hw-section-block">
-                <h2>Our Mission</h2>
-                <p>We combine the power of artificial intelligence with intuitive design to make wine collection management accessible to everyone. Whether you&#39;re cataloguing a personal cellar or running a shop on the secondary wine market, House Wine gives you one place to organise, share, and sell.</p>
-            </section>
+            <HWMotionContainer className="hw-section-block">
+                <h2>{EN.ourMission.title}</h2>
+                <p>{EN.ourMission.desc}</p>
+            </HWMotionContainer>
 
-            <section className="hw-section-block">
-                <h2>Key Features</h2>
-                <ul className="space-y-4">
-                    {keyFeatures?.map((item, index) => (
-                        <li key={index} className="flex flex-row items-start justify-start gap-4">
-                            <Check className="text-hw-thyme" />
+            <HWMotionContainer className="hw-section-block">
+                <h2>{EN.keyFeatures.title}</h2>
+                <ul>
+                    {ENlists.keyFeatures.map((item, index) => (
+                        <HWMotionItem as='li'
+                            key={item.desc}
+                            className="flex flex-row py-1"
+                        >
+                            <Check className="text-hw-thyme me-4" />
                             <p>
-                                <b className="text-hw-thyme">{item.title}</b>{item.desc}
+                                {richField({
+                                    t: { rich: t.rich } as unknown as TFunction,
+                                    textField: `keyFeatures.list.${index}.desc`,
+                                    className: "text-hw-thyme pe-2 w-3/12"
+                                })}
                             </p>
-                        </li>
+                        </HWMotionItem>
                     ))}
                 </ul>
-            </section>
+            </HWMotionContainer>
 
-            <section className="hw-section-block">
-                <h2>Who We Serve</h2>
-                <p>House Wine is for:</p>
+            <HWMotionContainer className="hw-section-block">
+                <h2>{EN.whoWeServe.title}</h2>
+                <h3 className="text-xl font-ibm-plex-sans!">{EN.whoWeServe.listTitle}</h3>
                 <ul className="list-disc space-y-4 px-4">
-                    {whoWeServe?.map((item, index) => (
-                        <li key={index} className="marker:text-hw-thyme">
+                    {ENlists.whoWeServe?.map((item, index) => (
+                        <HWMotionItem as='li' key={index} className="marker:text-hw-thyme">
                             {item.desc}
-                        </li>
+                        </HWMotionItem>
                     ))}
                 </ul>
-            </section>
+            </HWMotionContainer>
         </div>
     )
 }

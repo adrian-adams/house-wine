@@ -1,9 +1,12 @@
 import React from 'react'
-import type { LucideIcon } from 'lucide-react'
+
 // Typescript
+import type { LucideIcon } from 'lucide-react'
 import { ContentUI } from '@/types/ui'
 // NextJs
 import Image from 'next/image'
+// Motion
+import { motion, Variants } from 'motion/react'
 // Components
 import {
     Card,
@@ -12,15 +15,15 @@ import {
     CardTitle,
 } from "@/components/ui/card"
 
-type InfoCardsUI = Pick<ContentUI, 'src' | 'element' | 'desc' | 'title' | 'iconStyles' | 'iconSize'> & {
+type InfoCardsUI = Pick<ContentUI, 'src' | 'element' | 'desc' | 'title' | 'iconStyles' | 'iconSize' | 'className'> & {
     icon?: LucideIcon
 }
 
-export default function InfoCardsFeatures({ src, title, element: El = 'h3', desc, icon, iconStyles, iconSize }: InfoCardsUI) {
+export default function InfoCardsFeatures({ src, title, element: El = 'h3', desc, icon, iconStyles, iconSize, className }: InfoCardsUI) {
     const Icon = icon;
 
     return (
-        <Card className="h-full p-6 gap-3">
+        <Card className={`h-full p-6 gap-3 ${className}`}>
             {src && (
                 <div className="relative h-14 w-14 bg-hw-shea rounded-xl">
                     <Image

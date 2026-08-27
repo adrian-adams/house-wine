@@ -1,8 +1,6 @@
 import React from 'react'
-// Types
-import { SvgUI } from '@/types/svg'
 
-export default function LinkedIn({ width, height }: SvgUI) {
+export default function LinkedIn({ width, height }: { width: string | number, height: string | number }) {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" width={width} height={height} viewBox="0 0 24 24">
             <circle cx={4} cy={4} r={2} fill="currentColor" opacity={0}>

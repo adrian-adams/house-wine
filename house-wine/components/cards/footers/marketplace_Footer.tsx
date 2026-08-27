@@ -14,24 +14,22 @@ import { Button } from '@/components/ui/button';
 import { Euro, Dot, CirclePlus, ShoppingBasket } from 'lucide-react';
 
 export default function HWMarketplaceFooter({ slug, name, producer, vintage, price, quantity, availability, imageUrl }: ProductUI) {
-    const t = useTranslations('marketplace.cart');
+    const t = useTranslations('marketplace');
     const addItem = useCartStore((state) => state.addItem);
     const items = useCartStore((state) => state.items.find((i) => i.productId === slug));
-    const orderQuantity = useCartStore((state) => state.items)
 
     const [showConfirmation, setShowConfirmation] = useState<boolean>(false);
-    const [showError, setShowError] = useState<boolean>(false);
 
     useEffect(() => {
         if (!showConfirmation) {
             return;
         }
 
-        setShowConfirmation(true);
-
         const timer = setTimeout(() => {
             setShowConfirmation(false)
         }, 1000);
+
+        return () => clearTimeout(timer);
 
     }, [showConfirmation]);
 
@@ -74,8 +72,6 @@ export default function HWMarketplaceFooter({ slug, name, producer, vintage, pri
                     }, 1);
                     if (success) {
                         setShowConfirmation(true);
-                    } else {
-                        setShowError(true);
                     }
                 }}
                 className={cn(
@@ -84,17 +80,17 @@ export default function HWMarketplaceFooter({ slug, name, producer, vintage, pri
                     items && 'bg-neutral-700/50 text-white pointer-events-none'
                 )}
             >
-                {items ? (
+                {items ?
                     <>
-                        <p className="truncate">{`${t('cartStore.productCard.addedToCart')}!`}</p>
+                        <p className="truncate">{`${t('cart.cartStore.productCard.addedToCart')}!`}</p>
                         <ShoppingBasket />
                     </>
-                ) : (
+                    :
                     <>
-                        <p>{t('cartStore.productCard.addToCart')}</p>
+                        <p>{t('cart.cartStore.productCard.addToCart')}</p>
                         <CirclePlus />
                     </>
-                )}
+                }
             </Button>
 
             <AnimatePresence>
@@ -106,10 +102,11 @@ export default function HWMarketplaceFooter({ slug, name, producer, vintage, pri
                         transition={{ duration: 0.3, ease: 'easeInOut' }}
                         className="absolute inset-0 flex items-center justify-center bg-neutral-800 text-white"
                     >
-                        <p className="text-center">{`${t('cartStore.productCard.addedToCart')}!`}</p>
+                        <p className="text-center">{`${t('cart.cartStore.productCard.addedToCart')}!`}</p>
                     </motion.div>
                 )}
             </AnimatePresence>
+
         </>
     )
 }

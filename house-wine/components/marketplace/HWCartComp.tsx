@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 // Types, Hooks, Routes, Zustand, Motion
 import { useCartStore } from '@/lib/zustand/cart'
 import { AnimatePresence, motion, Variants } from "motion/react";
@@ -23,7 +23,7 @@ import {
 } from "@/components/ui/collapsible"
 import { StoreDisclaimer } from '@/components/layout/HWOrderForm'
 // Lucide
-import { Euro, Dot, TrashIcon, MinusIcon, PlusIcon, Equal, AsteriskIcon, Wine, X } from 'lucide-react';
+import { Euro, Dot, TrashIcon, MinusIcon, PlusIcon, Equal, AsteriskIcon, Wine } from 'lucide-react';
 
 interface StoreCardProps {
     productId: string;

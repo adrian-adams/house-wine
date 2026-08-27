@@ -7,13 +7,15 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
+import { ProductApiResponse } from '@/types/ui';
 // Components
 import HWProductCard, { HWNewArrivalsFooter } from '../cards/HWProductCard';
 import { Button } from '../ui/button';
 // Lucide
 import { ChevronRight, ChevronLeft } from 'lucide-react';
 
-export default function SwiperSlidesPerView({ slides }: { slides: any[] }) {
+
+export default function SwiperSlidesPerView({ slides }: { slides: ProductApiResponse[] }) {
     const prevRef = useRef(null);
     const nextRef = useRef(null);
     const iconSize: number = 20;
@@ -53,18 +55,18 @@ export default function SwiperSlidesPerView({ slides }: { slides: any[] }) {
                 className="mySwiper w-8/12 md:w-11/12 mx-auto"
                 id="newArrivalsSwiper"
             >
-                {slides.map((slide: any) => (
+                {slides.filter(i => (i.price ?? 0) > 0).map((slide) => (
                     <SwiperSlide key={slide._id}>
                         <HWProductCard
-                            src={slide.images?.[0]}
-                            alt={slide.name}
+                            src={slide.images?.[0] ?? ''}
+                            alt={slide.name ?? "New Arrivals"}
                             variant='New Arrivals'
                             footer={
                                 <HWNewArrivalsFooter
                                     quantity={5}
                                     name={slide.name}
                                     producer={slide.producer}
-                                    vintage={slide.vintage}
+                                    vintage={slide.vintage ?? "N/A"}
                                     price={slide.price}
                                 />
                             }

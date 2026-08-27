@@ -1,9 +1,7 @@
 "use client"
 
-import React from 'react'
 // CSS Utils
 import { cn } from '@/lib/utils'
-import { cva, type VariantProps } from "class-variance-authority"
 // i18n
 import { usePathname } from '@/i18n/routing'
 // Types
@@ -12,9 +10,9 @@ import { routes } from '@/lib/routes'
 
 export default function HWContainer({ children }: BaseComponentsUI) {
     const pathname = usePathname();
-    const slug = routes.products;
-    const fullWidthPages = pathname === "/" || pathname === "/marketplace" || pathname === `/products${slug}`;
-    const isMarketplace = pathname === "/marketplace";
+    // const slug = routes.products;
+    // const fullWidthPages = pathname === "/" || pathname === "/marketplace" || pathname === `/products${slug}`;
+    // const isMarketplace = pathname === "/marketplace";
 
     return (
         <main className={cn(

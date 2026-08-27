@@ -28,9 +28,9 @@ export default function MarketplaceLyout({ children }: { children: React.ReactNo
         <>
             <Drawer direction="right" open={showDrawer}>
                 <div className="flex flex-col h-full border-t border-neutral-700">
-                    <SidebarProvider className="flex-1 min-h-0 z-20">
+                    <SidebarProvider className="flex-1 min-h-0 z-20 md:z-40">
                         <div className="relative w-full min-h-0 flex flex-col">
-                            <div className="sticky top-0 flex flex-row items-center gap-4 bg-white p-6 z-40 border-b border-neutral-900">
+                            <div className="sticky top-25 md:top-0 flex flex-row items-center gap-4 bg-white p-6 z-40 border-b border-neutral-900">
                                 <HWTopBar />
                             </div>
                             <div className="flex flex-row">

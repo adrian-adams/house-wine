@@ -1,13 +1,15 @@
 import React from 'react'
-// Types
-import { ProductCardUI } from '@/types/product-card'
 // NextJS
 import Image from 'next/image'
 // Components
-import { Badge } from "@/components/ui/badge"
 import { Card } from "@/components/ui/card"
 
-export default function ProductCard({ children, imageUrl, title, className }: ProductCardUI) {
+export default function ProductCard({ children, imageUrl, title, className }: {
+    children: React.ReactNode
+    imageUrl: string
+    title: string
+    className: string
+}) {
     return (
         <Card className={`gap-0 ${className}`}>
             <div className="relative h-75 flex-2">

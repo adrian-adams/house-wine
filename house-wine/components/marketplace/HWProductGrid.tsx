@@ -23,7 +23,7 @@ interface ProductGridProps {
 }
 
 const gridVariants: Variants = {
-    hidden: { opacity: 1 },
+    hidden: { opacity: 0 },
     show: {
         opacity: 1,
         transition: {
@@ -96,13 +96,13 @@ export default function HWProductGrid({ data }: ProductGridProps) {
                     {items.length}
                 </Badge>
                 <DrawerTrigger
-                    className="group fixed bottom-10 right-10 bg-neutral-800 hover:bg-white active:scale-70 p-4 rounded-full z-20 cursor-pointer border-4 border-neutral-500 transition ease-in"
+                    className="group fixed bottom-10 right-10 bg-neutral-800 hover:bg-white active:scale-70 p-4 rounded-full cursor-pointer border-4 border-neutral-500 transition ease-in"
                     onClick={drawerToggle}
                 >
                     <ShoppingCart className="stroke-white group-hover:stroke-neutral-800" />
                 </DrawerTrigger>
             </>
-            <DrawerContent className="z-999 space-y-4 overflow-y-scroll overflow-x-hidden">
+            <DrawerContent className=" space-y-4 overflow-y-scroll overflow-x-hidden">
                 <HWDrawerHeader />
                 {isCart ? <StoreCart /> : <CartForm />}
             </DrawerContent>

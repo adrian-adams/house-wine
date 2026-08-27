@@ -1,4 +1,4 @@
-import { ContentUI, FormSection_TextProps, FormSection_CheckboxProps } from "@/types/ui";
+import { FormSection_TextProps } from "@/types/ui";
 
 export const loginConfig: FormSection_TextProps["data"] = [
     {

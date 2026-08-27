@@ -2,7 +2,7 @@ import React from 'react'
 
 // Translations
 import { useTranslations } from 'next-intl';
-import { richField } from '@/lib/i18n/richField';
+import { richField, TFunction } from '@/lib/i18n/richField';
 import { routes } from '@/lib/routes';
 // Next.js
 import type { Metadata } from "next";
@@ -52,15 +52,15 @@ export default function PrivacyPolicy() {
             yourRights: {
                 title: t('clauses.yourRights.title'),
                 desc: t('clauses.yourRights.desc'),
-                list: t.raw('clauses.yourRights.list' as any) as { desc: string }[]
+                list: t.raw('clauses.yourRights.list') as { desc: string }[]
             },
             cookies: {
                 title: t('clauses.cookies.title'),
                 desc: richField({
-                    t: t as any,
+                    t: { rich: t.rich } as unknown as TFunction,
                     textField: 'clauses.cookies.desc',
                     extraTags: {
-                        Link: (chunks: any) => <Link
+                        Link: (chunks: React.ReactNode) => <Link
                             href={routes.cookie()}
                             className="underline underline-offset-4 cursor-pointer"
                         >
@@ -76,10 +76,10 @@ export default function PrivacyPolicy() {
             contactUs: {
                 title: t('clauses.contactUs.title'),
                 desc: richField({
-                    t: t as any,
+                    t: { rich: t.rich } as unknown as TFunction,
                     textField: 'clauses.contactUs.desc',
                     extraTags: {
-                        Link: (chunks: any) => <Link
+                        Link: (chunks: React.ReactNode) => <Link
                             href={routes.contact()}
                             className="underline underline-offset-4 cursor-pointer"
                         >

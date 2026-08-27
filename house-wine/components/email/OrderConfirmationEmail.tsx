@@ -1,5 +1,4 @@
-import React from 'react'
-import { Section, Text, Heading, Hr, Row, Column } from '@react-email/components'
+import { Text, Heading, Hr, Row, Column } from '@react-email/components'
 import EmailLayout from './EmailLayout'
 
 interface OrderConfirmationEmailProps {
@@ -24,7 +23,7 @@ export default function OrderConfirmationEmail({ firstName, orderId, deliveryCho
                 Thanks for your order, {firstName}!
             </Heading>
             <Text>
-                We've received your request and will be in touch shortly to confirm details. You chose <strong>{deliveryChoice}</strong> for this order.
+                We&apos;ve received your request and will be in touch shortly to confirm details. You chose <strong>{deliveryChoice}</strong> for this order.
             </Text>
             <Hr />
             {items.map((item, index) => (

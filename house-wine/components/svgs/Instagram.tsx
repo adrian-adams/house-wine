@@ -1,8 +1,6 @@
 import React from 'react'
-// Types
-import { SvgUI } from '@/types/svg'
 
-export default function Instagram({ width, height }: SvgUI) {
+export default function Instagram({ width, height }: { width: string | number, height: string | number }) {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" width={width} height={height} viewBox="0 0 24 24">
             <g fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}>
