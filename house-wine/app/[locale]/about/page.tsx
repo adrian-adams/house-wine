@@ -69,15 +69,17 @@ export default function About() {
                 <div className="space-y-3">
                     {EN.initiative.desc}
                 </div>
-                <div className="flex flex-col md:flex-row flex-nowrap items-center justify-between gap-4">
-                    {ENlists.initiativeImages?.map((img, index) => ( 
+                <div className="w-full flex flex-col md:flex-row flex-nowrap items-center justify-between gap-4">
+                    {ENlists.initiativeImages?.map((img, index) => (
                         <Image
                             key={index}
                             src={img.src ?? ""}
                             alt={img.alt ?? "About House Wines"}
-                            width={250}
-                            height={333}
-                            className="flex-1 min-w-0 max-w-70 rounded-lg border border-primary-200 object-cover"
+                            // fill={true}
+                            sizes="100vw"
+                            width={0}
+                            height={0}
+                            className="rounded-lg border border-primary-200 w-full h-auto"
                         />
                     ))}
                 </div>
