@@ -14,9 +14,9 @@ export default function NotFound() {
     const t = useTranslations('status');
 
     return (
-        <div className='flex flex-col items-center justify-center min-h-screen'>
-            <h1>{t('404.title')}</h1>
-            <p>404 | {t('404.desc')}</p>
+        <div className='flex flex-col items-center justify-center gap-6 min-h-[calc(100vh-100px)]'>
+            <h1 className="leading-10">{t('404.title')}</h1>
+            <p><b>404</b> | {t('404.desc')}</p>
             <Link href={routes.home()}>
                 <Button>
                     {t('404.backToHome')}

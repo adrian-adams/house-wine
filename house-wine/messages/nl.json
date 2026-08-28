@@ -1,5 +1,8 @@
 {
    "status": {
+    "loading": {
+      "title": "Laden"
+    },
     "404": {
       "title": "Fout",
       "desc": "Oeps... Deze pagina bestaat niet.",
