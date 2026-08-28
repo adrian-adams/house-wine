@@ -17,7 +17,7 @@ export default function HWNoResults({ search }: SearchParams) {
                 <p className="text-lg font-medium">No wines found</p>
                 {search && (
                     <p className="text-neutral-800">
-                        No results for "<u>{search}</u>" — try a different search or clear your filters.
+                        No results for &quot;<u>{search}</u>&quot; — try a different search or clear your filters.
                     </p>
                 )}
             </div>

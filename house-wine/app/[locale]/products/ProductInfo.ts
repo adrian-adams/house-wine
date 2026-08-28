@@ -6,7 +6,7 @@ export interface ProductInfoRow {
     style?: string
 }
 
-export function getProductInfo( product: ProductUI, wineDetails: (key: string) => string  ): ProductInfoRow[] {
+export function getProductInfo( product: ProductUI, wineDetails: (key: string) => string ): ProductInfoRow[] {
     return [
         { title: wineDetails('country'), desc: product.country ?? '' },
         { title: wineDetails('region'), desc: product.region ?? '' },
@@ -19,7 +19,7 @@ export function getProductInfo( product: ProductUI, wineDetails: (key: string) =
         { title: wineDetails('alcohol'), desc: product.alcohol ?? '', style: "after:content-['°']"  },
         { title: wineDetails('servingTemp'), desc: product.servingTemp ?? '' },
         { title: wineDetails('drinkingWindow'), desc: product.drinkingWindow ?? '' },
-        { title: wineDetails('packaging'), desc: product.packaging ?? '' },
+        // { title: wineDetails('packaging'), desc: product.packaging ?? '' },
         { title: wineDetails('fillLevel'), desc: product.fillLevel ?? '' },
     ].filter((row) => row.desc !== '');
 }

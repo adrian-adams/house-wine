@@ -22,7 +22,7 @@ jobs:
                 with: 
                     node-version-file: house-wine/.nvmrc
                     cache: 'npm'
-                    cache-dependancy-path: house-wine/package-lock.json
+                    cache-dependency-path: house-wine/package-lock.json
 
             -   name: Install dependencies
                 run: npm ci

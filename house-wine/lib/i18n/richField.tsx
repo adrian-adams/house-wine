@@ -1,7 +1,5 @@
 import * as React from 'react';
 import type { RichTranslationValues } from 'next-intl';
-import Link from 'next/link'
-import { Route } from 'next';
 
 export type TFunction = {
     rich: (key: any, values?: RichTranslationValues) => React.ReactNode;

@@ -40,7 +40,9 @@ export default function MobileMenu() {
     const { rawPathname } = useCleanPathname();
 
     useEffect(() => {
-        setIsMenuOpen(false)
+        if (rawPathname) {
+            setIsMenuOpen(false);
+        }
     }, [rawPathname]);
 
     useEffect(() => {
@@ -56,7 +58,7 @@ export default function MobileMenu() {
 
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
-    }, [isMenuOpen]);
+    }, [isMenuOpen, windowWidth]);
 
     return (
         <>
