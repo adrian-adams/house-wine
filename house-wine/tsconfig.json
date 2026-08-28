@@ -30,6 +30,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-, "components/footer/SVG-Icons.jsx", "components/layout/.HWImage.tsx"  ],
+, "components/footer/SVG-Icons.jsx", "components/layout/.HWImage.tsx", "app/[locale]/not-found.tsx"  ],
   "exclude": ["node_modules"]
 }
