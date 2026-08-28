@@ -42,3 +42,6 @@ next-env.d.ts
 
 # Google Auth
 google-auth.json
+
+# Unused app files
+house-wine/app/[locale]/resources

@@ -18,7 +18,7 @@ import {
 } from "@/components/ui/table"
 import { Separator } from '@/components/ui/separator'
 import GallerySwiper from '@/components/swiper/ProductsSwiperGallery'
-import { HWMotionContainer, HWMotionItem } from '@/components/layout/HWMotionBox'
+import { HWMotionContainer } from '@/components/layout/HWMotionBox'
 
 export async function generateMetadata({ params }: ProductPageProps) {
     const { slug } = await params;
@@ -44,7 +44,7 @@ export default async function page({ params }: ProductPageProps) {
     }
 
     const product = mapProduct(staticData);
-    const productInfo = getProductInfo(product, (key: string) => wineDetails(key as any))
+    const productInfo = getProductInfo(product, (key) => wineDetails(key as never))
 
     return (
         <div className="px-4 py-6 w-full md:w-10/12 mx-auto">
@@ -88,9 +88,9 @@ export default async function page({ params }: ProductPageProps) {
                 <Separator className="bg-neutral-500" />
                 <section>
                     <h2 className="text-3xl pb-2">{wineDetails('title')}</h2>
-                    <Table>
-                        <TableBody>
-                            <HWMotionContainer as='div'>
+                    <HWMotionContainer as='div'>
+                        <Table>
+                            <TableBody>
                                 {productInfo.map((item) => (
                                     <TableRow key={item.title} className="w-full">
                                         <TableCell className="w-2/12 text-neutral-700 font-medium px-0">
@@ -101,9 +101,9 @@ export default async function page({ params }: ProductPageProps) {
                                         </TableCell>
                                     </TableRow>
                                 ))}
-                            </HWMotionContainer>
-                        </TableBody>
-                    </Table>
+                            </TableBody>
+                        </Table>
+                    </HWMotionContainer>
                 </section>
                 <Separator className="bg-neutral-500" />
                 <section>
