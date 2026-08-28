@@ -3,6 +3,7 @@ import { BaseComponentsUI } from '@/types/ui'
 // NextJS
 import Image from 'next/image'
 import Link from 'next/link'
+import type { Route } from "next";
 // Components
 import { Button } from "@/components/ui/button"
 import {
@@ -88,7 +89,7 @@ function ShopsHeader({ imageUrl, title, about, products }: ShopsHeaderUI) {
 function ShopsFooter({ slug }: ShopsFooterUI) {
     return (
         <CardFooter className="bg-transparent px-0">
-            <Link href={slug ? `/shops/${slug}` : '/'}>
+            <Link href={(slug ? `/shops/${slug}` : "/") as Route}>
                 <Button>
                     Visit Shop
                     <MoveRight />
