@@ -14,6 +14,8 @@ import Hero from '@/components/hero/Hero'
 import { Button } from "@/components/ui/button"
 import SwiperSlidesPerView from "@/components/swiper/SwiperSlidesPerView";
 import { HWMotionContainer, HWMotionItem } from '@/components/layout/HWMotionBox';
+import { Spinner } from '@/components/ui/spinner';
+import Loading from './loading';
 // Lucide
 import InfoCardsFeatures from "@/components/cards/InfoCards_Features";
 

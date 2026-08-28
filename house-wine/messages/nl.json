@@ -1,4 +1,11 @@
 {
+   "status": {
+    "404": {
+      "title": "Fout",
+      "desc": "Oeps... Deze pagina bestaat niet.",
+      "backToHome": "Terug naar de startpagina"
+    }
+  },
   "nav": {
     "siteMenu": [
       { "slug": "marketplace", "label": "Marktplaats" },

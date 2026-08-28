@@ -1,4 +1,11 @@
 {
+  "status": {
+    "404": {
+      "title": "Error",
+      "desc": "Oops... This page does not exist",
+      "backToHome": "Back to Home"
+    }
+  },
   "nav": {
     "siteMenu": [
       { "slug": "marketplace", "label": "Marketplace" },
