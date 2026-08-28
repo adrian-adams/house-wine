@@ -49,7 +49,7 @@ export default function HWContentList({ data, title, desc }: HWContentListProps)
             viewport={{ once: true, amount: 0.3 }}
         // transition={{ type: "spring", damping: 25, stiffness: 200 }}
         >
-            {data.map((item, index) => (
+            {data.map((item) => (
                 <motion.li
                     key={item.title}
                     variants={cardVariants}

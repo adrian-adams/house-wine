@@ -6,7 +6,7 @@ import { cn } from '@/lib/utils'
 import { usePathname } from '@/i18n/routing'
 // Types
 import { BaseComponentsUI } from '@/types/ui'
-import { routes } from '@/lib/routes'
+// import { routes } from '@/lib/routes'
 
 export default function HWContainer({ children }: BaseComponentsUI) {
     const pathname = usePathname();

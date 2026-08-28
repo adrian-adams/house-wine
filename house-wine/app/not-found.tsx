@@ -13,11 +13,6 @@ export const metadata: Metadata = {
 export default function GlobalNotFound() {
     const t = useTranslations('status');
 
-    const styles = {
-        fontSize: '140px',
-        color: 'red'
-    }
-
     return (
         <html>
             <body className='flex flex-col items-center justify-center min-h-screen'>

@@ -5,8 +5,6 @@ import type { LucideIcon } from 'lucide-react'
 import { ContentUI } from '@/types/ui'
 // NextJs
 import Image from 'next/image'
-// Motion
-import { motion, Variants } from 'motion/react'
 // Components
 import {
     Card,

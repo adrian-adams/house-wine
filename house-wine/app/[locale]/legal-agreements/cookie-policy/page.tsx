@@ -3,7 +3,6 @@ import React from 'react'
 // Translations
 import { useTranslations } from 'next-intl';
 import { richField, TFunction } from '@/lib/i18n/richField';
-import { enRoutes } from '@/lib/i18n/routes'
 // Next.js
 import type { Metadata } from "next";
 // Components
