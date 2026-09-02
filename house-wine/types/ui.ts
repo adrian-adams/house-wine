@@ -218,6 +218,7 @@ export interface SideBarFilterProps extends ContentUI {
     data: SideBarFilterUI[]
     onValueChange?: (value: string) => void
     onCheckedChange?: (value: string, checked: boolean) => void
+    isChecked?: (value: string) => boolean
 }
 
 /****************************/ 

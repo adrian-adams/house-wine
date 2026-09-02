@@ -14,13 +14,13 @@ import { Label } from '@/components/ui/label'
 
 interface SelectProps extends SideBarFilterProps {
     label?: string
-    defaultValue: string
+    value: string
 }
 
-export default function HWSelectFilter({ data, defaultValue, label, onValueChange, className }: SelectProps) {
+export default function HWSelectFilter({ data, value, label, onValueChange, className }: SelectProps) {
     return (
         <div className={`${className}`}>
-            <Select defaultValue={defaultValue} onValueChange={onValueChange}>
+            <Select value={value} onValueChange={onValueChange}>
                 {label && (
                     <Label>
                         <h3>

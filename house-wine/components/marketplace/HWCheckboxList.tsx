@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/field"
 import { Label } from "@/components/ui/label"
 
-export default function HWCheckboxList({ title, data, onCheckedChange }: SideBarFilterProps) {
+export default function HWCheckboxList({ title, data, onCheckedChange, isChecked }: SideBarFilterProps) {
     return (
         <FieldGroup className="gap-2">
             {title && (
@@ -24,6 +24,7 @@ export default function HWCheckboxList({ title, data, onCheckedChange }: SideBar
                     <Checkbox
                         id={item.value}
                         name={item.name}
+                        checked={isChecked?.(item.value) ?? false}
                         onCheckedChange={(checked) => onCheckedChange?.(item.value, checked === true)}
                     />
                     <Label htmlFor={item.value} className="font-normal">

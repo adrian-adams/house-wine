@@ -1,32 +1,19 @@
 "use client"
 
-// CSS Utils
 import { cn } from '@/lib/utils'
-// i18n
 import { usePathname } from '@/i18n/routing'
-// Types
+import { routes } from '@/lib/routes'
 import { BaseComponentsUI } from '@/types/ui'
-// import { routes } from '@/lib/routes'
 
 export default function HWContainer({ children }: BaseComponentsUI) {
     const pathname = usePathname();
-    // const slug = routes.products;
-    // const fullWidthPages = pathname === "/" || pathname === "/marketplace" || pathname === `/products${slug}`;
-    // const isMarketplace = pathname === "/marketplace";
 
     return (
         <main className={cn(
             'bg-hw-shea min-h-screen flex flex-col flex-1',
-            pathname === "/" ? "" : "pt-hw-nav-height"
+            pathname !== routes.home() && "pt-hw-nav-height"
         )}>
-            {/* <div className={cn(
-                '',
-                // isMarketplace ? "flex-1 flex flex-col min-h-0 overflow-hidden" : "",
-                // fullWidthPages && !isMarketplace ? "home" : "",
-                fullWidthPages ? "home" : "w-full sm:w-10/12 2xl:w-7/12 mx-auto px-4 py-10 space-y-6"
-            )}> */}
             {children}
-            {/* </div> */}
         </main>
     )
 }

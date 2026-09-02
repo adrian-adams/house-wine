@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react'
 // i18n
 import { usePathname } from '@/i18n/routing'
+import { routes } from '@/lib/routes'
 // CSS Utils
 import { cn } from '@/lib/utils'
 // Components
@@ -16,11 +17,11 @@ export default function Navigation() {
 
     useEffect(() => {
         const handleScroll = () => {
-            setScrolled(window.scrollY > 100)
+            setScrolled(window.scrollY > 100);
         }
 
-        window.addEventListener('scroll', handleScroll, { passive: true })
-        return () => window.removeEventListener('scroll', handleScroll)
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
     return (
@@ -28,8 +29,8 @@ export default function Navigation() {
             className={cn(
                 "w-full fixed px-4 md:px-8 py-4 flex flex-row items-center justify-between z-30 text-[0.90rem] transition-all ease-in-out duration-300 font-semibold backdrop-blur-xl",
                 scrolled ?
-                    "bg-white/80 text-hw-underworld border-b border-hw-cigar-smoke md:h-20" :
-                    `${pathname === "/" ? "bg-transparent text-neutral-900 md:text-neutral-200" : "bg-white/80"}`
+                    "bg-white/80 text-neutral-900 border-b border-neutral-400 md:h-20" :
+                    `${pathname === routes.home() ? "bg-transparent md:text-neutral-200" : "bg-white/80"}`
             )}
         >
             <span className={`${scrolled && 'md:scale-70'} transition-all duration-150 ease-in-out`}>

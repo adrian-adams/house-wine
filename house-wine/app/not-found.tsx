@@ -18,10 +18,7 @@ export default function GlobalNotFound() {
             <body className='flex flex-col items-center justify-center min-h-screen'>
                 <div>
                     <h1>{t('404.title')}</h1>
-                    <p style={{
-                        fontSize: '18px'
-                    }}
-                    >
+                    <p>
                         404 | {t('404.desc')}
                     </p>
                     <Link href={routes.home()}>

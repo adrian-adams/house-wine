@@ -52,7 +52,7 @@ export default function Terms() {
                 <p>{t('desc')}</p>
             </section>
             <br /><br />
-            <section>
+            <section className="px-6">
                 <ol className="space-y-6 list-decimal">
                     {rootTermsList.map((i, index) => (
                         <li key={i.title}>

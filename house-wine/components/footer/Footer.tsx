@@ -25,7 +25,7 @@ export default function Footer() {
     const { pathname } = useCleanPathname();
 
     return (
-        <footer className="flex flex-col items-center justify-between gap-8 h-full md:h-[calc(100vh-30%)] p-4 md:py-10 md:px-20 bg-hw-dead-sea-mud text-hw-coastal-fog bg-[url('/general/blur-bg.png')] bg-cover bg-center">
+        <footer className="flex flex-col items-center justify-between gap-8  p-4 md:py-10 md:px-20 bg-hw-dead-sea-mud text-hw-coastal-fog bg-[url('/general/blur-bg.png')] bg-cover bg-center">
             {pathname === '/' && (
                 <>
                     <section className="text-center space-y-8">

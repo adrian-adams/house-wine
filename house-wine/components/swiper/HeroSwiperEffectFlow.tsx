@@ -9,8 +9,9 @@ import 'swiper/css/autoplay';
 import { EffectCoverflow, Autoplay } from 'swiper/modules';
 // Components
 import HWProductCard, { HWHeroFooter } from '../cards/HWProductCard';
+import { ProductApiResponse } from '@/types/ui';
 
-export default function HeroSwiperEffectFlow({ slides }: { slides: any[] }) {
+export default function HeroSwiperEffectFlow({ slides }: { slides: ProductApiResponse[] }) {
   return (
     <Swiper
       modules={[Autoplay, EffectCoverflow]}
@@ -35,12 +36,12 @@ export default function HeroSwiperEffectFlow({ slides }: { slides: any[] }) {
       pagination={false}
       className="mySwiper"
     >
-      {slides.map((slide: any) => (
+      {slides.map((slide) => (
         <SwiperSlide key={slide._id}>
           <HWProductCard
             variant="Hero"
-            src={slide.images[0]}
-            alt={slide.title}
+            src={slide.images?.[0] ?? ""}
+            alt={slide.name ?? ""}
             availability
             footer={
               <HWHeroFooter

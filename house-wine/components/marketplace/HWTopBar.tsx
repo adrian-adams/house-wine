@@ -1,8 +1,9 @@
 "use client"
 
 import React, { useState, useEffect } from 'react'
-// Next-Intl
+// Next-Intl & Nextjs
 import { useTranslations } from 'next-intl';
+import { useSearchParams } from 'next/navigation';
 // Types, Lists, Queries & Parameters
 import { useFilters } from '@/hooks/useFilters';
 // Components
@@ -15,14 +16,19 @@ import {
 export default function HWTopBar() {
     const t = useTranslations('marketplace');
     const orderFiltersArr = t.raw('orderFilter') as { name: string, value: string }[];
-    const { updateParam } = useFilters()
+    const { updateParam } = useFilters();
+    const searchParams = useSearchParams();
 
-    const [localSearch, setLocalSearch] = useState('');
+    const searchQuery = searchParams.get('search') ?? '';
+    const [localSearch, setLocalSearch] = useState<string>(searchQuery);
 
     useEffect(() => {
-        if (!localSearch) {
-            updateParam('search', localSearch);
-            return;
+        setLocalSearch(searchQuery);
+    }, [searchQuery]);
+
+    useEffect(() => {
+        if (localSearch === searchQuery) {
+            return
         }
 
         const timeout = setTimeout(() => {
@@ -45,7 +51,7 @@ export default function HWTopBar() {
                 <SidebarTrigger className="block md:hidden" />
                 <HWSelectFilter
                     data={orderFiltersArr}
-                    defaultValue={orderFiltersArr[0].value}
+                    value={searchParams.get('sort') ?? orderFiltersArr[0].value}
                     onValueChange={val => updateParam('sort', val)}
                     className="w-full"
                 />

@@ -39,9 +39,9 @@ export default async function LocaleLayout({ children, params }: { children: Rea
   return (
     <html
       lang={locale}
-      className={`${instrumentSarif.variable} ${ibmPlexSans.variable} h-full antialiased`}
+      className={`${instrumentSarif.variable} ${ibmPlexSans.variable} antialiased h-dvvh`}
     >
-      <body className="min-h-full flex flex-col">
+      <body>
         <NextIntlClientProvider messages={messages}>
           <Navigation />
           <AuthSessionProvider>

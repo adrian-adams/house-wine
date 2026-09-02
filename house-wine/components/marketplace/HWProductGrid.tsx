@@ -7,7 +7,7 @@ import { ProductUI } from '@/types/ui'
 import { motion, Variants } from 'motion/react'
 import { useCartStore } from '@/lib/zustand/cart'
 // Components
-import StoreCart from './HWCartComp'
+import { StoreCart } from './HWCartComp'
 import CartForm from './HWCartForm'
 import {
     DrawerContent,
@@ -50,8 +50,8 @@ const cardVariants: Variants = {
 
 export default function HWProductGrid({ data }: ProductGridProps) {
     const drawerToggle = useCartStore((state) => state.drawerToggle);
-    const items = useCartStore((state) => state.items);
-    const isCart = useCartStore((state) => state.isCart)
+    const itemCount = useCartStore((state) => state.itemCount());
+    const isCart = useCartStore((state) => state.isCart);
 
     return (
         <div className="relative">
@@ -92,17 +92,17 @@ export default function HWProductGrid({ data }: ProductGridProps) {
                 ))}
             </motion.ul>
             <>
-                <Badge className="fixed bottom-22 right-11 z-30">
-                    {items.length}
+                <Badge className="fixed bottom-22 right-11 z-50">
+                    {itemCount}
                 </Badge>
                 <DrawerTrigger
-                    className="group fixed bottom-10 right-10 bg-neutral-800 hover:bg-white active:scale-70 p-4 rounded-full cursor-pointer border-4 border-neutral-500 transition ease-in"
+                    className="group fixed bottom-10 right-10 bg-neutral-800 hover:bg-white active:scale-70 p-4 rounded-full cursor-pointer border-4 border-neutral-500 transition ease-in z-40"
                     onClick={drawerToggle}
                 >
                     <ShoppingCart className="stroke-white group-hover:stroke-neutral-800" />
                 </DrawerTrigger>
             </>
-            <DrawerContent className=" space-y-4 overflow-y-scroll overflow-x-hidden">
+            <DrawerContent className="flex flex-col h-full overflow-hidden">
                 <HWDrawerHeader />
                 {isCart ? <StoreCart /> : <CartForm />}
             </DrawerContent>
