@@ -25,6 +25,10 @@ import {
     FormSection_Checkbox
 } from '../layout/HWOrderForm';
 import { Spinner } from '../ui/spinner';
+import {
+    DrawerFooter,
+
+} from '@/components/ui/drawer'
 
 export default function CartForm() {
     const t = useTranslations('marketplace');
@@ -167,119 +171,113 @@ export default function CartForm() {
     }
 
     return (
-        <>
-            <AnimatePresence>
-                <motion.div
-                    className="space-y-6 p-4"
-                    initial={{ x: "100%", opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
-                    exit={{ x: "100%", opacity: 0 }}
-                    transition={{ duration: 0.3, ease: "easeInOut" }}
-                >
+        <AnimatePresence>
+            <motion.div
+                className="p-4 h-full flex flex-col overflow-hidden"
+                initial={{ x: "100%", opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                exit={{ x: "100%", opacity: 0 }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+            >
+
+                <form onSubmit={handleSubmit} noValidate className="flex-1 space-y-6 overflow-y-auto overflow-x-hidden overscroll-contain p-1">
                     <StoreDisclaimer
                         label={t('cart.cartStore.cartFooter.disclaimer.title')}
                         desc={t('cart.cartStore.cartFooter.disclaimer.desc')}
                     />
-                    <form onSubmit={handleSubmit} noValidate>
-                        <FieldGroup>
-                            <FormSection_Text
-                                data={buyerFields}
-                                values={formData.contact}
-                                onChange={handleContactChange}
-                                className="after:content-['*']"
-                                errors={errors}
-                            />
-                            <FormSection_Radio
-                                data={deliveryFields}
-                                radioOption={formData.deliveryChoice}
-                                onValueChange={(value) => setFormData((prev) => ({
-                                    ...prev,
-                                    deliveryChoice: value as DeliveryMethod
-                                }))}
-                                label={`${t('cart.orderForm.formBody.deliveryDetails.title')} *`}
-                            />
-                            <AnimatePresence mode="wait">
-                                {formData.deliveryChoice === "pickup" ? (
-                                    <motion.div
-                                        key="pickup"
-                                        initial={{ x: "-100%", opacity: 0 }}
-                                        animate={{ x: 0, opacity: 1 }}
-                                        exit={{ x: "-100%", opacity: 0 }}
-                                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                    <FieldGroup className="flex flex-col">
+                        <FormSection_Text
+                            data={buyerFields}
+                            values={formData.contact}
+                            onChange={handleContactChange}
+                            className="after:content-['*']"
+                            errors={errors}
+                        />
+                        <FormSection_Radio
+                            data={deliveryFields}
+                            radioOption={formData.deliveryChoice}
+                            onValueChange={(value) => setFormData((prev) => ({
+                                ...prev,
+                                deliveryChoice: value as DeliveryMethod
+                            }))}
+                            label={`${t('cart.orderForm.formBody.deliveryDetails.title')} *`}
+                        />
+                        <AnimatePresence mode="wait">
+                            {formData.deliveryChoice === "pickup" ? (
+                                <motion.div
+                                    key="pickup"
+                                    initial={{ x: "-100%", opacity: 0 }}
+                                    animate={{ x: 0, opacity: 1 }}
+                                    exit={{ x: "-100%", opacity: 0 }}
+                                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                                >
+                                    <FormSection_Container legend={t('cart.orderForm.formBody.deliveryDetails.pickup.formBlock.legend')}>
+                                        <p className="text-neutral-950">Admiraal de Ruijterstraat 38 Sliedrecht 3361VC Woning</p>
+                                    </FormSection_Container>
+                                </motion.div>
+                            ) : (
+                                <motion.div
+                                    key="shipment"
+                                    initial={{ x: "100%", opacity: 0 }}
+                                    animate={{ x: 0, opacity: 1 }}
+                                    exit={{ x: "100%", opacity: 0 }}
+                                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                                >
+                                    <FormSection_Text
+                                        data={shipmentFields}
+                                        values={formData.deliveryAddress}
+                                        onChange={handleDeliveryChange}
+                                        className="after:content-['*']"
+                                        legend={t('cart.orderForm.formBody.deliveryDetails.shipment.formBlock.legend')}
+                                        errors={errors}
                                     >
-                                        <FormSection_Container legend={t('cart.orderForm.formBody.deliveryDetails.pickup.formBlock.legend')}>
-                                            <p className="text-neutral-950">Admiraal de Ruijterstraat 38 Sliedrecht 3361VC Woning</p>
-                                        </FormSection_Container>
-                                    </motion.div>
-                                ) : (
-                                    <motion.div
-                                        key="shipment"
-                                        initial={{ x: "100%", opacity: 0 }}
-                                        animate={{ x: 0, opacity: 1 }}
-                                        exit={{ x: "100%", opacity: 0 }}
-                                        transition={{ duration: 0.3, ease: "easeInOut" }}
-                                    >
-                                        <FormSection_Text
-                                            data={shipmentFields}
-                                            values={formData.deliveryAddress}
-                                            onChange={handleDeliveryChange}
-                                            className="after:content-['*']"
-                                            legend={t('cart.orderForm.formBody.deliveryDetails.shipment.formBlock.legend')}
+                                        <FormSection_Select
+                                            data={countries}
+                                            inputName='country'
+                                            label={t('cart.orderForm.formBody.deliveryDetails.shipment.formBlock.selectLabel')}
+                                            placeholder={t('cart.orderForm.formBody.deliveryDetails.shipment.formBlock.selectPlaceholder')}
+                                            className="col-span-4"
+                                            onValueChange={handleCountryChange}
+                                            value={formData.deliveryAddress.country}
+                                            inputRequired={true}
                                             errors={errors}
-                                        >
-                                            <FormSection_Select
-                                                data={countries}
-                                                inputName='country'
-                                                label={t('cart.orderForm.formBody.deliveryDetails.shipment.formBlock.selectLabel')}
-                                                placeholder={t('cart.orderForm.formBody.deliveryDetails.shipment.formBlock.selectPlaceholder')}
-                                                className="col-span-4"
-                                                onValueChange={handleCountryChange}
-                                                value={formData.deliveryAddress.country}
-                                                inputRequired={true}
-                                                errors={errors}
-                                            />
-                                        </FormSection_Text>
-                                    </motion.div>
-                                )}
-                            </AnimatePresence>
-                            <FormSection_TextArea
-                                value={formData.message}
-                                onAreaChange={handleMessageChange}
-                                label={t('cart.orderForm.formBody.message.title')}
-                                placeholder={t('cart.orderForm.formBody.message.placeholder')}
-                                inputRequired={false}
-                            />
-                            <FormSection_Checkbox
-                                data={keepUpdatedFields}
-                                onCheckedChange={handleKeepUpdatedChange}
-                                checked={formData.marketing}
-                            />
-                            <FieldSet>
-                                <FieldGroup className="flex flex-row items-center justify-between">
-                                    <Button className='flex-1/2' variant='hw_secondary' onClick={cartToggle} type="button">
-                                        {t('cart.orderForm.formFooter.backBtn')}
-                                    </Button>
-                                    <Button type='submit' className='flex-1/2'>
-                                        {isSubmitting
-                                            ? <span className="flex flex-row items-center justify-center gap-1">Submitting...<Spinner /></span>
-                                            : `${t('cart.orderForm.formFooter.sendRequesBtn')}`
-                                        }
-                                    </Button>
-                                </FieldGroup>
-                            </FieldSet>
+                                        />
+                                    </FormSection_Text>
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
+                        <FormSection_TextArea
+                            value={formData.message}
+                            onAreaChange={handleMessageChange}
+                            label={t('cart.orderForm.formBody.message.title')}
+                            placeholder={t('cart.orderForm.formBody.message.placeholder')}
+                            inputRequired={false}
+                        />
+                        <FormSection_Checkbox
+                            data={keepUpdatedFields}
+                            onCheckedChange={handleKeepUpdatedChange}
+                            checked={formData.marketing}
+                        />
+
+                    </FieldGroup>
+                    <FieldSet>
+                        <FieldGroup className="flex flex-row items-center justify-between">
+                            <Button className='flex-1/2' variant='hw_secondary' onClick={cartToggle} type="button">
+                                {t('cart.orderForm.formFooter.backBtn')}
+                            </Button>
+                            <Button type='submit' className='flex-1/2'>
+                                {isSubmitting
+                                    ? <span className="flex flex-row items-center justify-center gap-1">Submitting...<Spinner /></span>
+                                    : `${t('cart.orderForm.formFooter.sendRequesBtn')}`
+                                }
+                            </Button>
                         </FieldGroup>
-                        <Button className='mt-4' variant='hw_secondary' onClick={() => setFormData(initialState)} type="button">
-                            Clear Form Test
-                        </Button>
-                    </form>
-                </motion.div>
-            </AnimatePresence>
-            {/* <Dialog
-                open={showThankYou}
-                onOpenChange={() => setShowThankYou(false)}
-            >
-                <ThankYouDialog />
-            </Dialog> */}
-        </>
+                    </FieldSet>
+                    <Button className='mt-4' variant='hw_secondary' onClick={() => setFormData(initialState)} type="button">
+                        Clear Form
+                    </Button>
+                </form>
+            </motion.div>
+        </AnimatePresence>
     )
 }

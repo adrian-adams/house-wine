@@ -1,7 +1,6 @@
 "use client"
 
 import React from 'react'
-// il8n
 // Types
 import { ContentUI } from '@/types/ui';
 // Motion
@@ -24,6 +23,7 @@ interface SearchBarUI extends ContentUI {
 }
 
 export default function HWSearchBar({ placeholder, value, onChange, loading, className }: SearchBarUI) {
+
     return (
         <InputGroup className={`${className}`}>
             {loading && (

@@ -256,6 +256,7 @@
     ],
     "sidebarFilter": {
       "title": "Filters",
+      "clearFilters": "Filters wissen",
       "availability": [
         { "value": "true", "name": "Uitverkocht tonen" }
       ],

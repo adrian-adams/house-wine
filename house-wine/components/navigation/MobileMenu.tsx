@@ -34,16 +34,13 @@ function MobileMenuTrigger({ onClick }: { onClick: () => void }) {
 
 export default function MobileMenu() {
     const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-    const [windowWidth, setWindowWidth] = useState<number>(
-        typeof window !== 'undefined' ? window.innerWidth : 1200
-    );
     const { rawPathname } = useCleanPathname();
+    const [prevPathname, setPrevPathname] = useState(rawPathname);
 
-    useEffect(() => {
-        if (rawPathname) {
-            setIsMenuOpen(false);
-        }
-    }, [rawPathname]);
+    if (rawPathname !== prevPathname) {
+        setPrevPathname(rawPathname);
+        setIsMenuOpen(false);
+    }
 
     useEffect(() => {
         if (!isMenuOpen || typeof window === 'undefined') {
@@ -51,14 +48,14 @@ export default function MobileMenu() {
         }
 
         function handleResize() {
-            if (windowWidth > 768) {
+            if (window.innerWidth > 768) {
                 setIsMenuOpen(false);
             }
         }
 
         window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-    }, [isMenuOpen, windowWidth]);
+        return () => removeEventListener('resize', handleResize);
+    }, [isMenuOpen])
 
     return (
         <>

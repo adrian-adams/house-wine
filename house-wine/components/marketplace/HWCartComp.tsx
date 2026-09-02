@@ -30,7 +30,7 @@ interface StoreCardProps {
     message?: boolean
 }
 
-export default function StoreCart() {
+export function StoreCart() {
     return (
         <AnimatePresence>
             <motion.div
@@ -38,9 +38,11 @@ export default function StoreCart() {
                 animate={{ x: 0, opacity: 1 }}
                 exit={{ x: "-100%", opacity: 1 }}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
-                className="flex flex-col h-full"
+                className="flex flex-col h-full overflow-hidden"
             >
-                <StoreCardList />
+                <div className="flex-1 overflow-y-auto overflow-x-hidden overscroll-contain pt-4">
+                    <StoreCardList />
+                </div>
                 <StoreFooter />
             </motion.div>
         </AnimatePresence>
@@ -121,18 +123,18 @@ export function StoreCard({ productId }: StoreCardProps) {
         <AnimatePresence>
             <motion.div
                 className={cn(
-                    "relative p-2 border border-neutral-600 rounded-md text-center overflow-hidden [--card-height:130px] sm:[--card-height:100px]"
+                    "relative p-2 border border-neutral-600 rounded-md text-center overflow-hidden [--card-height:130px] sm:[--card-height:100px]",
                 )}
                 initial={{ height: "var(--card-height)", opacity: 1 }}
                 animate={{ height: maxQty ? "auto" : "var(--card-height)" }}
                 exit={{ height: "auto" }}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
             >
-                <div className="grid grid-cols-5 items-center gap-4">
+                <div className="flex flex-row items-center justify-between gap-3 h-full">
                     <div>
                         <StoreImage productId={productId} />
                     </div>
-                    <div className="flex flex-col gap-2 text-start col-span-3">
+                    <div className="space-y-2 text-start flex-2 overflow-hidden">
                         <StoreCardHeader productId={productId} />
                         <StoreCounter productId={productId} />
                     </div>
@@ -156,12 +158,14 @@ export function StoreImage({ productId }: StoreCardProps) {
     const { name, image } = item ?? {};
 
     return (
-        <div className="relative size-16 shrink-0 overflow-hidden rounded-md bg-neutral-200">
+        <div className="relative size-16 overflow-hidden rounded-md bg-neutral-200">
             {image ? (
                 <Image
                     src={image}
                     alt={name ?? "Wine bottle"}
-                    fill
+                    // fill
+                    width={100}
+                    height={100}
                     className="object-cover"
                 />
             ) : (
@@ -178,8 +182,8 @@ export function StoreCardHeader({ productId }: StoreCardProps) {
     return (
         <div>
             <h3 className="font-ibm-plex-sans text-[0.85rem]">{name}</h3>
-            <span className="flex flex-row items-center">
-                <p className="text-xs">{producer ?? "Producer"}</p>
+            <span className="flex flex-row items-center max-w-xs">
+                <p className="text-xs truncate">{producer ?? "Producer"}</p>
                 {vintage !== 0 && (
                     <>
                         <Dot className="size-4" />
@@ -192,7 +196,7 @@ export function StoreCardHeader({ productId }: StoreCardProps) {
     )
 }
 
-export function StoreCounter({ productId, message }: StoreCardProps) {
+export function StoreCounter({ productId }: StoreCardProps) {
     const item = useCartStore((state) => state.items.find((i) => i.productId === productId));
     const { orderQuantity, unitPrice, stockLevel } = item ?? {};
     const updateQuantity = useCartStore((state) => state.updateQuantity);
@@ -280,7 +284,6 @@ export function StoreRemoveProduct({ productId }: StoreCardProps) {
                 <TrashIcon className="size-4 fill-neutral-500 stroke-neutral-600 group-hover:stroke-neutral-900" />
             </Button>
         </div>
-
     )
 }
 
@@ -293,7 +296,7 @@ export function StoreFooter() {
     const t = useTranslations('marketplace');
 
     return (
-        <DrawerFooter className="space-y-2 border-t border-neutral-400">
+        <DrawerFooter className="space-y-2 border-t border-neutral-400 w-full bg-white">
             <div className="flex flex-row items-center justify-between font-semibold">
                 <h3 className="text-xl font-ibm-plex-sans">
                     {`${t('cart.cartStore.cartFooter.total')}:`}
@@ -317,7 +320,7 @@ export function StoreFooter() {
                         </motion.div>
                     </AnimatePresence>
                 </CollapsibleContent>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-2 items-center">
+                <div className="grid grid-cols-2 gap-2 items-center">
                     <Button
                         className={cn(
                             '',

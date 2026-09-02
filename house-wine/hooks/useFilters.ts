@@ -25,6 +25,10 @@ export function useFilters() {
         router.push(`${pathname}?${params.toString()}`)
     }
 
+    function clearFilters() {
+        router.push(pathname);
+    }
+
     function handleSelect(
         params: URLSearchParams, 
         key: string, 
@@ -41,15 +45,16 @@ export function useFilters() {
         key: string, 
         value: string, 
         checked: boolean) {
-        const existing = params.getAll(key)
-        if (checked) {
+        const existing = params.getAll(key);
+
+        if (checked) {;
             if (!existing.includes(value)) params.append(key, value)
         } else {
-            const updated = existing.filter(v => v !== value)
+            const updated = existing.filter(v => v !== value);
             params.delete(key)
             updated.forEach(v => params.append(key, v))
         }
     }
 
-    return { updateParam }
+    return { updateParam, clearFilters }
 }

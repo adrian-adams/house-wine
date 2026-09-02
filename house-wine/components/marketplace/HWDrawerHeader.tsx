@@ -18,7 +18,6 @@ export default function HWDrawerHeader() {
     const drawerToggle = useCartStore((state) => state.drawerToggle);
     const isCart = useCartStore((state) => state.isCart);
 
-
     return (
         <DrawerHeader className="flex flex-row items-center justify-between w-full border-b border-neutral-400 sticky pt-6 top-0 z-30 bg-white">
             {isCart ? <HWCartHeader /> : <HWFormHeader />}

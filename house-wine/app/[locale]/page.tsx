@@ -58,12 +58,12 @@ export default async function Home() {
             <HWMotionContainer
               as='div'
               variants={newArrivalsTitleVar}
-              className="w-full md:space-y-2"
+              className="w-full md:space-y-2 text-center md:text-start"
             >
               <h2>{t('newArrivals.title')}</h2>
               <p className="text-hw-dead-sea-mud">{t('newArrivals.desc')}</p>
             </HWMotionContainer>
-            <HWMotionContainer as='div' variants={newArrivalsBtnVar}>
+            <HWMotionContainer as='div' variants={newArrivalsBtnVar} className="mx-auto">
               <Link href="/marketplace">
                 <Button variant="hw_secondary">
                   {t('newArrivals.marketplaceBtn')}
@@ -88,7 +88,7 @@ export default async function Home() {
           </HWMotionContainer>
           <HWMotionContainer as='ul' className='hw-grid'>
             {powerfulFeatures.map((feature, index) => (
-              <HWMotionItem key={feature.title} as='li'>
+              <HWMotionItem key={t(`powerfulFeatures.cards.${index}.title`)} as='li'>
                 <InfoCardsFeatures
                   src={feature.src}
                   element="h3"

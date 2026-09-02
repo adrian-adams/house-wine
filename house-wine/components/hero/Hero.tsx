@@ -51,7 +51,7 @@ export default async function Hero() {
     }
 
     return (
-        <div className="h-screen bg-hw-heritage-park/80 text-white p-10 text-center lg:text-start flex flex-col lg:flex-row gap-2 items-center justify-between overflow-hidden bg-[url('/general/blur-bg.png')] bg-cover bg-center bg-fixed">
+        <div className="min-h-0 md:h-screen bg-hw-heritage-park/80 text-white p-10 text-center lg:text-start flex flex-col lg:flex-row gap-2 items-center justify-between overflow-hidden bg-[url('/general/blur-bg.png')] bg-cover bg-center bg-fixed">
             <div className="w-full pt-20 md:pt-30 space-y-4">
                 <h1 className="font-instrument-sarif text-3xl md:text-5xl leading-tight">
                     {EN.root.title}

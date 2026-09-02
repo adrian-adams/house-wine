@@ -93,7 +93,7 @@ export default async function page({ params }: ProductPageProps) {
                             <TableBody>
                                 {productInfo.map((item) => (
                                     <TableRow key={item.title} className="w-full">
-                                        <TableCell className="w-2/12 text-neutral-700 font-medium px-0">
+                                        <TableCell className="w-6/12 sm:w-4/12 xl:w-2/12 text-neutral-700 font-medium px-0">
                                             {item.title}
                                         </TableCell>
                                         <TableCell className={`${item.style} px-2`}>

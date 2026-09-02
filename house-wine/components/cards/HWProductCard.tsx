@@ -36,8 +36,8 @@ export function HWHeroFooter({ name, producer, vintage, quantity }: ProductUI) {
                 <p className="truncate">{name}</p>
             </div>
             <div className="w-full flex flex-row items-center justify-between">
-                <div className="flex flex-row items-center">
-                    <span className={`truncate text-wrap ${vintage && "max-w-16"}`}>{producer}</span>
+                <div className="flex flex-row items-center pe-2 overflow-auto">
+                    <span className={`truncate text-wrap`}>{producer}</span>
                     {vintage && (
                         <span className="flex flex-row items-center">
                             <Dot />
@@ -98,7 +98,7 @@ export default function HWProductCard({ promoTag, src, alt, footer, variant, ava
 
     return (
         <Card className={cn(
-            "group",
+            "group z-10 relative",
             variant === "Hero" && "h-80 m-2",
             variant === "New Arrivals" && "h-80 m-2",
             variant === "Marketplace" && "h-70"

@@ -258,6 +258,7 @@
     ],
     "sidebarFilter": {
       "title": "Filters",
+      "clearFilters": "Clear filters",
       "availability": [
         { "value": "true", "name": "Shows sold out" }
       ],
