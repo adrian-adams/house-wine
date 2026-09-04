@@ -76,7 +76,7 @@ export default function About() {
                             src={img.src ?? ""}
                             alt={img.alt ?? "About House Wines"}
                             // fill={true}
-                            sizes="100vw"
+                            sizes="(max-width: 768px) 100vw, 90vw"
                             width={0}
                             height={0}
                             className="rounded-lg border border-primary-200 w-full h-auto"
